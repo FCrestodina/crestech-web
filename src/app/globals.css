@@ -115,6 +115,7 @@ body {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.55s ease, transform 0.55s ease;
+  height: 100%;
 }
 .reveal-visible {
   opacity: 1 !important;
@@ -128,10 +129,22 @@ body {
   overflow: hidden;
   background: rgba(212,175,55,0.02);
   transition: border-color 0.25s, transform 0.25s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .portfolio-card:hover {
   border-color: rgba(212,175,55,0.45);
   transform: translateY(-4px);
+}
+.portfolio-card-body {
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.portfolio-card-desc {
+  flex: 1;
 }
 
 /* Testimonial cards */

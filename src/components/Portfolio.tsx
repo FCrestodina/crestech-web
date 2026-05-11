@@ -117,7 +117,7 @@ export default function Portfolio() {
                   </span>
                 </div>
 
-                <div style={{ padding: "24px 24px 28px" }}>
+                <div className="portfolio-card-body">
                   <span
                     style={{
                       fontSize: 10,
@@ -135,7 +135,7 @@ export default function Portfolio() {
                   >
                     {p.title}
                   </h3>
-                  <p style={{ fontSize: 14, color: "#888888", lineHeight: 1.7, marginBottom: 18 }}>
+                  <p className="portfolio-card-desc" style={{ fontSize: 14, color: "#888888", lineHeight: 1.7, marginBottom: 18 }}>
                     {p.description}
                   </p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>

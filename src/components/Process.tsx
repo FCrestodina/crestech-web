@@ -2,32 +2,24 @@ import Reveal from "./Reveal";
 
 const steps = [
   {
-    num: "01",
     title: "Consulta inicial",
     description:
-      "Hablamos 30 minutos sin costo. Entiendo tu proyecto, tus objetivos y qué resultado esperás. Sin compromiso.",
-    tag: "Gratis · 30 min",
+      "Hablamos sin costo. Entendemos tu proyecto, tus objetivos y qué resultado esperás. Sin compromiso.",
   },
   {
-    num: "02",
     title: "Propuesta & presupuesto",
     description:
-      "Te envío una propuesta detallada con alcance, tiempos y precio. Sin letra chica.",
-    tag: "2–3 días hábiles",
+      "Preparamos una propuesta detallada con alcance, tiempos y precio. Sin letra chica.",
   },
   {
-    num: "03",
     title: "Producción",
     description:
       "Arrancamos. Revisiones incluidas en cada etapa para que el resultado sea exactamente lo que imaginaste.",
-    tag: "Según el proyecto",
   },
   {
-    num: "04",
     title: "Entrega & soporte",
     description:
-      "Recibís todos los archivos finales y 15 días de soporte post-entrega para ajustes menores.",
-    tag: "Incluido siempre",
+      "Recibís todos los archivos finales con soporte post-entrega incluido para ajustes menores.",
   },
 ];
 
@@ -64,35 +56,21 @@ export default function Process() {
           }}
         >
           {steps.map((step, i) => (
-            <Reveal key={step.num} delay={i * 100}>
+            <Reveal key={step.title} delay={i * 100}>
               <div className="process-step">
                 <div
-                  className="font-serif gold-gradient-text"
-                  style={{ fontSize: 48, fontWeight: 500, lineHeight: 1, marginBottom: 20, opacity: 0.6 }}
-                >
-                  {step.num}
-                </div>
+                  className="gold-line"
+                  style={{ width: 32, marginBottom: 24 }}
+                />
                 <h3
                   className="font-serif"
                   style={{ fontSize: 20, fontWeight: 500, color: "#ffffff", marginBottom: 12 }}
                 >
                   {step.title}
                 </h3>
-                <p style={{ fontSize: 14, color: "#999999", lineHeight: 1.7, marginBottom: 20 }}>
+                <p style={{ fontSize: 14, color: "#999999", lineHeight: 1.7 }}>
                   {step.description}
                 </p>
-                <span
-                  style={{
-                    fontSize: 10,
-                    letterSpacing: "0.1em",
-                    color: "#D4AF37",
-                    border: "1px solid rgba(212,175,55,0.25)",
-                    padding: "4px 10px",
-                    borderRadius: 2,
-                  }}
-                >
-                  {step.tag}
-                </span>
               </div>
             </Reveal>
           ))}

@@ -81,10 +81,10 @@ export default function About() {
             <span className="gold-gradient-text">de la marca</span>
           </h2>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 16 }}>
-            Soy Franco Crestodina, fundador de Crestech Studio. Me especializo en construir presencias digitales que combinan identidad visual sólida con tecnología.
+            En Crestech Studio nos especializamos en construir presencias digitales que combinan identidad visual sólida con tecnología de primer nivel.
           </p>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 32 }}>
-            Trabajo con emprendedores, startups y marcas que entienden que el diseño no es un gasto — es una inversión en cómo los percibe el mundo.
+            Trabajamos con emprendedores, startups y marcas que entienden que el diseño no es un gasto — es una inversión en cómo los percibe el mundo.
           </p>
 
           <div
@@ -97,8 +97,7 @@ export default function About() {
           >
             {[
               { num: "+20", label: "Proyectos entregados" },
-              { num: "4", label: "Áreas de servicio" },
-              { num: "100%", label: "Clientes recurrentes" },
+              { num: "Full", label: "Stack — diseño y código" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div

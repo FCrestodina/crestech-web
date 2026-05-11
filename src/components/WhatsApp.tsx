@@ -1,7 +1,7 @@
 "use client";
 
-const WHATSAPP_NUMBER = "5491100000000"; // Reemplazar con número real
-const MESSAGE = encodeURIComponent("Hola Franco, me interesa conocer más sobre Crestech Studio.");
+const WHATSAPP_NUMBER = "5491164578484";
+const MESSAGE = encodeURIComponent("Hola, me interesa conocer más sobre Crestech Studio.");
 
 export default function WhatsApp() {
   return (

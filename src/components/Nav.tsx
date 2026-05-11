@@ -15,8 +15,11 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+      setOpen(false);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -76,11 +79,21 @@ export default function Nav() {
           className="show-mobile"
           onClick={() => setOpen(!open)}
           style={{ background: "none", border: "none", cursor: "pointer", padding: 8 }}
-          aria-label="Menu"
+          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
         >
-          <div style={{ width: 22, height: 2, background: "#D4AF37", marginBottom: 5 }} />
-          <div style={{ width: 22, height: 2, background: "#D4AF37", marginBottom: 5 }} />
-          <div style={{ width: 22, height: 2, background: "#D4AF37" }} />
+          {open ? (
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <line x1="2" y1="2" x2="20" y2="20" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" />
+              <line x1="20" y1="2" x2="2" y2="20" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          ) : (
+            <>
+              <div style={{ width: 22, height: 2, background: "#D4AF37", marginBottom: 5 }} />
+              <div style={{ width: 22, height: 2, background: "#D4AF37", marginBottom: 5 }} />
+              <div style={{ width: 22, height: 2, background: "#D4AF37" }} />
+            </>
+          )}
         </button>
       </div>
 

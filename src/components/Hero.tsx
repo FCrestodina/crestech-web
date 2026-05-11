@@ -57,23 +57,11 @@ export default function Hero() {
             fontWeight: 500,
             lineHeight: 1.05,
             letterSpacing: "0.02em",
-            color: "#ffffff",
-            marginBottom: 8,
-          }}
-        >
-          Crestech
-        </h1>
-        <h1
-          className="font-serif gold-gradient-text"
-          style={{
-            fontSize: "clamp(48px, 8vw, 100px)",
-            fontWeight: 500,
-            lineHeight: 1.05,
-            letterSpacing: "0.02em",
             marginBottom: 40,
           }}
         >
-          Studio
+          <span style={{ color: "#ffffff", display: "block", marginBottom: 8 }}>Crestech</span>
+          <span className="gold-gradient-text" style={{ display: "block" }}>Studio</span>
         </h1>
 
         <div className="gold-line" style={{ width: 200, margin: "0 auto 40px" }} />

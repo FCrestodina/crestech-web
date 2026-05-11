@@ -184,8 +184,8 @@ body {
 /* WhatsApp floating button */
 .whatsapp-btn {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
+  bottom: 80px;
+  right: 24px;
   z-index: 100;
   width: 52px;
   height: 52px;

@@ -60,7 +60,7 @@ export default function Process() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: 2,
+            gap: 24,
           }}
         >
           {steps.map((step, i) => (

@@ -96,8 +96,9 @@ export default function About() {
             }}
           >
             {[
-              { num: "4", label: "Servicios" },
-              { num: "100%", label: "Identidad coherente" },
+              { num: "+20", label: "Proyectos entregados" },
+              { num: "4", label: "Áreas de servicio" },
+              { num: "100%", label: "Clientes recurrentes" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div

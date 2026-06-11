@@ -4,12 +4,12 @@ import Reveal from "./Reveal";
 
 const faqs = [
   {
-    q: "¿Trabajás de manera remota?",
-    a: "Sí, 100% remoto. Trabajo con clientes de Argentina y el resto de Latinoamérica. Las reuniones son por videollamada y la comunicación por WhatsApp o email.",
+    q: "¿Trabajan de manera remota?",
+    a: "Sí, 100% remoto. Trabajamos con clientes de Argentina y el resto de Latinoamérica. Las reuniones son por videollamada y la comunicación por WhatsApp o email.",
   },
   {
     q: "¿Cuánto tiempo lleva un proyecto?",
-    a: "Depende del servicio: una identidad visual completa lleva entre 2 y 4 semanas. Una landing page, entre 1 y 3 semanas. Los proyectos de automatización varían según la complejidad. En la propuesta inicial siempre detallo los tiempos exactos.",
+    a: "Depende del servicio: una identidad visual completa lleva entre 2 y 4 semanas. Una landing page, entre 1 y 3 semanas. Los proyectos de automatización varían según la complejidad. En la propuesta inicial siempre detallamos los tiempos exactos.",
   },
   {
     q: "¿Ofrecen servicios por separado o solo paquetes?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "¿Cómo se realizan los pagos?",
-    a: "50% al inicio del proyecto y 50% contra entrega final. Acepto transferencia bancaria y medios digitales. Para clientes del exterior, PayPal o Wise.",
+    a: "50% al inicio del proyecto y 50% contra entrega final. Aceptamos transferencia bancaria y medios digitales. Para clientes del exterior, PayPal o Wise.",
   },
 ];
 

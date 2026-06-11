@@ -71,7 +71,7 @@ export default function About() {
 
         {/* Text */}
         <div>
-          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>SOBRE MÍ</span>
+          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>SOBRE</span>
           <h2
             className="font-serif"
             style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 500, marginTop: 16, marginBottom: 24, color: "#ffffff", lineHeight: 1.2 }}
@@ -81,10 +81,10 @@ export default function About() {
             <span className="gold-gradient-text">de la marca</span>
           </h2>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 16 }}>
-            En Crestech Studio nos especializamos en construir presencias digitales que combinan identidad visual sólida con tecnología de primer nivel.
+            En Crestech trabajamos en webs y sistemas a medida — turnos, reservas, catálogos — combinando una identidad visual sólida con tecnología que funciona todos los días.
           </p>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 32 }}>
-            Trabajamos con emprendedores, startups y marcas que entienden que el diseño no es un gasto — es una inversión en cómo los percibe el mundo.
+            Crestech la fundó Franco Crestodina, y hoy es él quien te responde y escribe el código: precio de startup, trato directo y entrega rápida — sin estructura de agencia que pagar.
           </p>
 
           <div
@@ -96,7 +96,7 @@ export default function About() {
             }}
           >
             {[
-              { num: "+20", label: "Proyectos entregados" },
+              { num: "A medida", label: "Cada proyecto, desde cero" },
               { num: "Full", label: "Stack — diseño y código" },
             ].map((stat) => (
               <div key={stat.label}>

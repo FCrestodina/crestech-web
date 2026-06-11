@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
+
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://crestech-web-production.up.railway.app";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Crestech Studio — Branding, Contenido & Desarrollo Digital",
   description:
     "Estudio digital especializado en branding, contenido para redes sociales, diseño web y automatización. Fundado por Franco Crestodina.",
@@ -19,7 +24,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="h-full">
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

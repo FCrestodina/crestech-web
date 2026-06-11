@@ -68,7 +68,7 @@ export default function Services() {
           className="font-serif"
           style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, marginTop: 16, color: "#ffffff" }}
         >
-          Qué puedo hacer por vos
+          Lo que hacemos
         </h2>
         <div className="gold-line" style={{ width: 160, margin: "24px auto 0" }} />
       </div>

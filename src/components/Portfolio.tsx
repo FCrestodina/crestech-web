@@ -33,22 +33,6 @@ const projects = [
     color: "rgba(212,175,55,0.05)",
     accent: "#D4AF37",
   },
-  {
-    category: "Redes Sociales",
-    title: "Vitae Wellness",
-    description: "Gestión mensual de Instagram y diseño de feed para centro de bienestar. +3.2K seguidores en 4 meses.",
-    tags: ["Instagram", "Reels", "Feed"],
-    color: "rgba(212,175,55,0.08)",
-    accent: "#D4AF37",
-  },
-  {
-    category: "Diseño Web",
-    title: "Arquitecta Vera",
-    description: "Portfolio web minimalista para estudio de arquitectura. Galería de proyectos, blog y contacto.",
-    tags: ["Portfolio", "Responsive", "CMS"],
-    color: "rgba(212,175,55,0.05)",
-    accent: "#D4AF37",
-  },
 ];
 
 export default function Portfolio() {

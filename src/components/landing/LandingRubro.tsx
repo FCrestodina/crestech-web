@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import PhoneDemo from "./PhoneDemo";
@@ -121,6 +122,20 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   {config.proofHeading} <em>{config.proofHeadingEm}</em>
                 </h2>
                 <p className={styles.lede}>{config.proofLede}</p>
+                {config.proofPhotos && (
+                  <div className={styles.proofPhotos}>
+                    {config.proofPhotos.map((photo) => (
+                      <Image
+                        key={photo.src}
+                        src={photo.src}
+                        alt={photo.alt}
+                        width={480}
+                        height={600}
+                        loading="lazy"
+                      />
+                    ))}
+                  </div>
+                )}
               </Reveal>
               <Reveal delay={120}>
                 <div className={styles.proofCard}>

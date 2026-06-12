@@ -27,6 +27,11 @@ export interface Feature {
   rest: string;
 }
 
+export interface ProofPhoto {
+  src: string;
+  alt: string;
+}
+
 export interface LandingConfig {
   slug: string;
   eyebrow: string;
@@ -50,6 +55,7 @@ export interface LandingConfig {
   proofHeading: string;
   proofHeadingEm: string;
   proofLede: string;
+  proofPhotos?: ProofPhoto[]; // fotos reales del caso (negocio, equipo, sistema)
   proofCardLabel: string;
   proofCardTitle: string;
   features: Feature[];
@@ -137,6 +143,11 @@ const pilates: LandingConfig = {
   proofHeadingEm: "en un negocio real",
   proofLede:
     "Mixtura es un sistema que desarrollamos para una academia deportiva: maneja sus turnos, sus pagos y sus recordatorios todos los días. Tu estudio puede tener el suyo, adaptado a cómo trabajás vos — tus horarios, tus camas, tus planes de clases.",
+  proofPhotos: [
+    { src: "/mixtura/sala-reformers.jpg", alt: "Sala de camas reformer en el estudio Mixtura" },
+    { src: "/mixtura/clase-torre.jpg", alt: "Alumna entrenando en una clase de Mixtura" },
+    { src: "/equipo/equipo-mixtura.jpg", alt: "El equipo de instructores de Mixtura en su estudio" },
+  ],
   proofCardLabel: "Caso real · Mixtura",
   proofCardTitle: "Lo que incluye tu sistema",
   features: [
@@ -223,6 +234,10 @@ const canchas: LandingConfig = {
   proofHeadingEm: "en un negocio real",
   proofLede:
     "Mixtura es un sistema que desarrollamos para una academia deportiva: maneja sus turnos, sus pagos y sus recordatorios todos los días. Tu complejo puede tener el suyo, adaptado a tus canchas, tus horarios y tus precios por franja.",
+  proofPhotos: [
+    { src: "/mixtura/estudio-amplio.jpg", alt: "El estudio de Mixtura, donde el sistema funciona todos los días" },
+    { src: "/equipo/equipo-mixtura.jpg", alt: "El equipo de Mixtura en su estudio" },
+  ],
   proofCardLabel: "Caso real · Mixtura",
   proofCardTitle: "Lo que incluye tu sistema",
   features: [
@@ -310,6 +325,10 @@ const hoteles: LandingConfig = {
   proofHeadingEm: "todos los días",
   proofLede:
     "Sistemas de reservas y pagos que ya funcionan todos los días en negocios reales. Mixtura — reservas, pagos con Mercado Pago y confirmaciones por WhatsApp — es la prueba de que la base ya está hecha y probada. La misma base, adaptada a habitaciones, tarifas y temporadas.",
+  proofPhotos: [
+    { src: "/mixtura/estudio-amplio.jpg", alt: "El estudio de Mixtura, donde el sistema funciona todos los días" },
+    { src: "/equipo/equipo-mixtura.jpg", alt: "El equipo de Mixtura en su estudio" },
+  ],
   proofCardLabel: "Caso real · Mixtura",
   proofCardTitle: "La misma base, adaptada a tu hotel",
   features: [

@@ -1,6 +1,18 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 
-const projects = [
+interface Project {
+  category: string;
+  title: string;
+  description: string;
+  tags: string[];
+  color: string;
+  accent: string;
+  image?: string;
+  imageAlt?: string;
+}
+
+const projects: Project[] = [
   {
     category: "Desarrollo Web & Automatización",
     title: "Mixtura",
@@ -8,6 +20,8 @@ const projects = [
     tags: ["ASP.NET Core", "MongoDB", "MercadoPago", "WhatsApp Bot"],
     color: "rgba(212,175,55,0.08)",
     accent: "#D4AF37",
+    image: "/mixtura/estudio-amplio.jpg",
+    imageAlt: "El estudio de Mixtura, la academia que usa el sistema todos los días",
   },
   {
     category: "Diseño Web",
@@ -70,7 +84,6 @@ export default function Portfolio() {
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
               <div className="portfolio-card">
-                {/* Image placeholder */}
                 <div
                   style={{
                     height: 200,
@@ -84,21 +97,33 @@ export default function Portfolio() {
                     overflow: "hidden",
                   }}
                 >
-                  <div
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      backgroundImage:
-                        "linear-gradient(rgba(212,175,55,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.03) 1px, transparent 1px)",
-                      backgroundSize: "40px 40px",
-                    }}
-                  />
-                  <span
-                    className="font-serif gold-gradient-text"
-                    style={{ fontSize: 13, letterSpacing: "0.2em", opacity: 0.6, position: "relative" }}
-                  >
-                    {p.title.toUpperCase()}
-                  </span>
+                  {p.image ? (
+                    <Image
+                      src={p.image}
+                      alt={p.imageAlt ?? p.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      style={{ objectFit: "cover" }}
+                    />
+                  ) : (
+                    <>
+                      <div
+                        style={{
+                          position: "absolute",
+                          inset: 0,
+                          backgroundImage:
+                            "linear-gradient(rgba(212,175,55,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.03) 1px, transparent 1px)",
+                          backgroundSize: "40px 40px",
+                        }}
+                      />
+                      <span
+                        className="font-serif gold-gradient-text"
+                        style={{ fontSize: 13, letterSpacing: "0.2em", opacity: 0.6, position: "relative" }}
+                      >
+                        {p.title.toUpperCase()}
+                      </span>
+                    </>
+                  )}
                 </div>
 
                 <div className="portfolio-card-body">

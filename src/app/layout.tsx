@@ -3,7 +3,7 @@ import "./globals.css";
 import Analytics from "@/components/Analytics";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://crestech-web-production.up.railway.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://crestech.com.ar";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

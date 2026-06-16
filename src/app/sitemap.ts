@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { landingSlugs } from "@/data/landings";
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://crestech-web-production.up.railway.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://crestech.com.ar";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

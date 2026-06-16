@@ -10,10 +10,21 @@ export const metadata: Metadata = {
   title: "Crestech Studio — Branding, Contenido & Desarrollo Digital",
   description:
     "Estudio digital especializado en branding, contenido para redes sociales, diseño web y automatización. Fundado por Franco Crestodina.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Crestech Studio",
     description: "Branding, Contenido & Desarrollo Digital",
     siteName: "Crestech Studio",
+    url: "/",
+    type: "website",
+    locale: "es_AR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Crestech Studio",
+    description: "Branding, Contenido & Desarrollo Digital",
   },
 };
 

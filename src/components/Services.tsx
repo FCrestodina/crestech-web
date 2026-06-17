@@ -15,15 +15,30 @@ const services = [
   {
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <rect x="4" y="8" width="28" height="20" rx="2" stroke="#D4AF37" strokeWidth="1.5" />
-        <circle cx="18" cy="18" r="5" stroke="#D4AF37" strokeWidth="1.5" />
-        <rect x="10" y="5" width="8" height="4" rx="1" stroke="#D4AF37" strokeWidth="1.5" />
+        <rect x="4" y="9" width="28" height="20" rx="2" stroke="#D4AF37" strokeWidth="1.5" />
+        <circle cx="18" cy="19" r="5.5" stroke="#D4AF37" strokeWidth="1.5" />
+        <rect x="11" y="5" width="9" height="4" rx="1" stroke="#D4AF37" strokeWidth="1.5" />
+        <circle cx="27" cy="14" r="1.4" fill="#D4AF37" />
       </svg>
     ),
-    title: "Contenido para Redes Sociales",
+    title: "Fotografía",
     description:
-      "Posts, reels y stories con identidad visual consistente. Contenido que genera autoridad y crece tu comunidad.",
-    tags: ["Instagram", "LinkedIn", "Posts", "Reels"],
+      "Producción de fotos profesionales de tu local, productos o equipo. Vamos presencialmente a capturar el material que tu marca necesita.",
+    tags: ["Producto", "Local", "Equipo", "Edición"],
+  },
+  {
+    icon: (
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M6 9 h24 a2 2 0 0 1 2 2 v11 a2 2 0 0 1 -2 2 H15 l-6 6 v-6 H6 a2 2 0 0 1 -2 -2 V11 a2 2 0 0 1 2 -2 z" stroke="#D4AF37" strokeWidth="1.5" fill="none" />
+        <circle cx="13" cy="16.5" r="1.3" fill="#D4AF37" />
+        <circle cx="18" cy="16.5" r="1.3" fill="#D4AF37" />
+        <circle cx="23" cy="16.5" r="1.3" fill="#D4AF37" />
+      </svg>
+    ),
+    title: "Contenido & Redes Sociales",
+    description:
+      "Manejo integral de tus redes con una community manager: planificación, posteos, reels y stories con identidad consistente que hacen crecer tu comunidad.",
+    tags: ["Instagram", "Community", "Reels", "Calendario"],
   },
   {
     icon: (
@@ -34,23 +49,23 @@ const services = [
         <line x1="18" y1="26" x2="18" y2="30" stroke="#D4AF37" strokeWidth="1.5" />
       </svg>
     ),
-    title: "Diseño Web",
+    title: "Diseño & Desarrollo Web",
     description:
-      "Landing pages y sitios web con foco en conversión — rápidos, bien diseñados y que comunican tu propuesta de valor.",
+      "Sitios web y sistemas a medida — turnos, reservas, catálogos. Rápidos, bien diseñados y pensados para convertir. Con mantenimiento opcional.",
     tags: ["Landing page", "Next.js", "Responsive", "SEO"],
   },
   {
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <path d="M10 14 L4 18 L10 22" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M26 14 L32 18 L26 22" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <line x1="15" y1="10" x2="21" y2="26" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="5" y1="30" x2="31" y2="30" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" />
+        <polyline points="7,25 14,17 20,21 29,9" stroke="#D4AF37" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points="23,9 29,9 29,15" stroke="#D4AF37" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: "Automatización & Desarrollo",
+    title: "Marketing & Estrategia",
     description:
-      "Scripts, bots y herramientas que ahorran tiempo — desde generación de contenido hasta flujos automáticos con Python o JavaScript.",
-    tags: ["Python", "JavaScript", "Bots", "Workflows"],
+      "Estrategia para que todo lo anterior tenga sentido: posicionamiento, campañas y acciones que conectan tu marca con los clientes correctos.",
+    tags: ["Estrategia", "Campañas", "Posicionamiento", "Análisis"],
   },
 ];
 
@@ -76,7 +91,7 @@ export default function Services() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(500px, 100%), 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(440px, 100%), 1fr))",
           gap: 24,
         }}
       >
@@ -112,6 +127,20 @@ export default function Services() {
           </div>
         ))}
       </div>
+
+      <p
+        style={{
+          textAlign: "center",
+          maxWidth: 680,
+          margin: "48px auto 0",
+          fontSize: 15,
+          color: "#aaaaaa",
+          lineHeight: 1.8,
+        }}
+      >
+        ¿Necesitás solo la web? ¿Web y fotos? ¿Web y manejo de redes con una CM? Combinamos los
+        servicios que tu negocio necesite — nos adaptamos a cada caso.
+      </p>
     </section>
   );
 }

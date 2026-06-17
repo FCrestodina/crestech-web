@@ -26,7 +26,7 @@ export default function Footer() {
           </span>
         </div>
         <p style={{ fontSize: 11, color: "#8a8a8a", letterSpacing: "0.1em" }}>
-          © {new Date().getFullYear()} Crestech Studio — Franco Crestodina
+          © {new Date().getFullYear()} Crestech Studio
         </p>
       </div>
     </footer>

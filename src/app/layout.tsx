@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Crestech Studio — Branding, Contenido & Desarrollo Digital",
   description:
-    "Estudio digital especializado en branding, contenido para redes sociales, diseño web y automatización. Fundado por Franco Crestodina.",
+    "Equipo digital: branding, fotografía, contenido para redes y desarrollo web. Combinamos los servicios que tu negocio necesita.",
   alternates: {
     canonical: "/",
   },
@@ -33,20 +33,21 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Crestech Studio",
   description:
-    "Estudio digital especializado en branding, contenido para redes sociales, diseño web y automatización.",
+    "Equipo digital: branding, fotografía, contenido para redes sociales y desarrollo web.",
   url: siteUrl,
   logo: `${siteUrl}/icon`,
   image: `${siteUrl}/opengraph-image`,
   email: "devfrancocrestodina@gmail.com",
   telephone: "+5491164578484",
-  founder: { "@type": "Person", name: "Franco Crestodina" },
   areaServed: "AR",
   sameAs: ["https://instagram.com/crestech.studio"],
   knowsAbout: [
     "Branding",
+    "Fotografía",
     "Contenido para redes sociales",
+    "Community management",
     "Diseño web",
-    "Automatización",
+    "Marketing digital",
   ],
 };
 

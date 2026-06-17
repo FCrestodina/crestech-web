@@ -53,7 +53,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
             rel="noopener"
             data-umami-event="landing-whatsapp-nav"
           >
-            Hablar con Franco
+            Hablar con el equipo
           </a>
         </div>
       </header>
@@ -201,11 +201,11 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
               <Reveal delay={120}>
                 <div className={styles.panel}>
                   <p className={styles.eyebrow}>Quién está del otro lado</p>
-                  <h3>Hablás con Franco. El mismo que lo programa.</h3>
+                  <h3>Un equipo de especialistas, no un intermediario.</h3>
                   <p>
-                    Crestech la fundó <strong>Franco Crestodina</strong>, y hoy es él quien te responde y
-                    escribe el código. No hay vendedor, ni intermediario, ni &quot;déjeme consultarlo con el
-                    equipo técnico&quot; — la persona que te contesta el WhatsApp es la que hace el sistema.
+                    En <strong>Crestech</strong> cada parte la trabaja quien sabe del tema: diseño,
+                    fotografía, redes, marketing y desarrollo. Armamos lo que tu negocio necesita —
+                    solo la web, web y fotos, o todo junto— y nos adaptamos a tu caso.
                   </p>
                 </div>
               </Reveal>
@@ -231,10 +231,10 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   data-umami-event="landing-whatsapp-final"
                 >
                   <WaIcon />
-                  Escribirle a Franco
+                  Escribinos
                 </a>
                 <p className={styles.ctaNote}>
-                  Te responde Franco. Sin compromiso, sin bot, sin spam después.
+                  Te respondemos a la brevedad. Sin compromiso, sin bot, sin spam después.
                 </p>
               </div>
             </Reveal>
@@ -244,7 +244,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
 
       <footer className={styles.footer}>
         <div className={`${styles.wrap} ${styles.foot}`}>
-          <span>© {year} Crestech Studio — Franco Crestodina</span>
+          <span>© {year} Crestech Studio</span>
           <a href="https://instagram.com/crestech.studio" target="_blank" rel="noopener">
             @CRESTECH.STUDIO
           </a>

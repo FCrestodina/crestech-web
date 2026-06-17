@@ -75,7 +75,7 @@ export default function Hero() {
             marginBottom: 52,
           }}
         >
-          Branding, contenido para redes sociales, diseño web y automatización — todo bajo una misma identidad visual.
+          Branding, fotografía, contenido para redes y desarrollo web. Un equipo de especialistas que se adapta a lo que tu negocio necesita.
         </p>
 
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>

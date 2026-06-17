@@ -4,8 +4,12 @@ import Reveal from "./Reveal";
 
 const faqs = [
   {
-    q: "¿Trabajan de manera remota?",
-    a: "Sí, 100% remoto. Trabajamos con clientes de Argentina y el resto de Latinoamérica. Las reuniones son por videollamada y la comunicación por WhatsApp o email.",
+    q: "¿Trabajan presencial o remoto?",
+    a: "Depende del servicio. El diseño, el desarrollo web y el manejo de redes los hacemos de forma remota, con reuniones por videollamada y comunicación por WhatsApp o email. Cuando el proyecto incluye fotografía, vamos presencialmente a tu local o negocio a producir las fotos.",
+  },
+  {
+    q: "¿Quiénes forman el equipo?",
+    a: "Somos un equipo de especialistas: una community manager, una fotógrafa, una especialista en marketing, una diseñadora gráfica y un desarrollador web. Cada parte del proyecto la trabaja quien sabe del tema.",
   },
   {
     q: "¿Cuánto tiempo lleva un proyecto?",

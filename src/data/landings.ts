@@ -83,7 +83,7 @@ const pilates: LandingConfig = {
   h1: "Tus alumnas reservan solas.",
   h1em: "Vos solo das la clase.",
   heroSub:
-    "Un sistema de turnos hecho a medida para tu estudio: **reservas online, pagos y recordatorios automáticos por WhatsApp**. Sin agencia en el medio — hablás directo con quien lo programa.",
+    "Un sistema de turnos hecho a medida para tu estudio: **reservas online, pagos y recordatorios automáticos por WhatsApp**. Sin vueltas — un equipo que se adapta a cómo trabajás.",
   demo: {
     appTitle: "TU ESTUDIO",
     day: "Mañana · Jueves",
@@ -162,12 +162,12 @@ const pilates: LandingConfig = {
   finalLede:
     "Te mostramos el sistema funcionando y nos contás cómo trabaja tu estudio. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola Franco, tengo un estudio de pilates y quiero ver el sistema de turnos funcionando.",
+    "Hola,tengo un estudio de pilates y quiero ver el sistema de turnos funcionando.",
   whatsappMessageNav:
-    "Hola Franco, tengo un estudio de pilates y quiero saber más del sistema de turnos.",
+    "Hola,tengo un estudio de pilates y quiero saber más del sistema de turnos.",
   metaTitle: "Sistema de turnos para estudios de pilates — Crestech Studio",
   metaDescription:
-    "Tus alumnas reservan solas, pagan online y reciben recordatorios por WhatsApp. Sistema de turnos a medida para estudios de pilates en AMBA. Hablás directo con quien lo programa.",
+    "Tus alumnas reservan solas, pagan online y reciben recordatorios por WhatsApp. Sistema de turnos a medida para estudios de pilates en AMBA. Un equipo que se adapta a tu estudio.",
   ogTitle: "Tus alumnas reservan solas. Vos das la clase.",
   ogDescription:
     "Sistema de turnos a medida para estudios de pilates: reservas online, pagos y recordatorios automáticos por WhatsApp.",
@@ -252,9 +252,9 @@ const canchas: LandingConfig = {
   finalLede:
     "Te mostramos el sistema funcionando y nos contás cómo trabaja tu complejo. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola Franco, tengo un complejo de canchas y quiero ver el sistema de reservas funcionando.",
+    "Hola,tengo un complejo de canchas y quiero ver el sistema de reservas funcionando.",
   whatsappMessageNav:
-    "Hola Franco, tengo un complejo de canchas y quiero saber más del sistema de reservas.",
+    "Hola,tengo un complejo de canchas y quiero saber más del sistema de reservas.",
   metaTitle: "Sistema de reservas para canchas de pádel y fútbol — Crestech Studio",
   metaDescription:
     "Los jugadores reservan online, dejan la seña por Mercado Pago y reciben confirmación por WhatsApp. Sistema de reservas a medida para canchas de pádel y fútbol en AMBA.",
@@ -343,9 +343,9 @@ const hoteles: LandingConfig = {
   finalLede:
     "Te mostramos el motor de reservas funcionando y nos contás cómo trabaja tu alojamiento. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola Franco, tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
+    "Hola,tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
   whatsappMessageNav:
-    "Hola Franco, tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
+    "Hola,tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
   metaTitle: "Motor de reservas directas para hoteles y alojamientos — Crestech Studio",
   metaDescription:
     "Web propia con motor de reservas directas para hoteles y alojamientos: disponibilidad online, pagos integrados y confirmaciones por WhatsApp. Menos comisiones, más reservas tuyas.",
@@ -431,9 +431,9 @@ const inmobiliarias: LandingConfig = {
   finalLede:
     "Te mostramos cómo se vería tu web con tu cartera y nos contás cómo trabajás hoy. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola Franco, tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
+    "Hola,tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
   whatsappMessageNav:
-    "Hola Franco, tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
+    "Hola,tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
   metaTitle: "Web para inmobiliarias con tu cartera de propiedades — Crestech Studio",
   metaDescription:
     "Web propia para tu inmobiliaria: fichas de propiedades para compartir por WhatsApp, búsqueda por zona y precio, y consultas directas. Caso real online: Crestodina Propiedades.",

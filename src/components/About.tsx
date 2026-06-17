@@ -1,7 +1,15 @@
+const team = [
+  "Community Manager",
+  "Fotógrafa",
+  "Especialista en Marketing",
+  "Diseñadora Gráfica",
+  "Desarrollador Web",
+];
+
 export default function About() {
   return (
     <section
-      id="sobre-mi"
+      id="nosotros"
       style={{
         padding: "100px 24px",
         borderTop: "1px solid rgba(212,175,55,0.1)",
@@ -18,73 +26,59 @@ export default function About() {
           alignItems: "center",
         }}
       >
-        {/* Firma decorativa */}
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <div style={{ textAlign: "center" }}>
-            <svg width="320" height="160" viewBox="0 0 320 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="gold-firma" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#F5DC7B" />
-                  <stop offset="40%" stopColor="#D4AF37" />
-                  <stop offset="100%" stopColor="#8B6914" />
-                </linearGradient>
-              </defs>
-              <text
-                x="160"
-                y="90"
-                textAnchor="middle"
-                fill="url(#gold-firma)"
-                fontFamily="Georgia, serif"
-                fontSize="52"
-                fontStyle="italic"
-                fontWeight="500"
+        {/* Equipo */}
+        <div>
+          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>EL EQUIPO</span>
+          <div
+            style={{
+              marginTop: 24,
+              display: "flex",
+              flexDirection: "column",
+              gap: 2,
+            }}
+          >
+            {team.map((role, i) => (
+              <div
+                key={role}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 16,
+                  padding: "16px 0",
+                  borderBottom:
+                    i < team.length - 1 ? "1px solid rgba(212,175,55,0.12)" : "none",
+                }}
               >
-                Franco
-              </text>
-              <text
-                x="160"
-                y="135"
-                textAnchor="middle"
-                fill="url(#gold-firma)"
-                fontFamily="Georgia, serif"
-                fontSize="38"
-                fontStyle="italic"
-                fontWeight="400"
-                opacity="0.75"
-              >
-                Crestodina
-              </text>
-              <line x1="40" y1="148" x2="280" y2="148" stroke="#D4AF37" strokeWidth="0.8" opacity="0.4" />
-            </svg>
-
-            {/* Dots decorator */}
-            <div style={{ display: "flex", gap: 16, justifyContent: "center", marginTop: 20 }}>
-              {[-1, 0, 1].map((i) => (
-                <div
-                  key={i}
-                  style={{ width: 6, height: 6, borderRadius: "50%", background: "#D4AF37", opacity: 0.7 }}
-                />
-              ))}
-            </div>
+                <span
+                  className="font-serif gold-gradient-text"
+                  style={{ fontSize: 20, fontWeight: 500, minWidth: 36 }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span style={{ fontSize: 17, color: "#ffffff", letterSpacing: "0.02em" }}>
+                  {role}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Text */}
         <div>
-          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>SOBRE</span>
+          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>SOBRE NOSOTROS</span>
           <h2
             className="font-serif"
             style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 500, marginTop: 16, marginBottom: 24, color: "#ffffff", lineHeight: 1.2 }}
           >
-            El estudio detrás
+            El equipo detrás
             <br />
-            <span className="gold-gradient-text">de la marca</span>
+            <span className="gold-gradient-text">de tu marca</span>
           </h2>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 16 }}>
-            En Crestech trabajamos en webs y sistemas a medida — turnos, reservas, catálogos — combinando una identidad visual sólida con tecnología que funciona todos los días.
+            Crestech es un equipo de especialistas: community manager, fotografía, marketing, diseño gráfico y desarrollo web. Cada proyecto lo trabaja quien sabe del tema, bajo una misma identidad visual.
           </p>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 32 }}>
-            Crestech la fundó Franco Crestodina, y hoy es él quien te responde y escribe el código: precio de startup, trato directo y entrega rápida — sin estructura de agencia que pagar.
+            Nos adaptamos a lo que necesites: solo la web, web y fotos, web y manejo de redes, o todo junto. La mayor parte del trabajo es remota; cuando el proyecto incluye fotografía, vamos a tu local a producirla.
           </p>
 
           <div
@@ -96,8 +90,8 @@ export default function About() {
             }}
           >
             {[
-              { num: "A medida", label: "Cada proyecto, desde cero" },
-              { num: "Full", label: "Stack — diseño y código" },
+              { num: "A medida", label: "Servicios según lo que necesites" },
+              { num: "Equipo", label: "Especialistas por área" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div

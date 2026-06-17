@@ -20,24 +20,18 @@ const projects: Project[] = [
     tags: ["ASP.NET Core", "MongoDB", "MercadoPago", "WhatsApp Bot"],
     color: "rgba(212,175,55,0.08)",
     accent: "#D4AF37",
-    image: "/mixtura/estudio-amplio.jpg",
-    imageAlt: "El estudio de Mixtura, la academia que usa el sistema todos los días",
+    image: "/portfolio/mixtura.jpg",
+    imageAlt: "Landing del sistema de Mixtura con reservas por WhatsApp",
   },
   {
     category: "Diseño Web",
     title: "Crestodina Propiedades",
-    description: "Plataforma inmobiliaria con listado de propiedades en venta y alquiler, sistema de tasaciones online y testimonios integrados.",
+    description: "Plataforma inmobiliaria con listado de propiedades en venta y alquiler, buscador por barrio, sistema de tasaciones online y consultas integradas.",
     tags: ["Next.js", "TypeScript", "Railway"],
     color: "rgba(212,175,55,0.05)",
     accent: "#D4AF37",
-  },
-  {
-    category: "Desarrollo Web",
-    title: "LoL Assistant",
-    description: "Herramienta para jugadores de League of Legends. Análisis de invocadores, historial de ELO, campeones más jugados y gestión de torneos con autenticación.",
-    tags: ["Next.js", "Prisma", "API Integration"],
-    color: "rgba(212,175,55,0.08)",
-    accent: "#D4AF37",
+    image: "/portfolio/crestodina.jpg",
+    imageAlt: "Home de Crestodina Propiedades con buscador de propiedades",
   },
   {
     category: "Desarrollo Web",
@@ -46,6 +40,8 @@ const projects: Project[] = [
     tags: ["Next.js 15", "PostgreSQL", "QR", "Educación"],
     color: "rgba(212,175,55,0.05)",
     accent: "#D4AF37",
+    image: "/portfolio/billetera.jpg",
+    imageAlt: "Generador de QR de la Billetera Virtual Educativa",
   },
 ];
 

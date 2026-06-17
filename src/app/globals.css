@@ -236,3 +236,44 @@ body {
   transition: border-color 0.2s;
 }
 .contact-link-outline:hover { border-color: var(--gold-mid); }
+
+/* Contact form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  margin-bottom: 32px;
+}
+.contact-form label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--gold-mid);
+  margin-bottom: 6px;
+  display: block;
+}
+.contact-input {
+  width: 100%;
+  background: rgba(212,175,55,0.03);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 2px;
+  padding: 13px 14px;
+  color: var(--text);
+  font-size: 15px;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-input::placeholder { color: #666; }
+.contact-input:focus {
+  outline: none;
+  border-color: var(--gold-mid);
+  background: rgba(212,175,55,0.06);
+}
+textarea.contact-input { resize: vertical; min-height: 110px; }
+.contact-form .btn-gold {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.contact-form .btn-gold:disabled { opacity: 0.5; cursor: not-allowed; }

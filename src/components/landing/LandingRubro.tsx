@@ -51,6 +51,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
             href={waLink(config.whatsappMessageNav)}
             target="_blank"
             rel="noopener"
+            data-umami-event="landing-whatsapp-nav"
           >
             Hablar con Franco
           </a>
@@ -73,6 +74,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   href={waLink(config.whatsappMessage)}
                   target="_blank"
                   rel="noopener"
+                  data-umami-event="landing-whatsapp-hero"
                 >
                   <WaIcon />
                   Quiero verlo funcionando
@@ -226,6 +228,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   href={waLink(config.whatsappMessage)}
                   target="_blank"
                   rel="noopener"
+                  data-umami-event="landing-whatsapp-final"
                 >
                   <WaIcon />
                   Escribirle a Franco

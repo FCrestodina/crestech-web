@@ -430,6 +430,31 @@
   border: 1px solid var(--line);
   display: block;
 }
+
+/* Capturas de celular: marco de teléfono, imagen completa sin recorte */
+.proofPhones {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.proofPhones .phone {
+  flex: 1 1 0;
+  min-width: 110px;
+  max-width: 180px;
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: #050505;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.45);
+}
+.proofPhones .phone img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+}
 .proofCard {
   background: linear-gradient(150deg, var(--surface-2), var(--surface) 70%);
   border: 1px solid var(--line);

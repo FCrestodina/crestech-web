@@ -124,7 +124,22 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   {config.proofHeading} <em>{config.proofHeadingEm}</em>
                 </h2>
                 <p className={styles.lede}>{config.proofLede}</p>
-                {config.proofPhotos && (
+                {config.proofPhotos && config.proofPhotosPhone && (
+                  <div className={styles.proofPhones}>
+                    {config.proofPhotos.map((photo) => (
+                      <div className={styles.phone} key={photo.src}>
+                        <Image
+                          src={photo.src}
+                          alt={photo.alt}
+                          width={390}
+                          height={844}
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {config.proofPhotos && !config.proofPhotosPhone && (
                   <div className={styles.proofPhotos}>
                     {config.proofPhotos.map((photo) => (
                       <Image

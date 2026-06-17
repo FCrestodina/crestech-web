@@ -56,6 +56,7 @@ export interface LandingConfig {
   proofHeadingEm: string;
   proofLede: string;
   proofPhotos?: ProofPhoto[]; // fotos reales del caso (negocio, equipo, sistema)
+  proofPhotosPhone?: boolean; // si true, las proofPhotos son capturas de celular (390x844) y se muestran en marco de teléfono, completas
   proofCardLabel: string;
   proofCardTitle: string;
   features: Feature[];
@@ -148,6 +149,7 @@ const pilates: LandingConfig = {
     { src: "/mixtura/app-abonos.png", alt: "Compra de abonos online en el sistema de Mixtura" },
     { src: "/mixtura/app-home.png", alt: "Reserva de clase de prueba en el sistema de Mixtura" },
   ],
+  proofPhotosPhone: true,
   proofCardLabel: "Caso real · Mixtura",
   proofCardTitle: "Lo que incluye tu sistema",
   features: [

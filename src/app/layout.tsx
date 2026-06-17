@@ -40,7 +40,7 @@ const jsonLd = {
   email: "devfrancocrestodina@gmail.com",
   telephone: "+5491164578484",
   areaServed: "AR",
-  sameAs: ["https://instagram.com/crestech.studio"],
+  sameAs: ["https://instagram.com/crestech.studio", "https://t.me/CrestechOK"],
   knowsAbout: [
     "Branding",
     "Fotografía",

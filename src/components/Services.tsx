@@ -1,16 +1,37 @@
-const services = [
+interface Service {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  tags: string[];
+  featured?: boolean;
+}
+
+const services: Service[] = [
+  {
+    featured: true,
+    icon: (
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+        <path d="M18 3 L22 13 L33 14 L24.5 21 L27 32 L18 26 L9 32 L11.5 21 L3 14 L14 13 Z" stroke="#D4AF37" strokeWidth="1.5" fill="none" strokeLinejoin="round" />
+      </svg>
+    ),
+    title: "Pack Completo",
+    description:
+      "Tu negocio online, de punta a punta: web + fotografía + contenido y redes, todo bajo una sola identidad. Nos encargamos de todo para que vos te ocupes de tu negocio.",
+    tags: ["Web", "Fotografía", "Redes", "Identidad"],
+  },
   {
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <circle cx="18" cy="18" r="16" stroke="#D4AF37" strokeWidth="1.5" />
-        <path d="M11 18 L18 10 L25 18 L18 26 Z" stroke="#D4AF37" strokeWidth="1.5" fill="none" />
-        <circle cx="18" cy="18" r="3" fill="#D4AF37" />
+        <rect x="4" y="6" width="28" height="20" rx="2" stroke="#D4AF37" strokeWidth="1.5" />
+        <line x1="4" y1="12" x2="32" y2="12" stroke="#D4AF37" strokeWidth="1" />
+        <path d="M14 30 L22 30" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="18" y1="26" x2="18" y2="30" stroke="#D4AF37" strokeWidth="1.5" />
       </svg>
     ),
-    title: "Branding & Identidad Visual",
+    title: "Diseño & Desarrollo Web",
     description:
-      "Diseño de marca que comunica quién sos desde el primer vistazo — logo, paleta, tipografía y sistema visual coherente.",
-    tags: ["Logo", "Paleta", "Tipografía", "Manual de marca"],
+      "Sitios web y sistemas a medida — turnos, reservas, catálogos. Rápidos, bien diseñados y pensados para convertir. Con mantenimiento opcional.",
+    tags: ["Sitio web", "Sistemas a medida", "Responsive", "Mantenimiento"],
   },
   {
     icon: (
@@ -43,16 +64,15 @@ const services = [
   {
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <rect x="4" y="6" width="28" height="20" rx="2" stroke="#D4AF37" strokeWidth="1.5" />
-        <line x1="4" y1="12" x2="32" y2="12" stroke="#D4AF37" strokeWidth="1" />
-        <path d="M14 30 L22 30" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="18" y1="26" x2="18" y2="30" stroke="#D4AF37" strokeWidth="1.5" />
+        <circle cx="18" cy="18" r="16" stroke="#D4AF37" strokeWidth="1.5" />
+        <path d="M11 18 L18 10 L25 18 L18 26 Z" stroke="#D4AF37" strokeWidth="1.5" fill="none" />
+        <circle cx="18" cy="18" r="3" fill="#D4AF37" />
       </svg>
     ),
-    title: "Diseño & Desarrollo Web",
+    title: "Branding & Identidad Visual",
     description:
-      "Sitios web y sistemas a medida — turnos, reservas, catálogos. Rápidos, bien diseñados y pensados para convertir. Con mantenimiento opcional.",
-    tags: ["Landing page", "Next.js", "Responsive", "SEO"],
+      "Diseño de marca que comunica quién sos desde el primer vistazo — logo, paleta, tipografía y sistema visual coherente.",
+    tags: ["Logo", "Paleta", "Tipografía", "Manual de marca"],
   },
   {
     icon: (
@@ -96,7 +116,38 @@ export default function Services() {
         }}
       >
         {services.map((s) => (
-          <div key={s.title} className="service-card">
+          <div
+            key={s.title}
+            className="service-card"
+            style={
+              s.featured
+                ? {
+                    position: "relative",
+                    border: "1px solid rgba(212,175,55,0.55)",
+                    background:
+                      "linear-gradient(150deg, rgba(212,175,55,0.10), rgba(212,175,55,0.02) 70%)",
+                  }
+                : undefined
+            }
+          >
+            {s.featured && (
+              <span
+                style={{
+                  position: "absolute",
+                  top: 18,
+                  right: 18,
+                  fontSize: 9,
+                  letterSpacing: "0.18em",
+                  color: "#0a0a0a",
+                  background: "linear-gradient(135deg, #F5DC7B, #D4AF37)",
+                  padding: "4px 10px",
+                  borderRadius: 2,
+                  fontWeight: 700,
+                }}
+              >
+                RECOMENDADO
+              </span>
+            )}
             <div style={{ marginBottom: 20 }}>{s.icon}</div>
             <h3
               className="font-serif"
@@ -104,7 +155,7 @@ export default function Services() {
             >
               {s.title}
             </h3>
-            <p style={{ fontSize: 14, color: "#999999", lineHeight: 1.7, marginBottom: 20 }}>
+            <p style={{ fontSize: 14, color: s.featured ? "#bbbbbb" : "#999999", lineHeight: 1.7, marginBottom: 20 }}>
               {s.description}
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
@@ -138,8 +189,8 @@ export default function Services() {
           lineHeight: 1.8,
         }}
       >
-        ¿Necesitás solo la web? ¿Web y fotos? ¿Web y manejo de redes con una CM? Combinamos los
-        servicios que tu negocio necesite — nos adaptamos a cada caso.
+        Lo ideal es llevar todo junto y bajo una misma identidad, pero nos adaptamos: podés
+        sumar solo lo que necesites — solo la web, web y fotos, o el combo completo.
       </p>
     </section>
   );

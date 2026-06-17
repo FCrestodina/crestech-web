@@ -20,8 +20,6 @@ const projects: Project[] = [
     tags: ["ASP.NET Core", "MongoDB", "MercadoPago", "WhatsApp Bot"],
     color: "rgba(212,175,55,0.08)",
     accent: "#D4AF37",
-    image: "/portfolio/mixtura.jpg",
-    imageAlt: "Landing del sistema de Mixtura con reservas por WhatsApp",
   },
   {
     category: "Diseño Web",
@@ -30,8 +28,6 @@ const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "Railway"],
     color: "rgba(212,175,55,0.05)",
     accent: "#D4AF37",
-    image: "/portfolio/crestodina.jpg",
-    imageAlt: "Home de Crestodina Propiedades con buscador de propiedades",
   },
   {
     category: "Desarrollo Web",
@@ -40,8 +36,6 @@ const projects: Project[] = [
     tags: ["Next.js 15", "PostgreSQL", "QR", "Educación"],
     color: "rgba(212,175,55,0.05)",
     accent: "#D4AF37",
-    image: "/portfolio/billetera.jpg",
-    imageAlt: "Generador de QR de la Billetera Virtual Educativa",
   },
 ];
 

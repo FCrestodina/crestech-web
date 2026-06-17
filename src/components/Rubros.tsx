@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Reveal from "./Reveal";
 
 const casos = [
@@ -7,16 +6,12 @@ const casos = [
     rubro: "Estudios de Pilates",
     caso: "Caso real · Mixtura",
     text: "Reservas online, pagos y recordatorios automáticos por WhatsApp. Tus alumnas reservan solas y vos das la clase.",
-    image: "/portfolio/mixtura.jpg",
-    imageAlt: "Sistema de turnos de Mixtura",
   },
   {
     slug: "inmobiliarias",
     rubro: "Inmobiliarias",
     caso: "Caso real · Crestodina Propiedades",
     text: "Tu cartera de propiedades en tu propia web, con buscador por zona y precio, tasaciones y consultas directas.",
-    image: "/portfolio/crestodina.jpg",
-    imageAlt: "Web de Crestodina Propiedades",
   },
 ];
 
@@ -70,49 +65,34 @@ export default function Rubros() {
         >
           {casos.map((c, i) => (
             <Reveal key={c.slug} delay={i * 80}>
-              <a href={`/${c.slug}`} className="portfolio-card" style={{ display: "block", textDecoration: "none" }}>
-                <div
+              <a
+                href={`/${c.slug}`}
+                className="service-card"
+                style={{ display: "flex", flexDirection: "column", height: "100%", textDecoration: "none" }}
+              >
+                <span
                   style={{
-                    height: 200,
-                    border: "1px solid rgba(212,175,55,0.15)",
-                    borderRadius: "2px 2px 0 0",
-                    position: "relative",
-                    overflow: "hidden",
+                    fontSize: 10,
+                    letterSpacing: "0.2em",
+                    color: "#D4AF37",
+                    display: "block",
+                    marginBottom: 12,
                   }}
                 >
-                  <Image
-                    src={c.image}
-                    alt={c.imageAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    style={{ objectFit: "cover", objectPosition: "top" }}
-                  />
-                </div>
-                <div className="portfolio-card-body">
-                  <span
-                    style={{
-                      fontSize: 10,
-                      letterSpacing: "0.2em",
-                      color: "#D4AF37",
-                      display: "block",
-                      marginBottom: 10,
-                    }}
-                  >
-                    {c.caso.toUpperCase()}
-                  </span>
-                  <h3
-                    className="font-serif"
-                    style={{ fontSize: 22, fontWeight: 500, color: "#ffffff", marginBottom: 10 }}
-                  >
-                    {c.rubro}
-                  </h3>
-                  <p style={{ fontSize: 14, color: "#888888", lineHeight: 1.7, marginBottom: 18 }}>
-                    {c.text}
-                  </p>
-                  <span style={{ fontSize: 12, letterSpacing: "0.1em", color: "#D4AF37", fontWeight: 600 }}>
-                    Ver la página →
-                  </span>
-                </div>
+                  {c.caso.toUpperCase()}
+                </span>
+                <h3
+                  className="font-serif"
+                  style={{ fontSize: 22, fontWeight: 500, color: "#ffffff", marginBottom: 12, lineHeight: 1.3 }}
+                >
+                  {c.rubro}
+                </h3>
+                <p style={{ fontSize: 14, color: "#999999", lineHeight: 1.7, flex: 1, marginBottom: 20 }}>
+                  {c.text}
+                </p>
+                <span style={{ fontSize: 12, letterSpacing: "0.1em", color: "#D4AF37", fontWeight: 600 }}>
+                  Ver la página →
+                </span>
               </a>
             </Reveal>
           ))}

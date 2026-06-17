@@ -162,9 +162,9 @@ const pilates: LandingConfig = {
   finalLede:
     "Te mostramos el sistema funcionando y nos contás cómo trabaja tu estudio. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola,tengo un estudio de pilates y quiero ver el sistema de turnos funcionando.",
+    "Hola, tengo un estudio de pilates y quiero ver el sistema de turnos funcionando.",
   whatsappMessageNav:
-    "Hola,tengo un estudio de pilates y quiero saber más del sistema de turnos.",
+    "Hola, tengo un estudio de pilates y quiero saber más del sistema de turnos.",
   metaTitle: "Sistema de turnos para estudios de pilates — Crestech Studio",
   metaDescription:
     "Tus alumnas reservan solas, pagan online y reciben recordatorios por WhatsApp. Sistema de turnos a medida para estudios de pilates en AMBA. Un equipo que se adapta a tu estudio.",
@@ -252,9 +252,9 @@ const canchas: LandingConfig = {
   finalLede:
     "Te mostramos el sistema funcionando y nos contás cómo trabaja tu complejo. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola,tengo un complejo de canchas y quiero ver el sistema de reservas funcionando.",
+    "Hola, tengo un complejo de canchas y quiero ver el sistema de reservas funcionando.",
   whatsappMessageNav:
-    "Hola,tengo un complejo de canchas y quiero saber más del sistema de reservas.",
+    "Hola, tengo un complejo de canchas y quiero saber más del sistema de reservas.",
   metaTitle: "Sistema de reservas para canchas de pádel y fútbol — Crestech Studio",
   metaDescription:
     "Los jugadores reservan online, dejan la seña por Mercado Pago y reciben confirmación por WhatsApp. Sistema de reservas a medida para canchas de pádel y fútbol en AMBA.",
@@ -343,9 +343,9 @@ const hoteles: LandingConfig = {
   finalLede:
     "Te mostramos el motor de reservas funcionando y nos contás cómo trabaja tu alojamiento. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola,tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
+    "Hola, tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
   whatsappMessageNav:
-    "Hola,tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
+    "Hola, tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
   metaTitle: "Motor de reservas directas para hoteles y alojamientos — Crestech Studio",
   metaDescription:
     "Web propia con motor de reservas directas para hoteles y alojamientos: disponibilidad online, pagos integrados y confirmaciones por WhatsApp. Menos comisiones, más reservas tuyas.",
@@ -417,6 +417,10 @@ const inmobiliarias: LandingConfig = {
   proofHeadingEm: "y funcionando",
   proofLede:
     "Crestodina Propiedades es una plataforma inmobiliaria que desarrollamos y está online: listado de propiedades en venta y alquiler, sistema de tasaciones online y consultas integradas. Tu inmobiliaria puede tener la suya, con tu marca y tu cartera.",
+  proofPhotos: [
+    { src: "/crestodina/home.jpg", alt: "Home de Crestodina Propiedades con buscador de propiedades" },
+    { src: "/crestodina/detalle.jpg", alt: "Ficha de una propiedad en Crestodina Propiedades" },
+  ],
   proofCardLabel: "Caso real · Crestodina Propiedades",
   proofCardTitle: "Lo que incluye tu web",
   features: [
@@ -431,9 +435,9 @@ const inmobiliarias: LandingConfig = {
   finalLede:
     "Te mostramos cómo se vería tu web con tu cartera y nos contás cómo trabajás hoy. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola,tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
+    "Hola, tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
   whatsappMessageNav:
-    "Hola,tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
+    "Hola, tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
   metaTitle: "Web para inmobiliarias con tu cartera de propiedades — Crestech Studio",
   metaDescription:
     "Web propia para tu inmobiliaria: fichas de propiedades para compartir por WhatsApp, búsqueda por zona y precio, y consultas directas. Caso real online: Crestodina Propiedades.",

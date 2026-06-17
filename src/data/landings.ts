@@ -145,9 +145,9 @@ const pilates: LandingConfig = {
   proofLede:
     "Mixtura es un sistema que desarrollamos para una academia deportiva: maneja sus turnos, sus pagos y sus recordatorios todos los días. Tu estudio puede tener el suyo, adaptado a cómo trabajás vos — tus horarios, tus camas, tus planes de clases.",
   proofPhotos: [
-    { src: "/mixtura/app-calendario.png", alt: "Calendario de clases en el sistema real de Mixtura" },
-    { src: "/mixtura/app-abonos.png", alt: "Compra de abonos online en el sistema de Mixtura" },
-    { src: "/mixtura/app-home.png", alt: "Reserva de clase de prueba en el sistema de Mixtura" },
+    { src: "/mixtura/app-calendario.png", alt: "Calendario de clases del sistema real de Mixtura" },
+    { src: "/mixtura/app-misturnos.png", alt: "Próximas clases y abono activo en el sistema de Mixtura" },
+    { src: "/mixtura/app-home.png", alt: "Panel del alumno: abono, recuperaciones y sedes" },
   ],
   proofPhotosPhone: true,
   proofCardLabel: "Caso real · Mixtura",

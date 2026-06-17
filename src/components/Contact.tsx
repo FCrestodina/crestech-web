@@ -45,7 +45,7 @@ export default function Contact() {
         </h2>
 
         <p style={{ fontSize: 16, color: "#999999", lineHeight: 1.7, marginBottom: 48 }}>
-          Contanos tu proyecto y te respondemos por WhatsApp. También podés escribirnos por Instagram o mail.
+          Contanos tu proyecto y te respondemos por WhatsApp. También estamos en Instagram.
         </p>
 
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -112,18 +112,19 @@ export default function Contact() {
             </svg>
             INSTAGRAM
           </a>
+        </div>
 
+        <p style={{ marginTop: 32, fontSize: 13, color: "#777777", lineHeight: 1.6 }}>
+          ¿Preferís mail?{" "}
           <a
             href="mailto:devfrancocrestodina@gmail.com"
-            className="contact-link-outline"
             data-umami-event="contact-email"
+            style={{ color: "#999999", textDecoration: "underline", textUnderlineOffset: 3 }}
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            ENVIAR UN EMAIL
+            Escribinos por correo
           </a>
-        </div>
+          .
+        </p>
       </div>
     </section>
   );

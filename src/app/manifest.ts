@@ -5,9 +5,9 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Crestech Studio",
     short_name: "Crestech",
     description:
-      "Estudio digital: branding, contenido para redes, diseño web y automatización.",
+      "Equipo digital: branding, fotografía, contenido para redes y desarrollo web.",
     start_url: "/",
-    display: "standalone",
+    display: "browser",
     background_color: "#0a0a0a",
     theme_color: "#0a0a0a",
     icons: [

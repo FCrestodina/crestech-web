@@ -1,9 +1,9 @@
 const team = [
-  "Community Manager",
-  "Fotógrafa",
-  "Especialista en Marketing",
-  "Diseñadora Gráfica",
   "Desarrollador Web",
+  "Fotógrafa",
+  "Diseñadora Gráfica",
+  "Especialista en Marketing",
+  "Community Manager",
 ];
 
 export default function About() {

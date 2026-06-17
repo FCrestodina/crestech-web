@@ -263,7 +263,7 @@ body {
   font-family: inherit;
   transition: border-color 0.2s, background 0.2s;
 }
-.contact-input::placeholder { color: #666; }
+.contact-input::placeholder { color: #8a8a8a; }
 .contact-input:focus {
   outline: none;
   border-color: var(--gold-mid);

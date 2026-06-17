@@ -25,7 +25,7 @@ export default function Footer() {
             CRESTECH.STUDIO
           </span>
         </div>
-        <p style={{ fontSize: 11, color: "#444444", letterSpacing: "0.1em" }}>
+        <p style={{ fontSize: 11, color: "#8a8a8a", letterSpacing: "0.1em" }}>
           © {new Date().getFullYear()} Crestech Studio — Franco Crestodina
         </p>
       </div>

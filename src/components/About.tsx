@@ -106,7 +106,7 @@ export default function About() {
                 >
                   {stat.num}
                 </div>
-                <div style={{ fontSize: 12, color: "#666666", letterSpacing: "0.1em", marginTop: 4 }}>
+                <div style={{ fontSize: 12, color: "#8a8a8a", letterSpacing: "0.1em", marginTop: 4 }}>
                   {stat.label}
                 </div>
               </div>

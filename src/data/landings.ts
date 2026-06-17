@@ -438,6 +438,15 @@ const inmobiliarias: LandingConfig = {
     { src: "/crestodina/home.jpg", alt: "Home de Crestodina Propiedades con buscador de propiedades" },
     { src: "/crestodina/detalle.jpg", alt: "Ficha de una propiedad en Crestodina Propiedades" },
   ],
+  adminEyebrow: "Del lado de la gestión",
+  adminHeading: "Cargás tu cartera",
+  adminHeadingEm: "vos mismo",
+  adminLede:
+    "Subís, editás y publicás propiedades desde un panel simple — fotos, precio, descripción y estado. Sin depender de nadie ni pagar un portal.",
+  adminPhotos: [
+    { src: "/crestodina/admin-cartera.png", alt: "Listado de propiedades en el panel de Crestodina" },
+    { src: "/crestodina/admin-carga.png", alt: "Carga y edición de una propiedad con fotos y datos" },
+  ],
   proofCardLabel: "Caso real · Crestodina Propiedades",
   proofCardTitle: "Lo que incluye tu web",
   features: [

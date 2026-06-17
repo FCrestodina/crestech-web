@@ -57,6 +57,11 @@ export interface LandingConfig {
   proofLede: string;
   proofPhotos?: ProofPhoto[]; // fotos reales del caso (negocio, equipo, sistema)
   proofPhotosPhone?: boolean; // si true, las proofPhotos son capturas de celular (390x844) y se muestran en marco de teléfono, completas
+  adminPhotos?: ProofPhoto[]; // capturas del panel de gestión (390x844, marco de teléfono); sin datos personales
+  adminEyebrow?: string;
+  adminHeading?: string;
+  adminHeadingEm?: string;
+  adminLede?: string;
   proofCardLabel: string;
   proofCardTitle: string;
   features: Feature[];
@@ -150,6 +155,16 @@ const pilates: LandingConfig = {
     { src: "/mixtura/app-home.png", alt: "Panel del alumno: abono, recuperaciones y sedes" },
   ],
   proofPhotosPhone: true,
+  adminEyebrow: "Del lado de la gestión",
+  adminHeading: "Y vos lo manejás",
+  adminHeadingEm: "todo desde un panel",
+  adminLede:
+    "Ingresos, ocupación, horarios y abonos — todo en un panel, desde la compu o el celular. Sin planillas ni cuadernos.",
+  adminPhotos: [
+    { src: "/mixtura/admin-reportes.png", alt: "Reporte de ingresos por período en el panel de Mixtura" },
+    { src: "/mixtura/admin-horarios.png", alt: "Horarios disponibles para compartir con alumnos" },
+    { src: "/mixtura/admin-abonos.png", alt: "Gestión de tipos de abono y precios en el panel" },
+  ],
   proofCardLabel: "Caso real · Mixtura",
   proofCardTitle: "Lo que incluye tu sistema",
   features: [

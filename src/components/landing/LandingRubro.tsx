@@ -173,6 +173,36 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
           </div>
         </section>
 
+        {/* PANEL DE GESTIÓN */}
+        {config.adminPhotos && (
+          <section id="panel">
+            <div className={styles.wrap}>
+              <Reveal>
+                <p className={styles.eyebrow}>{config.adminEyebrow}</p>
+                <h2>
+                  {config.adminHeading} <em>{config.adminHeadingEm}</em>
+                </h2>
+                {config.adminLede && <p className={styles.lede}>{config.adminLede}</p>}
+              </Reveal>
+              <Reveal delay={120}>
+                <div className={styles.proofPhones}>
+                  {config.adminPhotos.map((photo) => (
+                    <div className={styles.phone} key={photo.src}>
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        width={390}
+                        height={844}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+          </section>
+        )}
+
         {/* PROCESO */}
         <section id="proceso">
           <div className={styles.wrap}>

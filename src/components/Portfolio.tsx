@@ -16,7 +16,7 @@ const projects: Project[] = [
   {
     category: "Desarrollo Web & Automatización",
     title: "Mixtura",
-    description: "Sistema de gestión integral para academia deportiva. Turnos online, pagos con MercadoPago, facturación electrónica ARCA y bot de WhatsApp con recordatorios automáticos.",
+    description: "Sistema de gestión integral para estudio de pilates. Turnos online, pagos con MercadoPago, facturación electrónica ARCA y bot de WhatsApp con recordatorios automáticos.",
     tags: ["Turnos online", "Mercado Pago", "Facturación ARCA", "Bot de WhatsApp"],
     color: "rgba(212,175,55,0.08)",
     accent: "#D4AF37",

@@ -148,7 +148,7 @@ const pilates: LandingConfig = {
   proofHeading: "Ya está funcionando",
   proofHeadingEm: "en un negocio real",
   proofLede:
-    "Mixtura es un sistema que desarrollamos para una academia deportiva: maneja sus turnos, sus pagos y sus recordatorios todos los días. Tu estudio puede tener el suyo, adaptado a cómo trabajás vos — tus horarios, tus camas, tus planes de clases.",
+    "Mixtura es un sistema que desarrollamos para un estudio de pilates: maneja sus turnos, sus pagos y sus recordatorios todos los días. Tu estudio puede tener el suyo, adaptado a cómo trabajás vos — tus horarios, tus camas, tus planes de clases.",
   proofPhotos: [
     { src: "/mixtura/app-calendario.png", alt: "Calendario de clases del sistema real de Mixtura" },
     { src: "/mixtura/app-misturnos.png", alt: "Próximas clases y abono activo en el sistema de Mixtura" },
@@ -250,7 +250,7 @@ const canchas: LandingConfig = {
   proofHeading: "Ya está funcionando",
   proofHeadingEm: "en un negocio real",
   proofLede:
-    "Mixtura es un sistema que desarrollamos para una academia deportiva: maneja sus turnos, sus pagos y sus recordatorios todos los días. Tu complejo puede tener el suyo, adaptado a tus canchas, tus horarios y tus precios por franja.",
+    "Mixtura es un sistema que desarrollamos para un estudio de pilates: maneja sus turnos, sus pagos y sus recordatorios todos los días. Es otro rubro, pero la lógica es la misma — tu complejo puede tener el suyo, adaptado a tus canchas, tus horarios y tus precios por franja.",
   proofPhotos: [
     { src: "/mixtura/estudio-amplio.jpg", alt: "El estudio de Mixtura, donde el sistema funciona todos los días" },
     { src: "/mixtura/sala-equipos.jpg", alt: "Sala de equipos del estudio Mixtura" },

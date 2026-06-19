@@ -16,7 +16,7 @@ const services: Service[] = [
     ),
     title: "Pack Completo",
     description:
-      "Tu negocio online, de punta a punta: web + fotografía + contenido y redes, todo bajo una sola identidad. Nos encargamos de todo para que vos te ocupes de tu negocio.",
+      "Tu negocio online, de punta a punta: web + fotografía + identidad + contenido y redes, todo bajo una misma marca. Nos encargamos de todo para que vos te ocupes de tu negocio.",
     tags: ["Web", "Fotografía", "Redes", "Identidad"],
   },
   {
@@ -58,7 +58,7 @@ const services: Service[] = [
     ),
     title: "Contenido & Redes Sociales",
     description:
-      "Manejo integral de tus redes con una community manager: planificación, posteos, reels y stories con identidad consistente que hacen crecer tu comunidad.",
+      "Manejo integral de tus redes con una community manager: planificación, posteos, reels y stories con identidad consistente, pensados para hacer crecer tu comunidad.",
     tags: ["Instagram", "Community", "Reels", "Calendario"],
   },
   {
@@ -71,7 +71,7 @@ const services: Service[] = [
     ),
     title: "Branding & Identidad Visual",
     description:
-      "Diseño de marca que comunica quién sos desde el primer vistazo — logo, paleta, tipografía y sistema visual coherente.",
+      "Diseño de marca que comunica quién sos desde el primer vistazo: logo, paleta, tipografía y sistema visual coherente.",
     tags: ["Logo", "Paleta", "Tipografía", "Manual de marca"],
   },
   {
@@ -189,8 +189,8 @@ export default function Services() {
           lineHeight: 1.8,
         }}
       >
-        Lo ideal es llevar todo junto y bajo una misma identidad, pero nos adaptamos: podés
-        sumar solo lo que necesites — solo la web, web y fotos, o el combo completo.
+        Una sola marca, un solo equipo, una sola conversación. Empezá por la web, sumá
+        las fotos, o llevate todo: vos elegís hasta dónde.
       </p>
     </section>
   );

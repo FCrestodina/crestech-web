@@ -35,7 +35,9 @@ export default function Hero() {
       <div style={{ position: "absolute", bottom: 40, right: 40, width: 60, height: 60, borderBottom: "1px solid rgba(212,175,55,0.25)", borderRight: "1px solid rgba(212,175,55,0.25)" }} />
 
       <div style={{ position: "relative", maxWidth: 800, margin: "0 auto" }}>
-        <Logo size={56} />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Logo size={56} />
+        </div>
 
         <div style={{ marginTop: 32, marginBottom: 12 }}>
           <span

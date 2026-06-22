@@ -14,10 +14,18 @@ interface Project {
 
 const projects: Project[] = [
   {
-    category: "Desarrollo Web & Automatización",
+    category: "Software a medida",
     title: "Mixtura",
-    description: "Sistema de gestión integral para estudio de pilates. Turnos online, pagos con MercadoPago, facturación electrónica ARCA y bot de WhatsApp con recordatorios automáticos.",
-    tags: ["Turnos online", "Mercado Pago", "Facturación ARCA", "Bot de WhatsApp"],
+    description: "Sistema hecho a medida para un estudio de pilates, adaptado a su forma de trabajar: turnos online, pagos con MercadoPago, facturación electrónica ARCA, bot de WhatsApp con recordatorios y un panel de administración propio para gestionar clases, abonos y reportes.",
+    tags: ["A medida", "Panel de admin", "Facturación ARCA", "Bot de WhatsApp"],
+    color: "rgba(212,175,55,0.08)",
+    accent: "#D4AF37",
+  },
+  {
+    category: "Producto propio · SaaS",
+    title: "Cupio",
+    description: "Nuestra plataforma de gestión de turnos en formato SaaS: cualquier proveedor crea su sala, publica su agenda y sus clientes reservan online. Suscripción mensual con Mercado Pago, multi-cliente y lista para usar — la base probada que adaptamos cuando un negocio necesita algo a medida, como Mixtura.",
+    tags: ["SaaS multi-tenant", "Turnos online", "Suscripción Mercado Pago", "PWA instalable"],
     color: "rgba(212,175,55,0.08)",
     accent: "#D4AF37",
   },

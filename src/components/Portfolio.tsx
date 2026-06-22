@@ -10,6 +10,7 @@ interface Project {
   accent: string;
   image?: string;
   imageAlt?: string;
+  url?: string;
 }
 
 const projects: Project[] = [
@@ -20,6 +21,7 @@ const projects: Project[] = [
     tags: ["A medida", "Panel de admin", "Facturación ARCA", "Bot de WhatsApp"],
     color: "rgba(212,175,55,0.08)",
     accent: "#D4AF37",
+    url: "https://mixturapilates.com.ar",
   },
   {
     category: "Producto propio · SaaS",
@@ -28,6 +30,7 @@ const projects: Project[] = [
     tags: ["SaaS multi-tenant", "Turnos online", "Suscripción Mercado Pago", "PWA instalable"],
     color: "rgba(212,175,55,0.08)",
     accent: "#D4AF37",
+    url: "https://cupio.com.ar",
   },
   {
     category: "Diseño Web",
@@ -79,9 +82,23 @@ export default function Portfolio() {
             gap: 24,
           }}
         >
-          {projects.map((p, i) => (
+          {projects.map((p, i) => {
+            const CardTag = p.url ? "a" : "div";
+            const cardProps = p.url
+              ? {
+                  href: p.url,
+                  target: "_blank",
+                  rel: "noopener noreferrer",
+                  "aria-label": `Ver ${p.title} (abre en una pestaña nueva)`,
+                }
+              : {};
+            return (
             <Reveal key={p.title} delay={i * 80}>
-              <div className="portfolio-card">
+              <CardTag
+                {...cardProps}
+                className={`portfolio-card${p.url ? " portfolio-card-link" : ""}`}
+                style={{ textDecoration: "none", color: "inherit", cursor: p.url ? "pointer" : undefined }}
+              >
                 <div
                   style={{
                     height: 200,
@@ -163,9 +180,10 @@ export default function Portfolio() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </CardTag>
             </Reveal>
-          ))}
+            );
+          })}
         </div>
 
         <Reveal delay={200}>

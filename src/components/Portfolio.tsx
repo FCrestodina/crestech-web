@@ -41,6 +41,14 @@ const projects: Project[] = [
     accent: "#D4AF37",
   },
   {
+    category: "Diseño Web",
+    title: "Portfolio Fotografía & Audiovisual",
+    description: "Landing interactiva (scrollytelling) para una fotógrafa y filmmaker: portfolio de proyectos con experiencia inmersiva, estética de cine analógico nocturno y un panel propio para gestionar fotos, proyectos y textos.",
+    tags: ["Scrollytelling", "Portfolio", "Animaciones GSAP", "Panel de admin"],
+    color: "rgba(212,175,55,0.05)",
+    accent: "#D4AF37",
+  },
+  {
     category: "Desarrollo Web",
     title: "Billetera Virtual Educativa",
     description: "Simulador de billetera digital para alumnos de primaria del programa Buenos Aires Aprende. Pagos con QR, historial de transacciones y panel docente.",

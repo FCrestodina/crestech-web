@@ -18,7 +18,6 @@ export default function Nav() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40);
-      setOpen(false);
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -126,15 +125,6 @@ export default function Nav() {
           ))}
         </div>
       )}
-
-      <style>{`
-        .hidden-mobile { display: flex; }
-        .show-mobile { display: none; }
-        @media (max-width: 640px) {
-          .hidden-mobile { display: none !important; }
-          .show-mobile { display: block !important; }
-        }
-      `}</style>
     </header>
   );
 }

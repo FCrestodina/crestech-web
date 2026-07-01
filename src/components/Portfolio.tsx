@@ -86,7 +86,7 @@ export default function Portfolio() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))",
             gap: 24,
           }}
         >
@@ -152,7 +152,7 @@ export default function Portfolio() {
                 <div className="portfolio-card-body">
                   <span
                     style={{
-                      fontSize: 10,
+                      fontSize: 11,
                       letterSpacing: "0.2em",
                       color: "#D4AF37",
                       display: "block",
@@ -175,7 +175,7 @@ export default function Portfolio() {
                       <span
                         key={t}
                         style={{
-                          fontSize: 10,
+                          fontSize: 11,
                           letterSpacing: "0.1em",
                           color: "#D4AF37",
                           border: "1px solid rgba(212,175,55,0.25)",

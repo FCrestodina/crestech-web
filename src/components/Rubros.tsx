@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Reveal from "./Reveal";
 
 const casos = [
@@ -65,14 +66,14 @@ export default function Rubros() {
         >
           {casos.map((c, i) => (
             <Reveal key={c.slug} delay={i * 80}>
-              <a
+              <Link
                 href={`/${c.slug}`}
                 className="service-card"
                 style={{ display: "flex", flexDirection: "column", height: "100%", textDecoration: "none" }}
               >
                 <span
                   style={{
-                    fontSize: 10,
+                    fontSize: 11,
                     letterSpacing: "0.2em",
                     color: "#D4AF37",
                     display: "block",
@@ -93,7 +94,7 @@ export default function Rubros() {
                 <span style={{ fontSize: 12, letterSpacing: "0.1em", color: "#D4AF37", fontWeight: 600 }}>
                   Ver la página →
                 </span>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>
@@ -109,8 +110,15 @@ export default function Rubros() {
               margin: "48px auto 0",
             }}
           >
-            ¿Tu rubro no está acá? También desarrollamos sistemas para canchas, hoteles, comercios
-            y más.{" "}
+            ¿Tu rubro no está acá? También desarrollamos sistemas para{" "}
+            <Link href="/reservas-canchas" style={{ color: "#D4AF37", fontWeight: 600 }}>
+              canchas
+            </Link>
+            ,{" "}
+            <Link href="/hoteles" style={{ color: "#D4AF37", fontWeight: 600 }}>
+              hoteles
+            </Link>
+            , comercios y más.{" "}
             <a href="#contacto" style={{ color: "#D4AF37", fontWeight: 600 }}>
               Contanos el tuyo
             </a>{" "}

@@ -133,6 +133,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                           alt={photo.alt}
                           width={390}
                           height={844}
+                          sizes="(max-width: 900px) 45vw, 180px"
                           loading="lazy"
                         />
                       </div>
@@ -148,6 +149,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                         alt={photo.alt}
                         width={480}
                         height={600}
+                        sizes="(max-width: 900px) 45vw, 260px"
                         loading="lazy"
                       />
                     ))}
@@ -193,6 +195,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                         alt={photo.alt}
                         width={390}
                         height={844}
+                        sizes="(max-width: 900px) 45vw, 180px"
                         loading="lazy"
                       />
                     </div>

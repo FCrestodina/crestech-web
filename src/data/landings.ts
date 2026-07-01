@@ -74,7 +74,6 @@ export interface LandingConfig {
   metaDescription: string;
   ogTitle: string;
   ogDescription: string;
-  homeCard: { label: string; pain: string };
 }
 
 export const WHATSAPP_NUMBER = "5491164578484";
@@ -188,10 +187,6 @@ const pilates: LandingConfig = {
   ogTitle: "Tus alumnas reservan solas. Vos das la clase.",
   ogDescription:
     "Sistema de turnos a medida para estudios de pilates: reservas online, pagos y recordatorios automáticos por WhatsApp.",
-  homeCard: {
-    label: "Estudios de pilates",
-    pain: "Tus alumnas reservan solas y pagan online, sin que contestes mensajes a toda hora.",
-  },
 };
 
 const canchas: LandingConfig = {
@@ -278,10 +273,6 @@ const canchas: LandingConfig = {
   ogTitle: "Tu cancha se reserva sola. Hasta a la medianoche.",
   ogDescription:
     "Reservas online, señas por Mercado Pago y confirmaciones por WhatsApp para tu complejo de canchas.",
-  homeCard: {
-    label: "Canchas de pádel y fútbol",
-    pain: "Los jugadores reservan online y dejan la seña, hasta a la medianoche.",
-  },
 };
 
 const hoteles: LandingConfig = {
@@ -369,10 +360,6 @@ const hoteles: LandingConfig = {
   ogTitle: "Que te reserven a vos, no a Booking.",
   ogDescription:
     "Web propia con motor de reservas directas: disponibilidad online, pagos integrados y confirmaciones por WhatsApp.",
-  homeCard: {
-    label: "Hoteles y alojamientos",
-    pain: "Reservas directas sin comisión de Booking, con pago online integrado.",
-  },
 };
 
 const inmobiliarias: LandingConfig = {
@@ -470,10 +457,6 @@ const inmobiliarias: LandingConfig = {
   ogTitle: "Tu cartera de propiedades, en tu propia web.",
   ogDescription:
     "Fichas para compartir por WhatsApp, búsqueda por zona y precio, y consultas directas a vos.",
-  homeCard: {
-    label: "Inmobiliarias",
-    pain: "Tu cartera en tu propia web, con fichas para compartir por WhatsApp.",
-  },
 };
 
 export const landings: LandingConfig[] = [pilates, canchas, hoteles, inmobiliarias];

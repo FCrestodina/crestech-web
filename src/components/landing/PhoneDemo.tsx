@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { LandingConfig } from "@/data/landings";
 import styles from "./landing.module.css";
 
@@ -12,6 +12,7 @@ export default function PhoneDemo({ demo }: { demo: Demo }) {
   const [active, setActive] = useState<Active>(null);
   const [toastText, setToastText] = useState(demo.steps[0]?.toast ?? "");
   const [showToast, setShowToast] = useState(false);
+  const phoneRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -33,6 +34,13 @@ export default function PhoneDemo({ demo }: { demo: Demo }) {
     }
 
     let i = 0;
+    let running = false;
+    let raf = 0;
+
+    const clearTimers = () => {
+      timers.splice(0).forEach(clearTimeout);
+    };
+
     const cycle = () => {
       const s = steps[i % len];
       setActive(null);
@@ -48,18 +56,51 @@ export default function PhoneDemo({ demo }: { demo: Demo }) {
       i++;
       timers.push(setTimeout(cycle, 5600));
     };
-    const raf = requestAnimationFrame(cycle);
+
+    const start = () => {
+      if (running || document.hidden) return;
+      running = true;
+      raf = requestAnimationFrame(cycle);
+    };
+    const stop = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+      clearTimers();
+    };
+
+    // Sólo animamos mientras el teléfono está en viewport y la pestaña visible.
+    const node = phoneRef.current;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) start();
+        else stop();
+      },
+      { threshold: 0.2 }
+    );
+    if (node) observer.observe(node);
+
+    const onVisibility = () => {
+      if (document.hidden) stop();
+      else if (node) {
+        // Reanudar sólo si sigue en viewport.
+        const rect = node.getBoundingClientRect();
+        const visible = rect.top < window.innerHeight && rect.bottom > 0;
+        if (visible) start();
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibility);
 
     return () => {
-      cancelAnimationFrame(raf);
-      timers.forEach(clearTimeout);
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", onVisibility);
+      stop();
     };
   }, [demo]);
 
   return (
     <div className={styles.phoneCol}>
       <div>
-        <div className={styles.phone} aria-label="Demostración del sistema">
+        <div className={styles.phone} ref={phoneRef} aria-label="Demostración del sistema">
           <div className={styles.phoneNotch} />
           <div className={styles.screen}>
             <div className={styles.appBar}>

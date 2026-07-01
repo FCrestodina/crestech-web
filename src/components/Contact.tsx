@@ -7,6 +7,7 @@ export default function Contact() {
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [mensaje, setMensaje] = useState("");
+  const [sentLink, setSentLink] = useState<string | null>(null);
 
   const canSubmit = nombre.trim().length > 0 && mensaje.trim().length > 0;
 
@@ -17,7 +18,15 @@ export default function Contact() {
     const lines = [`Hola, soy ${nombre.trim()}.`, mensaje.trim()];
     if (email.trim()) lines.push(`Mi mail: ${email.trim()}`);
 
-    window.open(waLink(lines.join("\n")), "_blank", "noopener,noreferrer");
+    const link = waLink(lines.join("\n"));
+    setSentLink(link);
+
+    // Los in-app browsers (Instagram/WhatsApp) suelen bloquear window.open y
+    // devolver null: en ese caso navegamos en la misma pestaña como plan B.
+    const win = window.open(link, "_blank", "noopener,noreferrer");
+    if (!win) {
+      window.location.href = link;
+    }
   }
 
   return (
@@ -94,6 +103,30 @@ export default function Contact() {
           >
             ENVIAR POR WHATSAPP
           </button>
+
+          {sentLink && (
+            <p
+              role="status"
+              style={{
+                fontSize: 14,
+                color: "#cccccc",
+                lineHeight: 1.6,
+                textAlign: "center",
+                marginTop: 4,
+              }}
+            >
+              Abriendo WhatsApp… Si no se abre solo,{" "}
+              <a
+                href={sentLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#D4AF37", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: 3 }}
+              >
+                tocá acá para escribirnos
+              </a>
+              .
+            </p>
+          )}
         </form>
 
         <div className="gold-line" style={{ width: 120, margin: "0 auto 40px" }} />
@@ -127,7 +160,7 @@ export default function Contact() {
           </a>
         </div>
 
-        <p style={{ marginTop: 32, fontSize: 13, color: "#777777", lineHeight: 1.6 }}>
+        <p style={{ marginTop: 32, fontSize: 13, color: "#8a8a8a", lineHeight: 1.6 }}>
           ¿Preferís mail?{" "}
           <a
             href="mailto:devfrancocrestodina@gmail.com"

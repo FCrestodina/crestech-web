@@ -1,12 +1,9 @@
-"use client";
-
-const WHATSAPP_NUMBER = "5491164578484";
-const MESSAGE = encodeURIComponent("Hola, me interesa conocer más sobre Crestech Studio.");
+import { waLink } from "@/data/landings";
 
 export default function WhatsApp() {
   return (
     <a
-      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${MESSAGE}`}
+      href={waLink("Hola, me interesa conocer más sobre Crestech Studio.")}
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-btn"

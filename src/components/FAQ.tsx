@@ -59,45 +59,55 @@ export default function FAQ() {
         <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
           {faqs.map((faq, i) => (
             <Reveal key={i} delay={i * 60}>
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                className="faq-item"
-                aria-expanded={open === i}
-              >
-                <div className="faq-question">
-                  <span style={{ fontSize: 16, color: "#ffffff", textAlign: "left" }}>
-                    {faq.q}
-                  </span>
-                  <span
-                    style={{
-                      color: "#D4AF37",
-                      fontSize: 20,
-                      lineHeight: 1,
-                      transform: open === i ? "rotate(45deg)" : "rotate(0deg)",
-                      transition: "transform 0.25s",
-                      flexShrink: 0,
-                    }}
-                  >
-                    +
-                  </span>
-                </div>
+              <div className="faq-item">
+                <button
+                  onClick={() => setOpen(open === i ? null : i)}
+                  className="faq-trigger"
+                  aria-expanded={open === i}
+                  aria-controls={`faq-panel-${i}`}
+                  id={`faq-trigger-${i}`}
+                >
+                  <div className="faq-question">
+                    <span style={{ fontSize: 16, color: "#ffffff", textAlign: "left" }}>
+                      {faq.q}
+                    </span>
+                    <span
+                      style={{
+                        color: "#D4AF37",
+                        fontSize: 20,
+                        lineHeight: 1,
+                        transform: open === i ? "rotate(45deg)" : "rotate(0deg)",
+                        transition: "transform 0.25s",
+                        flexShrink: 0,
+                      }}
+                    >
+                      +
+                    </span>
+                  </div>
+                </button>
 
                 {open === i && (
-                  <p
-                    style={{
-                      fontSize: 14,
-                      color: "#999999",
-                      lineHeight: 1.8,
-                      textAlign: "left",
-                      paddingTop: 16,
-                      borderTop: "1px solid rgba(212,175,55,0.1)",
-                      marginTop: 16,
-                    }}
+                  <div
+                    id={`faq-panel-${i}`}
+                    role="region"
+                    aria-labelledby={`faq-trigger-${i}`}
                   >
-                    {faq.a}
-                  </p>
+                    <p
+                      style={{
+                        fontSize: 14,
+                        color: "#999999",
+                        lineHeight: 1.8,
+                        textAlign: "left",
+                        paddingTop: 16,
+                        borderTop: "1px solid rgba(212,175,55,0.1)",
+                        marginTop: 16,
+                      }}
+                    >
+                      {faq.a}
+                    </p>
+                  </div>
                 )}
-              </button>
+              </div>
             </Reveal>
           ))}
         </div>

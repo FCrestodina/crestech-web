@@ -136,7 +136,7 @@ export default function Services() {
                   position: "absolute",
                   top: 18,
                   right: 18,
-                  fontSize: 9,
+                  fontSize: 11,
                   letterSpacing: "0.18em",
                   color: "#0a0a0a",
                   background: "linear-gradient(135deg, #F5DC7B, #D4AF37)",
@@ -163,7 +163,7 @@ export default function Services() {
                 <span
                   key={t}
                   style={{
-                    fontSize: 10,
+                    fontSize: 11,
                     letterSpacing: "0.1em",
                     color: "#D4AF37",
                     border: "1px solid rgba(212,175,55,0.25)",

@@ -10,7 +10,7 @@ export const fraunces = Fraunces({
 
 export const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
-  style: ["normal", "italic"],
+  style: ["normal"],
   weight: ["400", "500", "600"],
   display: "swap",
   variable: "--font-instrument",

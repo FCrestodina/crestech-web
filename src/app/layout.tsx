@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
+import { WHATSAPP_NUMBER } from "@/data/landings";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://crestech.com.ar";
@@ -21,11 +22,6 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_AR",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Crestech Studio",
-    description: "Branding, Contenido & Desarrollo Digital",
-  },
 };
 
 const jsonLd = {
@@ -38,7 +34,7 @@ const jsonLd = {
   logo: `${siteUrl}/icon`,
   image: `${siteUrl}/opengraph-image`,
   email: "devfrancocrestodina@gmail.com",
-  telephone: "+5491164578484",
+  telephone: `+${WHATSAPP_NUMBER}`,
   areaServed: "AR",
   sameAs: ["https://instagram.com/crestech.studio", "https://t.me/CrestechOK"],
   knowsAbout: [
@@ -58,6 +54,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className="h-full">
+      <head>
+        {/* Marca que hay JS antes de la hidratación: sin esta clase, el CSS deja
+            el contenido de .reveal-init visible (fallback sin JS). Ver globals.css. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.classList.add('js')`,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <script
           type="application/ld+json"

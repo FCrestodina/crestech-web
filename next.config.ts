@@ -13,7 +13,9 @@ const csp = [
   "script-src 'self' 'unsafe-inline' https://cloud.umami.is",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: https:",
-  "connect-src 'self' https://cloud.umami.is",
+  // Umami Cloud carga el script de cloud.umami.is pero ENVÍA los eventos a gateway.umami.is;
+  // el wildcard cubre ambos (y endpoints regionales) para que las métricas no se bloqueen.
+  "connect-src 'self' https://*.umami.is",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",

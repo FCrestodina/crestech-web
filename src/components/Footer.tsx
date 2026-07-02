@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -25,6 +26,11 @@ export default function Footer() {
             CRESTECH.STUDIO
           </span>
         </div>
+        <p style={{ marginBottom: 12 }}>
+          <Link href="/blog" style={{ fontSize: 12, color: "#8a8577", letterSpacing: "0.08em" }}>
+            Blog
+          </Link>
+        </p>
         <p style={{ fontSize: 11, color: "#8a8a8a", letterSpacing: "0.1em" }}>
           © {new Date().getFullYear()} Crestech Studio
         </p>

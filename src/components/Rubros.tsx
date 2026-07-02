@@ -22,14 +22,14 @@ export default function Rubros() {
       id="soluciones"
       style={{
         padding: "100px 24px",
-        borderTop: "1px solid rgba(212,175,55,0.1)",
-        background: "rgba(212,175,55,0.02)",
+        borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
+        background: "rgba(var(--gold-rgb),0.02)",
       }}
     >
       <div style={{ maxWidth: 1000, margin: "0 auto" }}>
         <Reveal>
           <div style={{ textAlign: "center", marginBottom: 24 }}>
-            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>
+            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
               SOLUCIONES POR RUBRO
             </span>
             <h2
@@ -75,7 +75,7 @@ export default function Rubros() {
                   style={{
                     fontSize: 11,
                     letterSpacing: "0.2em",
-                    color: "#D4AF37",
+                    color: "var(--gold-mid)",
                     display: "block",
                     marginBottom: 12,
                   }}
@@ -91,7 +91,7 @@ export default function Rubros() {
                 <p style={{ fontSize: 14, color: "#999999", lineHeight: 1.7, flex: 1, marginBottom: 20 }}>
                   {c.text}
                 </p>
-                <span style={{ fontSize: 12, letterSpacing: "0.1em", color: "#D4AF37", fontWeight: 600 }}>
+                <span style={{ fontSize: 12, letterSpacing: "0.1em", color: "var(--gold-mid)", fontWeight: 600 }}>
                   Ver la página →
                 </span>
               </Link>
@@ -111,15 +111,15 @@ export default function Rubros() {
             }}
           >
             ¿Tu rubro no está acá? También desarrollamos sistemas para{" "}
-            <Link href="/reservas-canchas" style={{ color: "#D4AF37", fontWeight: 600 }}>
+            <Link href="/reservas-canchas" style={{ color: "var(--gold-mid)", fontWeight: 600 }}>
               canchas
             </Link>
             ,{" "}
-            <Link href="/hoteles" style={{ color: "#D4AF37", fontWeight: 600 }}>
+            <Link href="/hoteles" style={{ color: "var(--gold-mid)", fontWeight: 600 }}>
               hoteles
             </Link>
             , comercios y más.{" "}
-            <a href="#contacto" style={{ color: "#D4AF37", fontWeight: 600 }}>
+            <a href="#contacto" style={{ color: "var(--gold-mid)", fontWeight: 600 }}>
               Contanos el tuyo
             </a>{" "}
             y lo armamos a medida.

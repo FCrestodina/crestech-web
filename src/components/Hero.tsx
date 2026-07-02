@@ -22,17 +22,17 @@ export default function Hero() {
           position: "absolute",
           inset: 0,
           backgroundImage:
-            "linear-gradient(rgba(212,175,55,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.04) 1px, transparent 1px)",
+            "linear-gradient(rgba(var(--gold-rgb),0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--gold-rgb),0.04) 1px, transparent 1px)",
           backgroundSize: "80px 80px",
           pointerEvents: "none",
         }}
       />
 
       {/* Gold corner accents */}
-      <div style={{ position: "absolute", top: 40, left: 40, width: 60, height: 60, borderTop: "1px solid rgba(212,175,55,0.25)", borderLeft: "1px solid rgba(212,175,55,0.25)" }} />
-      <div style={{ position: "absolute", top: 40, right: 40, width: 60, height: 60, borderTop: "1px solid rgba(212,175,55,0.25)", borderRight: "1px solid rgba(212,175,55,0.25)" }} />
-      <div style={{ position: "absolute", bottom: 40, left: 40, width: 60, height: 60, borderBottom: "1px solid rgba(212,175,55,0.25)", borderLeft: "1px solid rgba(212,175,55,0.25)" }} />
-      <div style={{ position: "absolute", bottom: 40, right: 40, width: 60, height: 60, borderBottom: "1px solid rgba(212,175,55,0.25)", borderRight: "1px solid rgba(212,175,55,0.25)" }} />
+      <div style={{ position: "absolute", top: 40, left: 40, width: 60, height: 60, borderTop: "1px solid rgba(var(--gold-rgb),0.25)", borderLeft: "1px solid rgba(var(--gold-rgb),0.25)" }} />
+      <div style={{ position: "absolute", top: 40, right: 40, width: 60, height: 60, borderTop: "1px solid rgba(var(--gold-rgb),0.25)", borderRight: "1px solid rgba(var(--gold-rgb),0.25)" }} />
+      <div style={{ position: "absolute", bottom: 40, left: 40, width: 60, height: 60, borderBottom: "1px solid rgba(var(--gold-rgb),0.25)", borderLeft: "1px solid rgba(var(--gold-rgb),0.25)" }} />
+      <div style={{ position: "absolute", bottom: 40, right: 40, width: 60, height: 60, borderBottom: "1px solid rgba(var(--gold-rgb),0.25)", borderRight: "1px solid rgba(var(--gold-rgb),0.25)" }} />
 
       <div style={{ position: "relative", maxWidth: 800, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
@@ -44,7 +44,7 @@ export default function Hero() {
             style={{
               fontSize: 12,
               letterSpacing: "0.3em",
-              color: "#D4AF37",
+              color: "var(--gold-mid)",
               fontWeight: 500,
             }}
           >
@@ -100,8 +100,8 @@ export default function Hero() {
           opacity: 0.4,
         }}
       >
-        <span style={{ fontSize: 10, letterSpacing: "0.2em", color: "#D4AF37" }}>SCROLL</span>
-        <div style={{ width: 1, height: 40, background: "linear-gradient(to bottom, #D4AF37, transparent)" }} />
+        <span style={{ fontSize: 10, letterSpacing: "0.2em", color: "var(--gold-mid)" }}>SCROLL</span>
+        <div style={{ width: 1, height: 40, background: "linear-gradient(to bottom, var(--gold-mid), transparent)" }} />
       </div>
     </section>
   );

@@ -60,7 +60,7 @@ export default function Contact() {
       style={{ padding: "100px 24px", textAlign: "center" }}
     >
       <div style={{ maxWidth: 640, margin: "0 auto" }}>
-        <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>CONTACTO</span>
+        <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>CONTACTO</span>
 
         <h2
           className="font-serif"
@@ -145,7 +145,7 @@ export default function Contact() {
                 href={sentLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "#D4AF37", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: 3 }}
+                style={{ color: "var(--gold-mid)", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: 3 }}
               >
                 tocá acá para escribirnos
               </a>

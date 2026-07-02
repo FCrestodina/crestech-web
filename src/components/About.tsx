@@ -12,8 +12,8 @@ export default function About() {
       id="nosotros"
       style={{
         padding: "100px 24px",
-        borderTop: "1px solid rgba(212,175,55,0.1)",
-        borderBottom: "1px solid rgba(212,175,55,0.1)",
+        borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
+        borderBottom: "1px solid rgba(var(--gold-rgb),0.1)",
       }}
     >
       <div
@@ -28,7 +28,7 @@ export default function About() {
       >
         {/* Equipo */}
         <div>
-          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>EL EQUIPO</span>
+          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>EL EQUIPO</span>
           <div
             style={{
               marginTop: 24,
@@ -46,7 +46,7 @@ export default function About() {
                   gap: 16,
                   padding: "16px 0",
                   borderBottom:
-                    i < team.length - 1 ? "1px solid rgba(212,175,55,0.12)" : "none",
+                    i < team.length - 1 ? "1px solid rgba(var(--gold-rgb),0.12)" : "none",
                 }}
               >
                 <span
@@ -65,7 +65,7 @@ export default function About() {
 
         {/* Text */}
         <div>
-          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>SOBRE NOSOTROS</span>
+          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>SOBRE NOSOTROS</span>
           <h2
             className="font-serif"
             style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 500, marginTop: 16, marginBottom: 24, color: "#ffffff", lineHeight: 1.2 }}
@@ -85,7 +85,7 @@ export default function About() {
             style={{
               display: "flex",
               gap: 32,
-              borderTop: "1px solid rgba(212,175,55,0.15)",
+              borderTop: "1px solid rgba(var(--gold-rgb),0.15)",
               paddingTop: 28,
             }}
           >

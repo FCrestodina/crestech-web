@@ -25,7 +25,7 @@ const linkStyle: React.CSSProperties = {
   width: "100%",
   padding: "16px 20px",
   borderRadius: 14,
-  border: "1px solid rgba(212,175,55,0.28)",
+  border: "1px solid rgba(var(--gold-rgb),0.28)",
   background: "rgba(255,255,255,0.02)",
   color: "#f5f3ee",
   fontSize: 15,

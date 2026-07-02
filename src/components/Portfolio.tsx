@@ -19,8 +19,8 @@ const projects: Project[] = [
     title: "Mixtura",
     description: "Sistema hecho a medida para un estudio de pilates, adaptado a su forma de trabajar: turnos online, pagos con MercadoPago, facturación electrónica ARCA, bot de WhatsApp con recordatorios y un panel de administración propio para gestionar clases, abonos y reportes.",
     tags: ["A medida", "Panel de admin", "Facturación ARCA", "Bot de WhatsApp"],
-    color: "rgba(212,175,55,0.08)",
-    accent: "#D4AF37",
+    color: "rgba(var(--gold-rgb),0.08)",
+    accent: "var(--gold-mid)",
     url: "https://mixturapilates.com.ar",
   },
   {
@@ -28,8 +28,8 @@ const projects: Project[] = [
     title: "Cupio",
     description: "Nuestra plataforma de gestión de turnos en formato SaaS: cualquier proveedor crea su sala, publica su agenda y sus clientes reservan online. Suscripción mensual con Mercado Pago, multi-cliente y lista para usar — la base probada que adaptamos cuando un negocio necesita algo a medida, como Mixtura.",
     tags: ["SaaS multi-tenant", "Turnos online", "Suscripción Mercado Pago", "PWA instalable"],
-    color: "rgba(212,175,55,0.08)",
-    accent: "#D4AF37",
+    color: "rgba(var(--gold-rgb),0.08)",
+    accent: "var(--gold-mid)",
     url: "https://cupio.com.ar",
   },
   {
@@ -37,24 +37,24 @@ const projects: Project[] = [
     title: "Crestodina Propiedades",
     description: "Plataforma inmobiliaria con listado de propiedades en venta y alquiler, buscador por barrio, sistema de tasaciones online y consultas integradas.",
     tags: ["Búsqueda por zona", "Fichas para compartir", "Tasaciones online", "Consultas directas"],
-    color: "rgba(212,175,55,0.05)",
-    accent: "#D4AF37",
+    color: "rgba(var(--gold-rgb),0.05)",
+    accent: "var(--gold-mid)",
   },
   {
     category: "Diseño Web",
     title: "Portfolio Fotografía & Audiovisual",
     description: "Landing interactiva (scrollytelling) para una fotógrafa y filmmaker: portfolio de proyectos con experiencia inmersiva, estética de cine analógico nocturno y un panel propio para gestionar fotos, proyectos y textos.",
     tags: ["Scrollytelling", "Portfolio", "Animaciones GSAP", "Panel de admin"],
-    color: "rgba(212,175,55,0.05)",
-    accent: "#D4AF37",
+    color: "rgba(var(--gold-rgb),0.05)",
+    accent: "var(--gold-mid)",
   },
   {
     category: "Desarrollo Web",
     title: "Billetera Virtual Educativa",
     description: "Simulador de billetera digital para alumnos de primaria del programa Buenos Aires Aprende. Pagos con QR, historial de transacciones y panel docente.",
     tags: ["Pagos con QR", "Panel docente", "Historial de pagos", "Educación"],
-    color: "rgba(212,175,55,0.05)",
-    accent: "#D4AF37",
+    color: "rgba(var(--gold-rgb),0.05)",
+    accent: "var(--gold-mid)",
   },
 ];
 
@@ -64,13 +64,13 @@ export default function Portfolio() {
       id="portfolio"
       style={{
         padding: "100px 24px",
-        borderTop: "1px solid rgba(212,175,55,0.1)",
+        borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <Reveal>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
-            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>
+            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
               TRABAJOS
             </span>
             <h2
@@ -111,7 +111,7 @@ export default function Portfolio() {
                   style={{
                     height: 200,
                     background: p.color,
-                    border: "1px solid rgba(212,175,55,0.15)",
+                    border: "1px solid rgba(var(--gold-rgb),0.15)",
                     borderRadius: "2px 2px 0 0",
                     display: "flex",
                     alignItems: "center",
@@ -135,7 +135,7 @@ export default function Portfolio() {
                           position: "absolute",
                           inset: 0,
                           backgroundImage:
-                            "linear-gradient(rgba(212,175,55,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(212,175,55,0.03) 1px, transparent 1px)",
+                            "linear-gradient(rgba(var(--gold-rgb),0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--gold-rgb),0.03) 1px, transparent 1px)",
                           backgroundSize: "40px 40px",
                         }}
                       />
@@ -154,7 +154,7 @@ export default function Portfolio() {
                     style={{
                       fontSize: 11,
                       letterSpacing: "0.2em",
-                      color: "#D4AF37",
+                      color: "var(--gold-mid)",
                       display: "block",
                       marginBottom: 10,
                     }}
@@ -177,8 +177,8 @@ export default function Portfolio() {
                         style={{
                           fontSize: 11,
                           letterSpacing: "0.1em",
-                          color: "#D4AF37",
-                          border: "1px solid rgba(212,175,55,0.25)",
+                          color: "var(--gold-mid)",
+                          border: "1px solid rgba(var(--gold-rgb),0.25)",
                           padding: "3px 8px",
                           borderRadius: 2,
                         }}

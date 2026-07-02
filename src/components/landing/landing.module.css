@@ -11,7 +11,7 @@
   --gold: #d4af37;
   --gold-hi: #f5dc7b;
   --gold-deep: #8b6914;
-  --line: rgba(212, 175, 55, 0.16);
+  --line: rgba(var(--gold-rgb), 0.16);
   --line-soft: rgba(244, 241, 232, 0.08);
   --wa: #25d366;
   --radius: 14px;
@@ -112,7 +112,7 @@
   position: absolute;
   inset: auto -20% -60% -20%;
   height: 80%;
-  background: radial-gradient(ellipse at 70% 100%, rgba(212, 175, 55, 0.07), transparent 60%);
+  background: radial-gradient(ellipse at 70% 100%, rgba(var(--gold-rgb), 0.07), transparent 60%);
   pointer-events: none;
 }
 .heroGrid {
@@ -165,12 +165,12 @@
   text-decoration: none;
   padding: 15px 26px;
   border-radius: 99px;
-  box-shadow: 0 6px 28px rgba(212, 175, 55, 0.22);
+  box-shadow: 0 6px 28px rgba(var(--gold-rgb), 0.22);
   transition: transform 0.15s, box-shadow 0.2s;
 }
 .btnWa:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 34px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 34px rgba(var(--gold-rgb), 0.3);
 }
 .btnWa svg {
   flex: none;
@@ -284,8 +284,8 @@
   color: #c96a5a;
 }
 .slot.booked {
-  border-color: rgba(212, 175, 55, 0.5);
-  background: rgba(212, 175, 55, 0.07);
+  border-color: rgba(var(--gold-rgb), 0.5);
+  background: rgba(var(--gold-rgb), 0.07);
 }
 .slot.booked .spots {
   color: var(--gold-hi);

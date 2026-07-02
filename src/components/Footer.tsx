@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        borderTop: "1px solid rgba(212,175,55,0.15)",
+        borderTop: "1px solid rgba(var(--gold-rgb),0.15)",
         padding: "40px 24px",
         textAlign: "center",
       }}
@@ -18,7 +18,7 @@ export default function Footer() {
               fontWeight: 700,
               fontSize: 12,
               letterSpacing: "0.2em",
-              color: "#D4AF37",
+              color: "var(--gold-mid)",
               opacity: 0.7,
             }}
           >

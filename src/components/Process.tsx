@@ -29,13 +29,13 @@ export default function Process() {
       id="proceso"
       style={{
         padding: "100px 24px",
-        borderTop: "1px solid rgba(212,175,55,0.1)",
+        borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Reveal>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
-            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>
+            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
               PROCESO
             </span>
             <h2

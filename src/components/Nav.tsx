@@ -34,7 +34,7 @@ export default function Nav() {
         transition: "background 0.3s, border-color 0.3s",
         background: scrolled ? "rgba(10,10,10,0.92)" : "transparent",
         borderBottom: scrolled
-          ? "1px solid rgba(212,175,55,0.15)"
+          ? "1px solid rgba(var(--gold-rgb),0.15)"
           : "1px solid transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
       }}
@@ -58,7 +58,7 @@ export default function Nav() {
               fontWeight: 700,
               fontSize: 14,
               letterSpacing: "0.2em",
-              color: "#D4AF37",
+              color: "var(--gold-mid)",
             }}
           >
             CRESTECH
@@ -89,9 +89,9 @@ export default function Nav() {
             </svg>
           ) : (
             <>
-              <div style={{ width: 22, height: 2, background: "#D4AF37", marginBottom: 5 }} />
-              <div style={{ width: 22, height: 2, background: "#D4AF37", marginBottom: 5 }} />
-              <div style={{ width: 22, height: 2, background: "#D4AF37" }} />
+              <div style={{ width: 22, height: 2, background: "var(--gold-mid)", marginBottom: 5 }} />
+              <div style={{ width: 22, height: 2, background: "var(--gold-mid)", marginBottom: 5 }} />
+              <div style={{ width: 22, height: 2, background: "var(--gold-mid)" }} />
             </>
           )}
         </button>
@@ -102,7 +102,7 @@ export default function Nav() {
         <div
           style={{
             background: "rgba(10,10,10,0.97)",
-            borderTop: "1px solid rgba(212,175,55,0.15)",
+            borderTop: "1px solid rgba(var(--gold-rgb),0.15)",
             padding: "16px 24px 24px",
           }}
         >
@@ -117,7 +117,7 @@ export default function Nav() {
                 textDecoration: "none",
                 fontSize: 16,
                 padding: "12px 0",
-                borderBottom: "1px solid rgba(212,175,55,0.1)",
+                borderBottom: "1px solid rgba(var(--gold-rgb),0.1)",
               }}
             >
               {l.label}

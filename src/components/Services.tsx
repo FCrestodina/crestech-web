@@ -96,7 +96,7 @@ export default function Services() {
       style={{ padding: "100px 24px", maxWidth: 1200, margin: "0 auto" }}
     >
       <div style={{ textAlign: "center", marginBottom: 72 }}>
-        <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "#D4AF37" }}>
+        <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
           SERVICIOS
         </span>
         <h2
@@ -123,9 +123,9 @@ export default function Services() {
               s.featured
                 ? {
                     position: "relative",
-                    border: "1px solid rgba(212,175,55,0.55)",
+                    border: "1px solid rgba(var(--gold-rgb),0.55)",
                     background:
-                      "linear-gradient(150deg, rgba(212,175,55,0.10), rgba(212,175,55,0.02) 70%)",
+                      "linear-gradient(150deg, rgba(var(--gold-rgb),0.10), rgba(var(--gold-rgb),0.02) 70%)",
                   }
                 : undefined
             }
@@ -139,7 +139,7 @@ export default function Services() {
                   fontSize: 11,
                   letterSpacing: "0.18em",
                   color: "#0a0a0a",
-                  background: "linear-gradient(135deg, #F5DC7B, #D4AF37)",
+                  background: "linear-gradient(135deg, #F5DC7B, var(--gold-mid))",
                   padding: "4px 10px",
                   borderRadius: 2,
                   fontWeight: 700,
@@ -165,8 +165,8 @@ export default function Services() {
                   style={{
                     fontSize: 11,
                     letterSpacing: "0.1em",
-                    color: "#D4AF37",
-                    border: "1px solid rgba(212,175,55,0.25)",
+                    color: "var(--gold-mid)",
+                    border: "1px solid rgba(var(--gold-rgb),0.25)",
                     padding: "3px 8px",
                     borderRadius: 2,
                   }}

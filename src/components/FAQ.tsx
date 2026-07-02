@@ -20,6 +20,14 @@ const faqs = [
     a: "Ambas opciones. Podés contratar un servicio puntual (solo logo, solo web, solo automatización) o una solución integral que combine varios. Lo conversamos en la consulta inicial.",
   },
   {
+    q: "¿Desde qué presupuesto puedo arrancar?",
+    a: "Trabajamos por proyecto y armamos la propuesta según lo que necesites, así no pagás de más por cosas que no vas a usar. Cupio, nuestro sistema de turnos, se prueba 7 días gratis sin tarjeta. En una charla de 15 minutos te pasamos el número exacto, sin compromiso.",
+  },
+  {
+    q: "¿Sirve si mi negocio es chico o recién empiezo?",
+    a: "Sí, y muchas veces es cuando más suma: arrancás con una imagen y una organización profesional desde el día uno, en vez de tener que ordenar todo más adelante. Adaptamos el alcance (y el presupuesto) a la etapa en la que estás.",
+  },
+  {
     q: "¿Qué pasa si necesito cambios después de la entrega?",
     a: "Cada proyecto incluye rondas de revisión durante la producción y 15 días de soporte post-entrega para ajustes menores. Los cambios de mayor alcance se cotizan por separado.",
   },

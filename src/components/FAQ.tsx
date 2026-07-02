@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "¿Desde qué presupuesto puedo arrancar?",
-    a: "Trabajamos por proyecto y armamos la propuesta según lo que necesites, así no pagás de más por cosas que no vas a usar. Cupio, nuestro sistema de turnos, se prueba 7 días gratis sin tarjeta. En una charla de 15 minutos te pasamos el número exacto, sin compromiso.",
+    a: "Trabajamos por proyecto y armamos la propuesta según lo que necesites, así no pagás de más por cosas que no vas a usar. Cupio, nuestro sistema de turnos, es de los más accesibles del mercado y lo podés probar 7 días gratis. En una charla de 15 minutos te pasamos el número exacto, sin compromiso.",
   },
   {
     q: "¿Sirve si mi negocio es chico o recién empiezo?",

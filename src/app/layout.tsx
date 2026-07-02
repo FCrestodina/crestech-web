@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
+import MetaPixel from "@/components/MetaPixel";
 import { WHATSAPP_NUMBER } from "@/data/landings";
 
 const siteUrl =
@@ -70,6 +71,7 @@ export default function RootLayout({
         />
         {children}
         <Analytics />
+        <MetaPixel />
       </body>
     </html>
   );

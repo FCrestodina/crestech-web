@@ -1,0 +1,28 @@
+name: uptime
+
+# Monitor de uptime SIN servicios externos: cada 30 min chequea que el sitio responda 200 y
+# que siga teniendo el header de seguridad (CSP). Si se cae o un deploy rompe los headers, el
+# job FALLA y GitHub te manda un mail. Reemplaza a UptimeRobot sin registrarte en nada.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+env:
+  SITE: "https://crestech.com.ar"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ¿El sitio responde y conserva la CSP?
+        run: |
+          for path in "/" "/turnos-pilates"; do
+            code=$(curl -sS -o /dev/null -w "%{http_code}" --max-time 20 "$SITE$path")
+            echo "$path -> HTTP $code"
+            [ "$code" = "200" ] || { echo "::error::$SITE$path devolvió $code"; exit 1; }
+          done
+          curl -sS -I --max-time 20 "$SITE/" | grep -qi "content-security-policy" || {
+            echo "::error::falta el header Content-Security-Policy en $SITE (¿deploy roto?)"; exit 1; }
+          echo "OK"

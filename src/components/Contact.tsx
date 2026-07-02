@@ -8,8 +8,33 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [mensaje, setMensaje] = useState("");
   const [sentLink, setSentLink] = useState<string | null>(null);
+  const [leadStatus, setLeadStatus] = useState<
+    "idle" | "sending" | "ok" | "unavailable" | "error"
+  >("idle");
 
   const canSubmit = nombre.trim().length > 0 && mensaje.trim().length > 0;
+
+  async function handleEmailLead() {
+    if (!canSubmit || leadStatus === "sending") return;
+    setLeadStatus("sending");
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre: nombre.trim(),
+          email: email.trim(),
+          mensaje: mensaje.trim(),
+        }),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (json.ok) setLeadStatus("ok");
+      else if (json.error === "no_configurado") setLeadStatus("unavailable");
+      else setLeadStatus("error");
+    } catch {
+      setLeadStatus("error");
+    }
+  }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -125,6 +150,41 @@ export default function Contact() {
                 tocá acá para escribirnos
               </a>
               .
+            </p>
+          )}
+
+          <button
+            type="button"
+            onClick={handleEmailLead}
+            disabled={!canSubmit || leadStatus === "sending"}
+            data-umami-event="contact-email-lead"
+            style={{
+              background: "none",
+              border: "none",
+              color: "#8a8577",
+              fontSize: 13,
+              textDecoration: "underline",
+              textUnderlineOffset: 3,
+              cursor: canSubmit ? "pointer" : "default",
+              marginTop: 4,
+            }}
+          >
+            {leadStatus === "sending" ? "Enviando…" : "Prefiero que me escriban por mail"}
+          </button>
+
+          {leadStatus === "ok" && (
+            <p role="status" style={{ fontSize: 14, color: "#cccccc", marginTop: 4 }}>
+              ¡Listo! Te vamos a escribir por mail a la brevedad.
+            </p>
+          )}
+          {leadStatus === "unavailable" && (
+            <p role="status" style={{ fontSize: 14, color: "#cccccc", marginTop: 4 }}>
+              Por ahora escribinos por WhatsApp o al mail de abajo 👇
+            </p>
+          )}
+          {leadStatus === "error" && (
+            <p role="status" style={{ fontSize: 14, color: "#cccccc", marginTop: 4 }}>
+              No pudimos enviarlo. Probá por WhatsApp o al mail de abajo.
             </p>
           )}
         </form>

@@ -53,7 +53,7 @@ export default function Hero() {
         </div>
 
         <h1
-          className="font-serif"
+          className="font-display"
           style={{
             fontSize: "clamp(48px, 8vw, 100px)",
             fontWeight: 500,

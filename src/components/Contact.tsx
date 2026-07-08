@@ -63,7 +63,7 @@ export default function Contact() {
         <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>CONTACTO</span>
 
         <h2
-          className="font-serif"
+          className="font-display"
           style={{
             fontSize: "clamp(32px, 5vw, 56px)",
             fontWeight: 500,

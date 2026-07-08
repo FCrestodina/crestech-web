@@ -50,7 +50,7 @@ export default async function PostPage({
           ← Blog
         </Link>
         <h1
-          className="font-serif"
+          className="font-display"
           style={{
             fontSize: "clamp(30px, 5vw, 46px)",
             fontWeight: 500,
@@ -66,7 +66,7 @@ export default async function PostPage({
           b.type === "h2" ? (
             <h2
               key={i}
-              className="font-serif"
+              className="font-display"
               style={{ fontSize: 22, color: "#f5f3ee", margin: "30px 0 10px" }}
             >
               {b.text}

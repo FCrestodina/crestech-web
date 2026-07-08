@@ -47,7 +47,7 @@ export default function LinksPage() {
     >
       <div style={{ width: "100%", maxWidth: 440, textAlign: "center" }}>
         <h1
-          className="font-serif gold-gradient-text"
+          className="font-display gold-gradient-text"
           style={{ fontSize: 40, fontWeight: 500, marginBottom: 4 }}
         >
           Crestech

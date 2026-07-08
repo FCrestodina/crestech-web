@@ -33,32 +33,29 @@ export default function About() {
             style={{
               marginTop: 24,
               display: "flex",
-              flexDirection: "column",
-              gap: 2,
+              flexWrap: "wrap",
+              gap: 12,
             }}
           >
-            {team.map((role, i) => (
-              <div
+            {team.map((role) => (
+              <span
                 key={role}
                 style={{
-                  display: "flex",
+                  display: "inline-flex",
                   alignItems: "center",
-                  gap: 16,
-                  padding: "16px 0",
-                  borderBottom:
-                    i < team.length - 1 ? "1px solid rgba(var(--gold-rgb),0.12)" : "none",
+                  gap: 8,
+                  padding: "10px 18px",
+                  borderRadius: 999,
+                  border: "1px solid rgba(var(--gold-rgb),0.3)",
+                  background: "rgba(var(--gold-rgb),0.05)",
+                  fontSize: 14,
+                  color: "#ffffff",
+                  letterSpacing: "0.02em",
                 }}
               >
-                <span
-                  className="font-serif gold-gradient-text"
-                  style={{ fontSize: 20, fontWeight: 500, minWidth: 36 }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span style={{ fontSize: 17, color: "#ffffff", letterSpacing: "0.02em" }}>
-                  {role}
-                </span>
-              </div>
+                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--gold-mid)" }} />
+                {role}
+              </span>
             ))}
           </div>
         </div>
@@ -67,7 +64,7 @@ export default function About() {
         <div>
           <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>SOBRE NOSOTROS</span>
           <h2
-            className="font-serif"
+            className="font-display"
             style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 500, marginTop: 16, marginBottom: 24, color: "#ffffff", lineHeight: 1.2 }}
           >
             El equipo detrás
@@ -83,25 +80,35 @@ export default function About() {
 
           <div
             style={{
-              display: "flex",
-              gap: 32,
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gap: 24,
               borderTop: "1px solid rgba(var(--gold-rgb),0.15)",
               paddingTop: 28,
             }}
           >
             {[
-              { num: "A medida", label: "Servicios según lo que necesites" },
-              { num: "Equipo", label: "Especialistas por área" },
-            ].map((stat) => (
-              <div key={stat.label}>
+              { title: "A medida", desc: "Servicios según lo que necesites" },
+              { title: "Equipo", desc: "Especialistas por área" },
+            ].map((item) => (
+              <div
+                key={item.title}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 6,
+                  paddingLeft: 16,
+                  borderLeft: "2px solid var(--gold-mid)",
+                }}
+              >
                 <div
-                  className="font-serif gold-gradient-text"
-                  style={{ fontSize: 32, fontWeight: 500 }}
+                  className="font-display"
+                  style={{ fontSize: 16, color: "#ffffff" }}
                 >
-                  {stat.num}
+                  {item.title}
                 </div>
-                <div style={{ fontSize: 12, color: "#8a8a8a", letterSpacing: "0.1em", marginTop: 4 }}>
-                  {stat.label}
+                <div style={{ fontSize: 13, color: "#8a8a8a", lineHeight: 1.5 }}>
+                  {item.desc}
                 </div>
               </div>
             ))}

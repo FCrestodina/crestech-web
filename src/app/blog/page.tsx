@@ -15,7 +15,7 @@ export default function BlogIndex() {
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>BLOG</span>
         <h1
-          className="font-serif"
+          className="font-display"
           style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, margin: "12px 0 44px", color: "#ffffff" }}
         >
           Ideas para tu negocio
@@ -25,7 +25,7 @@ export default function BlogIndex() {
           {ordenados.map((p) => (
             <article key={p.slug}>
               <Link href={`/blog/${p.slug}`} style={{ textDecoration: "none", display: "block" }}>
-                <h2 className="font-serif" style={{ fontSize: 24, color: "#f5f3ee", marginBottom: 8 }}>
+                <h2 className="font-display" style={{ fontSize: 24, color: "#f5f3ee", marginBottom: 8 }}>
                   {p.title}
                 </h2>
                 <p style={{ color: "#999999", lineHeight: 1.7, marginBottom: 8 }}>{p.description}</p>

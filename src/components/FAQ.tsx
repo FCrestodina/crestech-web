@@ -55,7 +55,7 @@ export default function FAQ() {
               FAQ
             </span>
             <h2
-              className="font-serif"
+              className="font-display"
               style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, marginTop: 16, color: "#ffffff" }}
             >
               Preguntas frecuentes

@@ -39,7 +39,7 @@ export default function Process() {
               PROCESO
             </span>
             <h2
-              className="font-serif"
+              className="font-display"
               style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, marginTop: 16, color: "#ffffff" }}
             >
               Cómo trabajamos
@@ -63,7 +63,7 @@ export default function Process() {
                   style={{ width: 32, marginBottom: 24 }}
                 />
                 <h3
-                  className="font-serif"
+                  className="font-display"
                   style={{ fontSize: 20, fontWeight: 500, color: "#ffffff", marginBottom: 12 }}
                 >
                   {step.title}

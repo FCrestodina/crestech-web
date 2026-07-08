@@ -33,7 +33,7 @@ export default function Rubros() {
               SOLUCIONES POR RUBRO
             </span>
             <h2
-              className="font-serif"
+              className="font-display"
               style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, marginTop: 16, color: "#ffffff" }}
             >
               Sistemas a medida para tu negocio
@@ -83,7 +83,7 @@ export default function Rubros() {
                   {c.caso.toUpperCase()}
                 </span>
                 <h3
-                  className="font-serif"
+                  className="font-display"
                   style={{ fontSize: 22, fontWeight: 500, color: "#ffffff", marginBottom: 12, lineHeight: 1.3 }}
                 >
                   {c.rubro}

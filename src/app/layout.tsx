@@ -3,6 +3,7 @@ import "./globals.css";
 import Analytics from "@/components/Analytics";
 import MetaPixel from "@/components/MetaPixel";
 import { WHATSAPP_NUMBER } from "@/data/landings";
+import { instrumentSans } from "@/lib/landingFonts";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://crestech.com.ar";
@@ -54,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className="h-full">
+    <html lang="es" className={`h-full ${instrumentSans.variable}`}>
       <head>
         {/* Marca que hay JS antes de la hidratación: sin esta clase, el CSS deja
             el contenido de .reveal-init visible (fallback sin JS). Ver globals.css. */}

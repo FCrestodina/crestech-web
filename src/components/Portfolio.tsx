@@ -74,7 +74,7 @@ export default function Portfolio() {
               TRABAJOS
             </span>
             <h2
-              className="font-serif"
+              className="font-display"
               style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, marginTop: 16, color: "#ffffff" }}
             >
               Proyectos seleccionados
@@ -139,9 +139,44 @@ export default function Portfolio() {
                           backgroundSize: "40px 40px",
                         }}
                       />
+                      {/* Placeholder tipo "browser chrome" mientras no haya mockup/captura real */}
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          right: 0,
+                          height: 28,
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 6,
+                          padding: "0 12px",
+                          borderBottom: "1px solid rgba(var(--gold-rgb),0.15)",
+                          background: "rgba(var(--gold-rgb),0.04)",
+                        }}
+                      >
+                        {[0, 1, 2].map((d) => (
+                          <span
+                            key={d}
+                            style={{
+                              width: 6,
+                              height: 6,
+                              borderRadius: "50%",
+                              background: "rgba(var(--gold-rgb),0.3)",
+                            }}
+                          />
+                        ))}
+                      </div>
                       <span
-                        className="font-serif gold-gradient-text"
-                        style={{ fontSize: 13, letterSpacing: "0.2em", opacity: 0.6, position: "relative" }}
+                        className="font-display"
+                        style={{
+                          fontSize: 13,
+                          letterSpacing: "0.2em",
+                          color: "var(--gold-light)",
+                          position: "relative",
+                          textAlign: "center",
+                          padding: "0 16px",
+                        }}
                       >
                         {p.title.toUpperCase()}
                       </span>
@@ -162,7 +197,7 @@ export default function Portfolio() {
                     {p.category.toUpperCase()}
                   </span>
                   <h3
-                    className="font-serif"
+                    className="font-display"
                     style={{ fontSize: 22, fontWeight: 500, color: "#ffffff", marginBottom: 10 }}
                   >
                     {p.title}

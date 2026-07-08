@@ -100,7 +100,7 @@ export default function Services() {
           SERVICIOS
         </span>
         <h2
-          className="font-serif"
+          className="font-display"
           style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, marginTop: 16, color: "#ffffff" }}
         >
           Lo que hacemos
@@ -150,7 +150,7 @@ export default function Services() {
             )}
             <div style={{ marginBottom: 20 }}>{s.icon}</div>
             <h3
-              className="font-serif"
+              className="font-display"
               style={{ fontSize: 20, fontWeight: 500, color: "#ffffff", marginBottom: 12, lineHeight: 1.3 }}
             >
               {s.title}

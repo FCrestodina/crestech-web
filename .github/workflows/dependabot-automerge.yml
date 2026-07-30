@@ -1,0 +1,48 @@
+name: dependabot-automerge
+
+# Auto-merge SOLO para actualizaciones de PATCH de Dependabot, y SOLO si el CI del
+# propio PR terminó en verde. Minor y major quedan SIEMPRE para revisión manual.
+#
+# OJO (verificado con `gh api repos/FCrestodina/<repo>`): ninguno de los repos de
+# Franco tiene "Allow auto-merge" habilitado en Settings (allow_auto_merge: false),
+# y al ser repos privados en plan free tampoco pueden tener branch protection con
+# required status checks (la API devuelve 403 "Upgrade to GitHub Pro"). Por eso NO
+# alcanza con `gh pr merge --auto`: fallaría directo con "Auto-merge is not allowed
+# for this repository", y aunque se habilitara ese toggle sin required checks,
+# el auto-merge nativo de GitHub mergearía SIN esperar a que termine el CI (no hay
+# nada "required" que lo bloquee). Por eso acá esperamos explícitamente con
+# `gh pr checks --watch --fail-fast` a que TODOS los checks del PR terminen en
+# verde, y recién ahí hacemos un merge directo (sin --auto, ya no hace falta).
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  automerge-patch:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Metadata de Dependabot
+        id: metadata
+        uses: dependabot/fetch-metadata@v2
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Esperar CI en verde (solo patch)
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr checks "$PR_URL" --watch --fail-fast
+
+      - name: Merge automático (patch con CI verde)
+        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge "$PR_URL" --squash --delete-branch

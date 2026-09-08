@@ -186,7 +186,7 @@ export default function DidacticoPage() {
                               paddingBottom: 2,
                             }}
                           >
-                            Probar {r.nombre.toLowerCase()} →
+                            Probar {r.nombre} →
                           </a>
                         </div>
                       ))}

@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
+import Didactico from "@/components/Didactico";
 import Rubros from "@/components/Rubros";
 import About from "@/components/About";
 import FAQ from "@/components/FAQ";
@@ -20,6 +21,7 @@ export default function Home() {
         <Services />
         <Rubros />
         <Portfolio />
+        <Didactico />
         <About />
         <FAQ />
         <Contact />

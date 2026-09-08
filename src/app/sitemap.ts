@@ -7,7 +7,7 @@ const siteUrl =
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const routes = ["", ...landingSlugs, "blog", ...postSlugs.map((s) => `blog/${s}`)];
+  const routes = ["", "didactico", ...landingSlugs, "blog", ...postSlugs.map((s) => `blog/${s}`)];
   return routes.map((slug) => ({
     url: slug ? `${siteUrl}/${slug}` : siteUrl,
     lastModified: now,

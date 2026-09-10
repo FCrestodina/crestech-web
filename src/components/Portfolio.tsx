@@ -15,22 +15,22 @@ interface Project {
 
 const projects: Project[] = [
   {
-    category: "Software a medida",
-    title: "Mixtura",
-    description: "Sistema hecho a medida para un estudio de pilates, adaptado a su forma de trabajar: turnos online, pagos con MercadoPago, facturación electrónica ARCA, bot de WhatsApp con recordatorios y un panel de administración propio para gestionar clases, abonos y reportes.",
-    tags: ["A medida", "Panel de admin", "Facturación ARCA", "Bot de WhatsApp"],
-    color: "rgba(var(--gold-rgb),0.08)",
-    accent: "var(--gold-mid)",
-    url: "https://mixturapilates.com.ar",
-  },
-  {
     category: "Producto propio · SaaS",
     title: "Cupio",
-    description: "Nuestra plataforma de gestión de turnos en formato SaaS: cualquier proveedor crea su sala, publica su agenda y sus clientes reservan online. Suscripción mensual con Mercado Pago, multi-cliente y lista para usar — la base probada que adaptamos cuando un negocio necesita algo a medida, como Mixtura.",
+    description: "Nuestro sistema de turnos online: cada profesional crea su agenda y sus clientes reservan solos desde el celular, con cupo por clase, turnos fijos, lista de espera y recordatorios. Suscripción mensual con Mercado Pago y 7 días de prueba gratis.",
     tags: ["SaaS multi-tenant", "Turnos online", "Suscripción Mercado Pago", "PWA instalable"],
     color: "rgba(var(--gold-rgb),0.08)",
     accent: "var(--gold-mid)",
-    url: "https://cupio.com.ar",
+    url: "https://cupio.com.ar?utm_source=crestech&utm_medium=web&utm_campaign=portfolio",
+  },
+  {
+    category: "Software a medida",
+    title: "Mixtura",
+    description: "Sistema hecho a medida para un estudio de pilates con dos sedes, adaptado a su forma de trabajar: las alumnas ven sus clases y su abono, cancelan y recuperan solas; el estudio maneja horarios, abonos, cobros, reportes y facturación electrónica ARCA desde su propio panel.",
+    tags: ["A medida", "Panel de admin", "Facturación ARCA", "Recuperaciones"],
+    color: "rgba(var(--gold-rgb),0.08)",
+    accent: "var(--gold-mid)",
+    url: "https://mixturapilates.com.ar",
   },
   {
     category: "Diseño Web",

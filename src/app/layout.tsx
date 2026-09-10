@@ -8,14 +8,14 @@ import { instrumentSans } from "@/lib/landingFonts";
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://crestech.com.ar";
 
+// Sin `alternates.canonical` acá: el layout lo heredan todas las páginas, y un
+// canonical "/" heredado hace que cualquier página nueva se declare como la home.
+// Cada página define el suyo (la home, en app/page.tsx).
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Crestech Studio — Branding, Contenido & Desarrollo Digital",
   description:
     "Equipo digital: branding, fotografía, contenido para redes y desarrollo web. Combinamos los servicios que tu negocio necesita.",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: "Crestech Studio",
     description: "Branding, Contenido & Desarrollo Digital",
@@ -31,7 +31,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Crestech Studio",
   description:
-    "Equipo digital: branding, fotografía, contenido para redes sociales y desarrollo web.",
+    "Equipo digital: branding, fotografía, contenido para redes sociales, desarrollo web y sistemas de turnos y reservas.",
   url: siteUrl,
   logo: `${siteUrl}/icon`,
   image: `${siteUrl}/opengraph-image`,
@@ -46,6 +46,9 @@ const jsonLd = {
     "Community management",
     "Diseño web",
     "Marketing digital",
+    "Sistemas de turnos online",
+    "Sistemas de reservas online",
+    "Desarrollo de software a medida",
   ],
 };
 

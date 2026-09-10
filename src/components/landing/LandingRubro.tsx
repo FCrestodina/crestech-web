@@ -3,9 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import PhoneDemo from "./PhoneDemo";
-import { type LandingConfig, waLink } from "@/data/landings";
+import { type LandingConfig, cupioLink, landings, waLink } from "@/data/landings";
 import { landingFontVars } from "@/lib/landingFonts";
 import styles from "./landing.module.css";
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://crestech.com.ar";
 
 function rich(text: string): ReactNode {
   return text
@@ -38,9 +40,24 @@ const PROCESS_STEPS = [
 
 export default function LandingRubro({ config }: { config: LandingConfig }) {
   const year = new Date().getFullYear();
+  const otros = landings.filter((l) => l.slug !== config.slug);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: config.eyebrow,
+    serviceType: config.eyebrow,
+    description: config.metaDescription,
+    url: `${siteUrl}/${config.slug}`,
+    areaServed: { "@type": "Country", name: "Argentina" },
+    provider: { "@type": "ProfessionalService", name: "Crestech Studio", url: siteUrl },
+  };
 
   return (
     <div className={`${styles.landing} ${landingFontVars}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       <header className={styles.header}>
         <div className={`${styles.wrap} ${styles.nav}`}>
           <Link className={styles.wordmark} href="/">
@@ -63,10 +80,10 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
         <div className={styles.hero}>
           <div className={`${styles.wrap} ${styles.heroGrid}`}>
             <div>
-              <p className={styles.eyebrow}>{config.eyebrow}</p>
-              <h1>
+              <h1 className={styles.eyebrow}>{config.eyebrow}</h1>
+              <p className={styles.headline}>
                 {config.h1} <em>{config.h1em}</em>
-              </h1>
+              </p>
               <p className={styles.heroSub}>{rich(config.heroSub)}</p>
               <div className={styles.ctaRow}>
                 <a
@@ -79,9 +96,21 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   <WaIcon />
                   Quiero verlo funcionando
                 </a>
-                <a className={styles.btnGhost} href="#demo">
-                  Ver qué incluye ↓
-                </a>
+                {config.heroSecondary ? (
+                  <a
+                    className={styles.btnGhost}
+                    href={config.heroSecondary.href}
+                    target="_blank"
+                    rel="noopener"
+                    data-umami-event="landing-cupio-hero"
+                  >
+                    {config.heroSecondary.label}
+                  </a>
+                ) : (
+                  <a className={styles.btnGhost} href="#demo">
+                    Ver qué incluye ↓
+                  </a>
+                )}
               </div>
               <p className={styles.ctaNote}>Respuesta de una persona, no de un bot. Sin compromiso.</p>
             </div>
@@ -124,6 +153,17 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   {config.proofHeading} <em>{config.proofHeadingEm}</em>
                 </h2>
                 <p className={styles.lede}>{config.proofLede}</p>
+                {config.proofCta && (
+                  <a
+                    className={`${styles.btnGhost} ${styles.proofCta}`}
+                    href={config.proofCta.href}
+                    target="_blank"
+                    rel="noopener"
+                    data-umami-event="landing-cupio-proof"
+                  >
+                    {config.proofCta.label}
+                  </a>
+                )}
                 {config.proofPhotos && config.proofPhotosPhone && (
                   <div className={styles.proofPhones}>
                     {config.proofPhotos.map((photo) => (
@@ -235,15 +275,26 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
               <Reveal>
                 <div className={styles.panel}>
                   <p className={styles.eyebrow}>Precio</p>
-                  <h3>De startup, no de agencia</h3>
-                  <p>
-                    Somos un estudio chico y eso se nota en el precio:{" "}
-                    <strong>presupuesto cerrado, pensado para tu negocio, no para corporaciones</strong>.
-                  </p>
-                  <p>
-                    Pagás una vez por el desarrollo y, si querés, un mantenimiento mensual opcional para que
-                    nos ocupemos de que todo siga funcionando.
-                  </p>
+                  {config.pricing ? (
+                    <>
+                      <h3>{config.pricing.heading}</h3>
+                      {config.pricing.body.map((p) => (
+                        <p key={p}>{rich(p)}</p>
+                      ))}
+                    </>
+                  ) : (
+                    <>
+                      <h3>De startup, no de agencia</h3>
+                      <p>
+                        Somos un estudio chico y eso se nota en el precio:{" "}
+                        <strong>presupuesto cerrado, pensado para tu negocio, no para corporaciones</strong>.
+                      </p>
+                      <p>
+                        Pagás una vez por el desarrollo y, si querés, un mantenimiento mensual opcional para que
+                        nos ocupemos de que todo siga funcionando.
+                      </p>
+                    </>
+                  )}
                 </div>
               </Reveal>
               <Reveal delay={120}>
@@ -257,6 +308,26 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   </p>
                 </div>
               </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* PREGUNTAS FRECUENTES */}
+        <section id="preguntas">
+          <div className={styles.wrap}>
+            <Reveal>
+              <p className={styles.eyebrow}>Preguntas frecuentes</p>
+              <h2>
+                Lo que nos preguntan <em>antes de arrancar</em>
+              </h2>
+            </Reveal>
+            <div className={styles.faqList}>
+              {config.faq.map((f) => (
+                <div className={styles.faqItem} key={f.q}>
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -291,6 +362,20 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
       </main>
 
       <footer className={styles.footer}>
+        <div className={styles.wrap}>
+          <nav className={styles.related} aria-label="Otras soluciones">
+            <span>También hacemos:</span>
+            {otros.map((l) => (
+              <Link key={l.slug} href={`/${l.slug}`}>
+                {l.shortLabel}
+              </Link>
+            ))}
+            <a href={cupioLink("/", config.slug)} target="_blank" rel="noopener">
+              Cupio · turnos online
+            </a>
+            <Link href="/blog">Blog</Link>
+          </nav>
+        </div>
         <div className={`${styles.wrap} ${styles.foot}`}>
           <span>© {year} Crestech Studio</span>
           <a href="https://instagram.com/crestech.studio" target="_blank" rel="noopener">

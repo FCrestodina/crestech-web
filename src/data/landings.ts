@@ -1,6 +1,11 @@
 // Configuración por rubro de las landings. Para sumar un rubro nuevo, agregá una
 // entrada a `landings` con su copy y su demo — el template LandingRubro la renderiza.
 // Espejo de cómo el config.yaml del Prospector suma rubros.
+//
+// Todo lo que la sección de prueba afirma tiene que ser cierto HOY del sistema que
+// se cita. Pilates vende Cupio (SaaS propio): Cupio NO cobra al cliente final ni
+// manda WhatsApp — los avisos van por notificación push. El resto de los rubros
+// venden desarrollo a medida y citan a Cupio como la base que ya está online.
 
 export interface DemoSlot {
   time?: string;
@@ -32,12 +37,24 @@ export interface ProofPhoto {
   alt: string;
 }
 
+export interface Faq {
+  q: string;
+  a: string;
+}
+
+export interface CtaLink {
+  href: string;
+  label: string;
+}
+
 export interface LandingConfig {
   slug: string;
-  eyebrow: string;
-  h1: string;
+  shortLabel: string; // etiqueta corta para los links entre rubros
+  eyebrow: string; // es el <h1> de la página: la búsqueda que queremos rankear
+  h1: string; // titular grande (visual); se renderiza como <p>
   h1em: string;
   heroSub: string; // admite **negrita**
+  heroSecondary?: CtaLink; // reemplaza el botón "Ver qué incluye" del hero
   demo: {
     appTitle: string;
     day: string;
@@ -45,6 +62,7 @@ export interface LandingConfig {
     slots: DemoSlot[];
     steps: DemoStep[];
     caption: string;
+    toastLabel?: string; // encabezado del aviso del teléfono; default "WHATSAPP · AUTOMÁTICO"
   };
   painsEyebrow: string;
   painsHeading: string;
@@ -55,6 +73,7 @@ export interface LandingConfig {
   proofHeading: string;
   proofHeadingEm: string;
   proofLede: string;
+  proofCta?: CtaLink; // botón debajo del texto de la prueba
   proofPhotos?: ProofPhoto[]; // fotos reales del caso (negocio, equipo, sistema)
   proofPhotosPhone?: boolean; // si true, las proofPhotos son capturas de celular (390x844) y se muestran en marco de teléfono, completas
   adminPhotos?: ProofPhoto[]; // capturas del panel de gestión (390x844, marco de teléfono); sin datos personales
@@ -65,6 +84,8 @@ export interface LandingConfig {
   proofCardLabel: string;
   proofCardTitle: string;
   features: Feature[];
+  pricing?: { heading: string; body: string[] }; // reemplaza el panel "Precio" genérico (a medida); admite **negrita**
+  faq: Faq[];
   finalHeading: string;
   finalHeadingEm: string;
   finalLede: string;
@@ -82,17 +103,30 @@ export function waLink(message: string): string {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
+export const CUPIO_URL = "https://cupio.com.ar";
+
+// Links a Cupio con UTM, para distinguir lo que llega desde crestech.com.ar.
+export function cupioLink(path: string, campaign: string): string {
+  return `${CUPIO_URL}${path}?utm_source=crestech&utm_medium=web&utm_campaign=${encodeURIComponent(campaign)}`;
+}
+
+const PRECIO_A_MEDIDA =
+  "Presupuesto cerrado según lo que necesites: pagás una vez por el desarrollo y, si querés, un mantenimiento mensual opcional para que nos ocupemos de que todo siga funcionando.";
+
 const pilates: LandingConfig = {
   slug: "turnos-pilates",
-  eyebrow: "Para estudios de pilates · AMBA",
+  shortLabel: "Turnos para estudios de pilates",
+  eyebrow: "Sistema de turnos para estudios de pilates",
   h1: "Tus alumnas reservan solas.",
   h1em: "Vos solo das la clase.",
   heroSub:
-    "Un sistema de turnos hecho a medida para tu estudio: **reservas online, pagos y recordatorios automáticos por WhatsApp**. Sin vueltas — un equipo que se adapta a cómo trabajás.",
+    "Cupio, nuestro sistema de turnos online: **tus alumnas ven los lugares libres, reservan desde el celular y reciben un recordatorio antes de la clase**. Lo configuramos con vos y lo dejamos andando.",
+  heroSecondary: { href: cupioLink("/registro", "turnos-pilates"), label: "Probar gratis 7 días" },
   demo: {
     appTitle: "TU ESTUDIO",
     day: "Mañana · Jueves",
     clock: "23:41",
+    toastLabel: "CUPIO · NOTIFICACIÓN",
     slots: [
       { time: "08:00", name: "Reformer", spots: "2 lugares" },
       { time: "09:00", name: "Reformer", spots: "1 lugar" },
@@ -103,18 +137,19 @@ const pilates: LandingConfig = {
       {
         slot: 1,
         clock: "23:41",
-        toast: "Hola Sofi 👋 Quedó confirmado tu lugar en Reformer mañana 09:00. ¡Te esperamos!",
+        toast: "Reserva confirmada: Reformer, mañana 09:00. ¡Te esperamos, Sofi!",
       },
       {
         slot: 0,
-        clock: "07:12",
+        clock: "09:15",
         toast:
-          "Recordatorio: tenés clase hoy 08:00. Si no llegás, cancelá desde la app y liberás el lugar 🙌",
+          "Recordatorio: mañana tenés Reformer 08:00. Si no podés venir, cancelá desde Cupio y liberás el lugar 🙌",
       },
       {
-        slot: 3,
-        clock: "21:05",
-        toast: "Hola Caro 👋 Reservaste Reformer 18:00. ¡Nos vemos!",
+        slot: 2,
+        clock: "08:31",
+        bookedLabel: "Lugar liberado",
+        toast: "Se liberó un lugar en Mat 10:00 y estabas primera en la lista de espera. ¡Reservalo!",
       },
     ],
     caption: "Son las 23:41. Una alumna acaba de reservar. Vos no contestaste nada.",
@@ -128,70 +163,82 @@ const pilates: LandingConfig = {
       tag: "Reservas",
       title: "Turnos por WhatsApp, uno por uno",
       body:
-        'Anotás en un cuaderno o un Excel, los horarios se pisan, y contestás "¿hay lugar mañana?" veinte veces por día. **Con el sistema, cada alumna ve los lugares libres y reserva sola** — de día o a las 11 de la noche.',
+        'Anotás en un cuaderno o un Excel, los horarios se pisan, y contestás "¿hay lugar mañana?" veinte veces por día. **Con Cupio, cada alumna ve los lugares libres y reserva sola** — de día o a las 11 de la noche.',
     },
     {
       tag: "Ausentismo",
       title: "Camas vacías que nadie avisó",
       body:
-        "La alumna se olvida, no avisa, y esa cama quedó vacía cuando otra la quería. **El recordatorio automático por WhatsApp** le avisa antes de la clase, y si cancela a tiempo, el lugar se libera para otra.",
+        "La alumna se olvida, no avisa, y esa cama quedó vacía cuando otra la quería. **Cupio le manda un recordatorio al celular antes de la clase**, y si cancela a tiempo, el lugar se libera y le avisa a la primera de la lista de espera.",
     },
     {
-      tag: "Cobros",
-      title: "Transferencias sueltas, cuentas a mano",
+      tag: "Fijas",
+      title: "Las fijas y los packs, anotados a mano",
       body:
-        "¿Quién pagó el mes? ¿Quién debe dos clases? **Con Mercado Pago integrado**, los pagos quedan registrados solos y vos ves todo en un panel: quién está al día y quién no.",
+        "La que viene siempre martes y jueves, el pack de 8 clases, quién ya usó las suyas. **Con Cupio cada alumna deja su lugar fijo reservado todas las semanas**, y si trabajás con packs, ponés un tope de clases por mes, igual para todas.",
     },
   ],
   proofEyebrow: "No es una promesa",
-  proofHeading: "Ya está funcionando",
-  proofHeadingEm: "en un negocio real",
+  proofHeading: "Ya está online:",
+  proofHeadingEm: "probalo hoy",
   proofLede:
-    "Mixtura es un sistema que desarrollamos para un estudio de pilates: maneja sus turnos, sus pagos y sus recordatorios todos los días. Tu estudio puede tener el suyo, adaptado a cómo trabajás vos — tus horarios, tus camas, tus planes de clases.",
-  proofPhotos: [
-    { src: "/mixtura/app-calendario.png", alt: "Calendario de clases del sistema real de Mixtura" },
-    { src: "/mixtura/app-misturnos.png", alt: "Próximas clases y abono activo en el sistema de Mixtura" },
-    { src: "/mixtura/app-home.png", alt: "Panel del alumno: abono, recuperaciones y sedes" },
-  ],
-  proofPhotosPhone: true,
-  adminEyebrow: "Del lado de la gestión",
-  adminHeading: "Y vos lo manejás",
-  adminHeadingEm: "todo desde un panel",
-  adminLede:
-    "Ingresos, ocupación, horarios y abonos — todo en un panel, desde la compu o el celular. Sin planillas ni cuadernos.",
-  adminPhotos: [
-    { src: "/mixtura/admin-reportes.png", alt: "Reporte de ingresos por período en el panel de Mixtura" },
-    { src: "/mixtura/admin-horarios.png", alt: "Horarios disponibles para compartir con alumnos" },
-    { src: "/mixtura/admin-abonos.png", alt: "Gestión de tipos de abono y precios en el panel" },
-  ],
-  proofCardLabel: "Caso real · Mixtura",
-  proofCardTitle: "Lo que incluye tu sistema",
+    "Cupio es el sistema de turnos que desarrollamos y mantenemos nosotros. Está funcionando en cupio.com.ar: podés crear la agenda de tu estudio y probarlo gratis 7 días, o escribirnos y lo armamos juntos con tus horarios.",
+  proofCta: { href: cupioLink("/turnos/pilates", "turnos-pilates"), label: "Ver Cupio para estudios de pilates →" },
+  proofCardLabel: "Cupio · sistema de turnos",
+  proofCardTitle: "Lo que incluye",
   features: [
-    { strong: "Turnos online", rest: "— tus alumnas reservan y cancelan solas, con cupos por clase." },
-    { strong: "Pagos con Mercado Pago", rest: "— packs de clases o mensualidad, registrados automáticamente." },
-    { strong: "Recordatorios por WhatsApp", rest: "— automáticos, para bajar las ausencias sin que persigas a nadie." },
-    { strong: "Panel de gestión", rest: "— ves ocupación, pagos y alumnas desde el celular." },
-    { strong: "Facturación ARCA", rest: "— opcional, si facturás electrónicamente." },
+    { strong: "Clases con cupo", rest: "— definís cuántas camas o reformers tiene cada clase, y reservan hasta que se llena." },
+    { strong: "Lugar fijo semanal", rest: "— la alumna de todos los martes deja su lugar reservado todas las semanas." },
+    { strong: "Lista de espera", rest: "— si la clase está llena, se anota y le avisamos cuando se libera un lugar." },
+    { strong: "Recordatorios en el celular", rest: "— automáticos, antes de cada clase, para bajar las ausencias." },
+    { strong: "Tope de clases por mes", rest: "— cuántas clases puede reservar cada alumna en el mes, si trabajás con un pack." },
+    { strong: "Agenda y lista de asistencia", rest: "— ves quién viene a cada clase y marcás quién faltó." },
+  ],
+  pricing: {
+    heading: "Una suscripción, sin desarrollo",
+    body: [
+      "Cupio se paga por mes según cuántas alumnas tengas, con débito automático de Mercado Pago. **Los primeros 7 días son gratis.**",
+      "¿Necesitás algo que Cupio no hace, como cobrar las clases online o facturar? También lo desarrollamos a medida.",
+    ],
+  },
+  faq: [
+    {
+      q: "¿Qué es Cupio?",
+      a: "Es el sistema de turnos online que desarrollamos y mantenemos en Crestech. Tu estudio tiene su propia agenda y tus alumnas reservan desde el celular, sin descargar nada.",
+    },
+    {
+      q: "¿Sirve para pilates reformer, con pocos lugares por clase?",
+      a: "Sí. Cada clase tiene su cupo (por ejemplo, 4 reformers) y cuando se llena, las demás se anotan en la lista de espera y reciben un aviso si se libera un lugar.",
+    },
+    {
+      q: "¿Puedo cobrar las clases por el sistema?",
+      a: "Cupio no maneja cobros: lo que les cobrás a tus alumnas lo seguís manejando como hoy. Si necesitás cobros online o facturación, lo desarrollamos a medida.",
+    },
+    {
+      q: "¿Cuánto cuesta?",
+      a: "Una suscripción mensual según cuántas alumnas tengas, con débito automático de Mercado Pago, y los primeros 7 días son gratis. Si querés, te ayudamos a configurarlo.",
+    },
   ],
   finalHeading: "¿Lo vemos juntos en",
   finalHeadingEm: "15 minutos?",
   finalLede:
-    "Te mostramos el sistema funcionando y nos contás cómo trabaja tu estudio. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
+    "Te mostramos Cupio funcionando y lo configuramos con los horarios de tu estudio. Si te sirve, arrancás con 7 días gratis. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola, tengo un estudio de pilates y quiero ver el sistema de turnos funcionando.",
+    "Hola, tengo un estudio de pilates y quiero ver Cupio, el sistema de turnos, funcionando.",
   whatsappMessageNav:
-    "Hola, tengo un estudio de pilates y quiero saber más del sistema de turnos.",
-  metaTitle: "Sistema de turnos para estudios de pilates — Crestech Studio",
+    "Hola, tengo un estudio de pilates y quiero saber más de Cupio, el sistema de turnos.",
+  metaTitle: "Sistema de turnos para estudios de pilates | Crestech",
   metaDescription:
-    "Tus alumnas reservan solas, pagan online y reciben recordatorios por WhatsApp. Sistema de turnos a medida para estudios de pilates en AMBA. Un equipo que se adapta a tu estudio.",
+    "Tus alumnas reservan solas desde el celular, con cupo por clase, lugar fijo y recordatorios. Cupio, el sistema de turnos para pilates: 7 días gratis.",
   ogTitle: "Tus alumnas reservan solas. Vos das la clase.",
   ogDescription:
-    "Sistema de turnos a medida para estudios de pilates: reservas online, pagos y recordatorios automáticos por WhatsApp.",
+    "Cupio: turnos online con cupo por clase, lugar fijo semanal y recordatorios para tu estudio de pilates.",
 };
 
 const canchas: LandingConfig = {
   slug: "reservas-canchas",
-  eyebrow: "Para canchas de pádel y fútbol · AMBA",
+  shortLabel: "Reservas para canchas",
+  eyebrow: "Sistema de reservas para canchas de pádel y fútbol 5",
   h1: "Tu cancha se reserva sola.",
   h1em: "Hasta a la medianoche.",
   heroSub:
@@ -242,22 +289,30 @@ const canchas: LandingConfig = {
     },
   ],
   proofEyebrow: "No es una promesa",
-  proofHeading: "Ya está funcionando",
-  proofHeadingEm: "en un negocio real",
+  proofHeading: "La base ya está",
+  proofHeadingEm: "funcionando",
   proofLede:
-    "Mixtura es un sistema que desarrollamos para un estudio de pilates: maneja sus turnos, sus pagos y sus recordatorios todos los días. Es otro rubro, pero la lógica es la misma — tu complejo puede tener el suyo, adaptado a tus canchas, tus horarios y tus precios por franja.",
-  proofPhotos: [
-    { src: "/mixtura/estudio-amplio.jpg", alt: "El estudio de Mixtura, donde el sistema funciona todos los días" },
-    { src: "/mixtura/sala-equipos.jpg", alt: "Sala de equipos del estudio Mixtura" },
-  ],
-  proofCardLabel: "Caso real · Mixtura",
+    "Cupio, el sistema de turnos que desarrollamos, ya está online: grilla de horarios, reservas las 24 horas, cupos, recordatorios y avisos de cancelación. Para tu complejo lo adaptamos a canchas, franjas horarias y señas con Mercado Pago.",
+  proofCta: { href: cupioLink("/", "reservas-canchas"), label: "Ver Cupio funcionando →" },
+  proofCardLabel: "A medida para tu complejo",
   proofCardTitle: "Lo que incluye tu sistema",
   features: [
     { strong: "Reservas online", rest: "— grilla por cancha y horario, los jugadores reservan solos." },
     { strong: "Señas y pagos con Mercado Pago", rest: "— integrados al momento de reservar." },
-    { strong: "Recordatorios y confirmaciones por WhatsApp", rest: "— automáticos." },
+    { strong: "Recordatorios y confirmaciones", rest: "— automáticos." },
     { strong: "Panel de ocupación", rest: "— ves todas tus canchas desde el celular." },
     { strong: "Facturación ARCA", rest: "— opcional." },
+  ],
+  faq: [
+    {
+      q: "¿Los jugadores tienen que descargar una app?",
+      a: "No. Reservan desde el navegador, con el link de tu complejo que compartís por WhatsApp o Instagram.",
+    },
+    {
+      q: "¿Se puede cobrar distinto según el horario?",
+      a: "Sí. Como lo armamos a medida, los precios por franja (mañana, noche, fin de semana) y el monto de la seña se configuran como trabaja tu complejo.",
+    },
+    { q: "¿Cuánto cuesta?", a: PRECIO_A_MEDIDA },
   ],
   finalHeading: "¿Lo vemos juntos en",
   finalHeadingEm: "15 minutos?",
@@ -267,17 +322,18 @@ const canchas: LandingConfig = {
     "Hola, tengo un complejo de canchas y quiero ver el sistema de reservas funcionando.",
   whatsappMessageNav:
     "Hola, tengo un complejo de canchas y quiero saber más del sistema de reservas.",
-  metaTitle: "Sistema de reservas para canchas de pádel y fútbol — Crestech Studio",
+  metaTitle: "Reservas online para canchas de pádel y fútbol 5 | Crestech",
   metaDescription:
-    "Los jugadores reservan online, dejan la seña por Mercado Pago y reciben confirmación por WhatsApp. Sistema de reservas a medida para canchas de pádel y fútbol en AMBA.",
+    "Los jugadores reservan online, dejan la seña por Mercado Pago y reciben la confirmación. Sistema de reservas a medida para canchas de pádel y fútbol 5.",
   ogTitle: "Tu cancha se reserva sola. Hasta a la medianoche.",
   ogDescription:
-    "Reservas online, señas por Mercado Pago y confirmaciones por WhatsApp para tu complejo de canchas.",
+    "Reservas online, señas por Mercado Pago y confirmaciones automáticas para tu complejo de canchas.",
 };
 
 const hoteles: LandingConfig = {
   slug: "hoteles",
-  eyebrow: "Para hoteles y alojamientos",
+  shortLabel: "Motor de reservas para hoteles",
+  eyebrow: "Motor de reservas directas para hoteles y alojamientos",
   h1: "Que te reserven a vos,",
   h1em: "no a Booking.",
   heroSub:
@@ -329,22 +385,30 @@ const hoteles: LandingConfig = {
     },
   ],
   proofEyebrow: "No es una promesa",
-  proofHeading: "Sistemas que ya funcionan",
-  proofHeadingEm: "todos los días",
+  proofHeading: "Sistemas de reservas",
+  proofHeadingEm: "que ya funcionan",
   proofLede:
-    "Sistemas de reservas y pagos que ya funcionan todos los días en negocios reales. Mixtura — reservas, pagos con Mercado Pago y confirmaciones por WhatsApp — es la prueba de que la base ya está hecha y probada. La misma base, adaptada a habitaciones, tarifas y temporadas.",
-  proofPhotos: [
-    { src: "/mixtura/estudio-amplio.jpg", alt: "El estudio de Mixtura, donde el sistema funciona todos los días" },
-    { src: "/mixtura/sala-equipos.jpg", alt: "Sala de equipos del estudio Mixtura" },
-  ],
-  proofCardLabel: "Caso real · Mixtura",
-  proofCardTitle: "La misma base, adaptada a tu hotel",
+    "Desarrollamos y mantenemos Cupio, un sistema de reservas online que ya está funcionando: disponibilidad en tiempo real, reservas las 24 horas y avisos automáticos. Para tu alojamiento lo llevamos a habitaciones, tarifas y temporadas, dentro de tu propia web.",
+  proofCta: { href: cupioLink("/", "hoteles"), label: "Ver Cupio funcionando →" },
+  proofCardLabel: "A medida para tu alojamiento",
+  proofCardTitle: "Lo que incluye tu motor de reservas",
   features: [
     { strong: "Motor de reservas en tu propia web", rest: "— disponibilidad en tiempo real, sin intermediarios." },
     { strong: "Pagos y señas online", rest: "— integrados al reservar." },
-    { strong: "Confirmaciones y recordatorios por WhatsApp", rest: "— automáticos." },
+    { strong: "Confirmaciones y recordatorios", rest: "— automáticos." },
     { strong: "Panel de ocupación y tarifas", rest: "— gestionás habitaciones y temporadas desde el celular." },
     { strong: "Web institucional incluida", rest: "— fotos, habitaciones y cómo llegar." },
+  ],
+  faq: [
+    {
+      q: "¿Tengo que dejar de publicar en Booking?",
+      a: "No. El motor suma tu canal directo: los huéspedes que te encuentran en Google o ya te conocen reservan con vos, sin comisión.",
+    },
+    {
+      q: "¿Necesito tener una web?",
+      a: "No, la hacemos nosotros: la web institucional con fotos, habitaciones y cómo llegar viene incluida.",
+    },
+    { q: "¿Cuánto cuesta?", a: PRECIO_A_MEDIDA },
   ],
   finalHeading: "¿Lo vemos juntos en",
   finalHeadingEm: "15 minutos?",
@@ -354,17 +418,18 @@ const hoteles: LandingConfig = {
     "Hola, tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
   whatsappMessageNav:
     "Hola, tengo un hotel/alojamiento y quiero saber más del motor de reservas directas.",
-  metaTitle: "Motor de reservas directas para hoteles y alojamientos — Crestech Studio",
+  metaTitle: "Motor de reservas directas para hoteles | Crestech",
   metaDescription:
-    "Web propia con motor de reservas directas para hoteles y alojamientos: disponibilidad online, pagos integrados y confirmaciones por WhatsApp. Menos comisiones, más reservas tuyas.",
+    "Web propia con motor de reservas directas: disponibilidad online, pagos integrados y confirmaciones automáticas. Menos comisiones, más reservas tuyas.",
   ogTitle: "Que te reserven a vos, no a Booking.",
   ogDescription:
-    "Web propia con motor de reservas directas: disponibilidad online, pagos integrados y confirmaciones por WhatsApp.",
+    "Web propia con motor de reservas directas: disponibilidad online, pagos integrados y confirmaciones automáticas.",
 };
 
 const inmobiliarias: LandingConfig = {
   slug: "inmobiliarias",
-  eyebrow: "Para inmobiliarias · AMBA",
+  shortLabel: "Web para inmobiliarias",
+  eyebrow: "Página web para inmobiliarias",
   h1: "Tu cartera de propiedades,",
   h1em: "en tu propia web.",
   heroSub:
@@ -417,10 +482,10 @@ const inmobiliarias: LandingConfig = {
     },
   ],
   proofEyebrow: "No es una promesa",
-  proofHeading: "Ya está online",
-  proofHeadingEm: "y funcionando",
+  proofHeading: "Ya la hicimos",
+  proofHeadingEm: "para una inmobiliaria real",
   proofLede:
-    "Crestodina Propiedades es una plataforma inmobiliaria que desarrollamos y está online: listado de propiedades en venta y alquiler, sistema de tasaciones online y consultas integradas. Tu inmobiliaria puede tener la suya, con tu marca y tu cartera.",
+    "Crestodina Propiedades es la plataforma que desarrollamos para una inmobiliaria familiar de Caballito con más de 40 años: listado de propiedades en venta y alquiler, tasaciones online y consultas integradas. Tu inmobiliaria puede tener la suya, con tu marca y tu cartera.",
   proofPhotos: [
     { src: "/crestodina/home.jpg", alt: "Home de Crestodina Propiedades con buscador de propiedades" },
     { src: "/crestodina/detalle.jpg", alt: "Ficha de una propiedad en Crestodina Propiedades" },
@@ -443,6 +508,17 @@ const inmobiliarias: LandingConfig = {
     { strong: "Panel de carga", rest: "— cargás y editás propiedades vos mismo, sin depender de nadie." },
     { strong: "Tasaciones online", rest: "— opcionales." },
   ],
+  faq: [
+    {
+      q: "¿Puedo cargar las propiedades yo mismo?",
+      a: "Sí. Tenés un panel para subir, editar y publicar propiedades con fotos, precio, descripción y estado.",
+    },
+    {
+      q: "¿Tengo que dejar de publicar en los portales?",
+      a: "No. Tu web suma un canal propio: cada propiedad tiene su ficha con tu marca, lista para compartir por WhatsApp con un link.",
+    },
+    { q: "¿Cuánto cuesta?", a: PRECIO_A_MEDIDA },
+  ],
   finalHeading: "¿Lo vemos juntos en",
   finalHeadingEm: "15 minutos?",
   finalLede:
@@ -451,9 +527,9 @@ const inmobiliarias: LandingConfig = {
     "Hola, tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
   whatsappMessageNav:
     "Hola, tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
-  metaTitle: "Web para inmobiliarias con tu cartera de propiedades — Crestech Studio",
+  metaTitle: "Página web para inmobiliarias con tu cartera | Crestech",
   metaDescription:
-    "Web propia para tu inmobiliaria: fichas de propiedades para compartir por WhatsApp, búsqueda por zona y precio, y consultas directas. Caso real online: Crestodina Propiedades.",
+    "Web propia para tu inmobiliaria: fichas de propiedades para compartir por WhatsApp, búsqueda por zona y precio, y consultas que llegan directo a vos.",
   ogTitle: "Tu cartera de propiedades, en tu propia web.",
   ogDescription:
     "Fichas para compartir por WhatsApp, búsqueda por zona y precio, y consultas directas a vos.",

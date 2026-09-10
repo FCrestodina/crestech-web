@@ -121,7 +121,8 @@
   gap: 56px;
   align-items: center;
 }
-.landing h1 {
+/* El titular grande es un <p>: el <h1> semántico es el eyebrow (la búsqueda a rankear). */
+.headline {
   font-family: var(--font-fraunces), serif;
   font-weight: 500;
   font-size: clamp(2.4rem, 5.2vw, 3.7rem);
@@ -129,7 +130,50 @@
   letter-spacing: -0.01em;
   margin: 20px 0 22px;
 }
-.landing h1 em {
+.proofCta {
+  display: inline-flex;
+  margin-top: 26px;
+}
+.faqList {
+  display: grid;
+  gap: 14px;
+  margin-top: 36px;
+  max-width: 780px;
+}
+.faqItem {
+  background: var(--surface);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+}
+.faqItem h3 {
+  font-family: var(--font-fraunces), serif;
+  font-weight: 500;
+  font-size: 1.12rem;
+  margin-bottom: 8px;
+}
+.faqItem p {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+.related {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 0.85rem;
+  color: var(--faint);
+}
+.related a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.related a:hover {
+  color: var(--gold-hi);
+}
+.headline em {
   font-style: italic;
   font-weight: 500;
   background: linear-gradient(120deg, var(--gold-hi), var(--gold) 55%, var(--gold-deep));

@@ -136,7 +136,7 @@ export default function PhoneDemo({ demo }: { demo: Demo }) {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Z" />
                 </svg>
-                WHATSAPP · AUTOMÁTICO
+                {demo.toastLabel ?? "WHATSAPP · AUTOMÁTICO"}
               </div>
               <span>{toastText}</span>
             </div>

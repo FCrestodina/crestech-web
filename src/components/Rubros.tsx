@@ -1,12 +1,25 @@
 import Link from "next/link";
 import Reveal from "./Reveal";
+import { cupioLink } from "@/data/landings";
 
 const casos = [
   {
     slug: "turnos-pilates",
-    rubro: "Estudios de Pilates",
-    caso: "Caso real · Mixtura",
-    text: "Reservas online, pagos y recordatorios automáticos por WhatsApp. Tus alumnas reservan solas y vos das la clase.",
+    rubro: "Estudios de pilates",
+    caso: "Con Cupio · sistema de turnos",
+    text: "Tus alumnas reservan solas desde el celular, con cupo por clase, lugar fijo semanal y recordatorios antes de cada clase.",
+  },
+  {
+    slug: "reservas-canchas",
+    rubro: "Canchas de pádel y fútbol",
+    caso: "A medida",
+    text: "Reservas online por cancha y horario, con la seña por Mercado Pago al momento de reservar.",
+  },
+  {
+    slug: "hoteles",
+    rubro: "Hoteles y alojamientos",
+    caso: "A medida",
+    text: "Motor de reservas directas en tu propia web: disponibilidad online y pago al reservar, sin comisión de portales.",
   },
   {
     slug: "inmobiliarias",
@@ -110,17 +123,19 @@ export default function Rubros() {
               margin: "48px auto 0",
             }}
           >
-            ¿Tu rubro no está acá? También desarrollamos sistemas para{" "}
-            <Link href="/reservas-canchas" style={{ color: "var(--gold-mid)", fontWeight: 600 }}>
-              canchas
-            </Link>
-            ,{" "}
-            <Link href="/hoteles" style={{ color: "var(--gold-mid)", fontWeight: 600 }}>
-              hoteles
-            </Link>
-            , comercios y más.{" "}
+            ¿Trabajás con turnos en otro rubro? Probá{" "}
+            <a
+              href={cupioLink("/", "home-rubros")}
+              target="_blank"
+              rel="noopener"
+              style={{ color: "var(--gold-mid)", fontWeight: 600 }}
+              data-umami-event="home-cupio"
+            >
+              Cupio
+            </a>{" "}
+            gratis 7 días. ¿Necesitás otra cosa?{" "}
             <a href="#contacto" style={{ color: "var(--gold-mid)", fontWeight: 600 }}>
-              Contanos el tuyo
+              Contanos tu caso
             </a>{" "}
             y lo armamos a medida.
           </p>

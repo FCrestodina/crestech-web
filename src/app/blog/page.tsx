@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "Blog — Crestech Studio",
   description: "Ideas concretas para hacer crecer tu negocio: turnos, marca, web y contenido.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog — Crestech Studio",
+    description: "Ideas concretas para hacer crecer tu negocio: turnos, marca, web y contenido.",
+    siteName: "Crestech Studio",
+    url: "/blog",
+    type: "website",
+    locale: "es_AR",
+  },
 };
 
 export default function BlogIndex() {

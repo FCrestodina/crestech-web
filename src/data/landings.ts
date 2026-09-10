@@ -182,8 +182,22 @@ const pilates: LandingConfig = {
   proofHeading: "Ya está online:",
   proofHeadingEm: "probalo hoy",
   proofLede:
-    "Cupio es el sistema de turnos que desarrollamos y mantenemos nosotros. Está funcionando en cupio.com.ar: podés crear la agenda de tu estudio y probarlo gratis 7 días, o escribirnos y lo armamos juntos con tus horarios.",
+    "Cupio es el sistema de turnos que desarrollamos y mantenemos nosotros. Está funcionando en cupio.com.ar: podés crear la agenda de tu estudio y probarlo gratis 7 días, o escribirnos y lo armamos juntos con tus horarios. (Las capturas son de una sala de ejemplo.)",
   proofCta: { href: cupioLink("/turnos/pilates", "turnos-pilates"), label: "Ver Cupio para estudios de pilates →" },
+  proofPhotos: [
+    { src: "/cupio/app-sala.png", alt: "Vista de la alumna en Cupio: su próxima clase y su lugar fijo semanal" },
+    { src: "/cupio/app-reservar.png", alt: "Clases del día en Cupio con los lugares libres, una clase completa y la lista de espera" },
+  ],
+  proofPhotosPhone: true,
+  adminEyebrow: "Del lado del estudio",
+  adminHeading: "Y vos ves",
+  adminHeadingEm: "cómo viene cada clase",
+  adminLede:
+    "La agenda del mes con la ocupación de cada clase y, en cada día, quién viene. Desde la compu o el celular.",
+  adminPhotos: [
+    { src: "/cupio/admin-agenda.png", alt: "Agenda del mes en Cupio con la ocupación de cada clase por color" },
+    { src: "/cupio/admin-dia.png", alt: "Clases de un día en Cupio con las alumnas anotadas en cada una" },
+  ],
   proofCardLabel: "Cupio · sistema de turnos",
   proofCardTitle: "Lo que incluye",
   features: [

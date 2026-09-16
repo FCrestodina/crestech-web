@@ -15,6 +15,15 @@
   --line-soft: rgba(244, 241, 232, 0.08);
   --wa: #25d366;
   --radius: 14px;
+  --header-bg: rgba(10, 10, 10, 0.82);
+  --on-accent: #0a0a0a;
+  --btn-bg: linear-gradient(120deg, var(--gold-hi), var(--gold) 60%, #b9952e);
+  --btn-radius: 99px;
+  --em-grad: linear-gradient(120deg, var(--gold-hi), var(--gold) 55%, var(--gold-deep));
+  --em-style: italic;
+  --display: var(--font-fraunces), serif;
+  --display-weight: 500;
+  --display-case: none;
   --max: 1100px;
 
   background: var(--bg);
@@ -27,9 +36,9 @@
 
 .landing ::selection {
   background: var(--gold);
-  color: #0a0a0a;
+  color: var(--on-accent);
 }
-.landing a {
+.landing :where(a) {
   color: inherit;
 }
 .landing img {
@@ -52,7 +61,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 10, 10, 0.82);
+  background: var(--header-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line-soft);
 }
@@ -83,12 +92,12 @@
   color: var(--gold-hi);
   border: 1px solid var(--line);
   padding: 8px 16px;
-  border-radius: 99px;
+  border-radius: var(--btn-radius);
   transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 .navCta:hover {
   background: var(--gold);
-  color: #0a0a0a;
+  color: var(--on-accent);
   border-color: var(--gold);
 }
 
@@ -123,8 +132,9 @@
 }
 /* El titular grande es un <p>: el <h1> semántico es el eyebrow (la búsqueda a rankear). */
 .headline {
-  font-family: var(--font-fraunces), serif;
-  font-weight: 500;
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  text-transform: var(--display-case);
   font-size: clamp(2.4rem, 5.2vw, 3.7rem);
   line-height: 1.08;
   letter-spacing: -0.01em;
@@ -147,8 +157,9 @@
   padding: 22px 24px;
 }
 .faqItem h3 {
-  font-family: var(--font-fraunces), serif;
-  font-weight: 500;
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  text-transform: var(--display-case);
   font-size: 1.12rem;
   margin-bottom: 8px;
 }
@@ -174,9 +185,9 @@
   color: var(--gold-hi);
 }
 .headline em {
-  font-style: italic;
+  font-style: var(--em-style);
   font-weight: 500;
-  background: linear-gradient(120deg, var(--gold-hi), var(--gold) 55%, var(--gold-deep));
+  background: var(--em-grad);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -202,13 +213,13 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(120deg, var(--gold-hi), var(--gold) 60%, #b9952e);
-  color: #0d0c07;
+  background: var(--btn-bg);
+  color: var(--on-accent);
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;
   padding: 15px 26px;
-  border-radius: 99px;
+  border-radius: var(--btn-radius);
   box-shadow: 0 6px 28px rgba(var(--gold-rgb), 0.22);
   transition: transform 0.15s, box-shadow 0.2s;
 }
@@ -390,15 +401,16 @@
   border-top: 1px solid var(--line-soft);
 }
 .landing h2 {
-  font-family: var(--font-fraunces), serif;
-  font-weight: 500;
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  text-transform: var(--display-case);
   font-size: clamp(1.7rem, 3.4vw, 2.4rem);
   line-height: 1.15;
   margin: 16px 0 14px;
   letter-spacing: -0.01em;
 }
 .landing h2 em {
-  font-style: italic;
+  font-style: var(--em-style);
   color: var(--gold-hi);
 }
 .lede {
@@ -426,8 +438,9 @@
   transform: translateY(-3px);
 }
 .pain h3 {
-  font-family: var(--font-fraunces), serif;
-  font-weight: 500;
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  text-transform: var(--display-case);
   font-size: 1.18rem;
   margin-bottom: 10px;
 }
@@ -513,8 +526,9 @@
   text-transform: uppercase;
 }
 .proofCard h3 {
-  font-family: var(--font-fraunces), serif;
-  font-weight: 500;
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  text-transform: var(--display-case);
   font-size: 1.5rem;
   margin: 10px 0 12px;
 }
@@ -572,8 +586,9 @@
   color: var(--gold);
 }
 .step h3 {
-  font-family: var(--font-fraunces), serif;
-  font-weight: 500;
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  text-transform: var(--display-case);
   font-size: 1.2rem;
   margin: 12px 0 8px;
 }
@@ -596,8 +611,9 @@
   padding: 30px 28px;
 }
 .panel h3 {
-  font-family: var(--font-fraunces), serif;
-  font-weight: 500;
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  text-transform: var(--display-case);
   font-size: 1.3rem;
   margin: 12px 0 10px;
 }
@@ -680,5 +696,397 @@
   }
   .proofGrid {
     gap: 28px;
+  }
+}
+
+/* =====================================================================
+   Temas por rubro (data-theme en .landing). Cada rubro tiene paleta,
+   tipografía y layout propios para que las landings no sean clones.
+   El mockup del teléfono queda siempre oscuro: en los temas claros se
+   le redefinen los tokens adentro de .phone.
+   ===================================================================== */
+
+/* ---------- calma · estudios de pilates (claro, cálido, redondeado) ---------- */
+.landing[data-theme="calma"] {
+  --bg: #f5efe6;
+  --surface: #fffaf3;
+  --surface-2: #fbf1e4;
+  --ink: #2d2621;
+  --muted: #5f544b;
+  --faint: #766a60;
+  --gold: #b4603f;
+  --gold-rgb: 180, 96, 63;
+  --gold-hi: #9a4a2c;
+  --gold-deep: #7a3a22;
+  --line: rgba(180, 96, 63, 0.24);
+  --line-soft: rgba(45, 38, 33, 0.1);
+  --header-bg: rgba(245, 239, 230, 0.86);
+  --on-accent: #fffaf3;
+  --btn-bg: linear-gradient(120deg, #a5543a, #8f4327);
+  --em-grad: linear-gradient(120deg, #c9765a, #8f4327);
+  --radius: 24px;
+  --display-weight: 400;
+}
+.landing[data-theme="calma"] .hero::before {
+  inset: -30% -10% auto 45%;
+  height: 120%;
+  background: radial-gradient(circle at 50% 50%, rgba(201, 118, 90, 0.16), transparent 62%);
+}
+.landing[data-theme="calma"] .pain,
+.landing[data-theme="calma"] .panel,
+.landing[data-theme="calma"] .faqItem {
+  border-color: transparent;
+  box-shadow: 0 10px 30px rgba(92, 60, 40, 0.07);
+}
+.landing[data-theme="calma"] .tag {
+  background: rgba(180, 96, 63, 0.1);
+  border-color: transparent;
+}
+.landing[data-theme="calma"] .step {
+  border-top: 0;
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+}
+.landing[data-theme="calma"] .final {
+  background: radial-gradient(ellipse at 50% 0%, rgba(201, 118, 90, 0.18), transparent 70%);
+}
+
+/* ---------- cancha · pádel y fútbol 5 (oscuro, lima, deportivo) ---------- */
+.landing[data-theme="cancha"] {
+  --bg: #0a0d0b;
+  --surface: #111612;
+  --surface-2: #151c16;
+  --ink: #eef3ea;
+  --muted: #a1ab9d;
+  --faint: #838e80;
+  --gold: #c6f135;
+  --gold-rgb: 198, 241, 53;
+  --gold-hi: #d9ff5c;
+  --gold-deep: #8fb81a;
+  --line: rgba(198, 241, 53, 0.2);
+  --line-soft: rgba(238, 243, 234, 0.08);
+  --header-bg: rgba(10, 13, 11, 0.86);
+  --on-accent: #0a0d0b;
+  --btn-bg: #c6f135;
+  --btn-radius: 4px;
+  --em-grad: linear-gradient(90deg, #d9ff5c, #c6f135);
+  --em-style: normal;
+  --radius: 4px;
+  --display: var(--font-barlow), sans-serif;
+  --display-weight: 700;
+  --display-case: uppercase;
+}
+.landing[data-theme="cancha"] .hero::before {
+  inset: 0;
+  height: auto;
+  background-image:
+    linear-gradient(rgba(198, 241, 53, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(198, 241, 53, 0.07) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse at 30% 50%, #000 10%, transparent 70%);
+}
+.landing[data-theme="cancha"] .heroGrid {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+.landing[data-theme="cancha"] .heroGrid > :first-child {
+  order: 2;
+}
+.landing[data-theme="cancha"] .headline {
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+.landing[data-theme="cancha"] h2 {
+  font-size: clamp(2rem, 4.4vw, 3rem);
+  line-height: 1;
+  letter-spacing: 0;
+}
+.landing[data-theme="cancha"] .btnWa {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.92rem;
+}
+.landing[data-theme="cancha"] .painGrid {
+  counter-reset: dolor;
+}
+.landing[data-theme="cancha"] .pain {
+  counter-increment: dolor;
+  border-left: 3px solid var(--gold);
+}
+.landing[data-theme="cancha"] .pain::before {
+  content: "0" counter(dolor);
+  display: block;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 3.4rem;
+  line-height: 1;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.landing[data-theme="cancha"] .tag {
+  border-radius: 2px;
+}
+.landing[data-theme="cancha"] .final {
+  --ink: #0a0d0b;
+  --muted: #26301a;
+  --faint: #34401f;
+  --gold: #0a0d0b;
+  --gold-hi: #0a0d0b;
+  --btn-bg: #0a0d0b;
+  --on-accent: #c6f135;
+  background: #c6f135;
+  color: var(--ink);
+}
+.landing[data-theme="cancha"] .final h2 em {
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 6px;
+}
+
+/* ---------- hotel · alojamientos (azul noche, bronce, editorial) ---------- */
+.landing[data-theme="hotel"] {
+  --bg: #0b1320;
+  --surface: #101a2b;
+  --surface-2: #152137;
+  --ink: #f1ece2;
+  --muted: #aab1be;
+  --faint: #8d96a6;
+  --gold: #c9a46b;
+  --gold-rgb: 201, 164, 107;
+  --gold-hi: #e6c794;
+  --gold-deep: #8c6a3a;
+  --line: rgba(201, 164, 107, 0.22);
+  --line-soft: rgba(241, 236, 226, 0.08);
+  --header-bg: rgba(11, 19, 32, 0.86);
+  --on-accent: #0b1320;
+  --btn-bg: linear-gradient(120deg, #e6c794, #c9a46b);
+  --btn-radius: 2px;
+  --radius: 2px;
+  --display: var(--font-cormorant), serif;
+  --display-weight: 500;
+}
+.landing[data-theme="hotel"] .hero {
+  padding: 88px 0 72px;
+}
+.landing[data-theme="hotel"] .hero::before {
+  inset: -40% -20% auto -20%;
+  height: 90%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(201, 164, 107, 0.12), transparent 60%);
+}
+.landing[data-theme="hotel"] .heroGrid {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  gap: 64px;
+}
+.landing[data-theme="hotel"] .phone {
+  text-align: left;
+}
+.landing[data-theme="hotel"] .headline {
+  font-size: clamp(2.8rem, 6.4vw, 4.8rem);
+  line-height: 1.02;
+}
+.landing[data-theme="hotel"] .heroSub {
+  margin-inline: auto;
+  max-width: 54ch;
+}
+.landing[data-theme="hotel"] .ctaRow {
+  justify-content: center;
+}
+.landing[data-theme="hotel"] .btnWa,
+.landing[data-theme="hotel"] .navCta {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+}
+.landing[data-theme="hotel"] h2 {
+  font-size: clamp(2.1rem, 4.2vw, 3rem);
+}
+.landing[data-theme="hotel"] :global(#dolores),
+.landing[data-theme="hotel"] :global(#proceso),
+.landing[data-theme="hotel"] :global(#preguntas) {
+  text-align: center;
+}
+.landing[data-theme="hotel"] .lede,
+.landing[data-theme="hotel"] .faqList {
+  margin-inline: auto;
+}
+.landing[data-theme="hotel"] .pain {
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--gold);
+  border-radius: 0;
+  padding: 30px 8px 0;
+}
+.landing[data-theme="hotel"] .pain:hover {
+  transform: none;
+}
+.landing[data-theme="hotel"] .pain h3 {
+  font-size: 1.6rem;
+  font-style: italic;
+}
+.landing[data-theme="hotel"] .tag {
+  border: 0;
+  padding: 0;
+}
+.landing[data-theme="hotel"] .faqItem {
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 22px 0;
+}
+.landing[data-theme="hotel"] .faqItem h3 {
+  font-size: 1.4rem;
+}
+.landing[data-theme="hotel"] .proofCard,
+.landing[data-theme="hotel"] .panel {
+  outline: 1px solid var(--line);
+  outline-offset: -8px;
+}
+.landing[data-theme="hotel"] .final h2 {
+  font-size: clamp(2.4rem, 5.4vw, 3.8rem);
+}
+
+/* ---------- inmo · inmobiliarias (claro, verde petróleo, sobrio) ---------- */
+.landing[data-theme="inmo"] {
+  --bg: #f4f5f2;
+  --surface: #ffffff;
+  --surface-2: #fafbf9;
+  --ink: #14201c;
+  --muted: #4b5752;
+  --faint: #5f6b66;
+  --gold: #1d6b58;
+  --gold-rgb: 29, 107, 88;
+  --gold-hi: #1d6b58;
+  --gold-deep: #134a3d;
+  --line: rgba(29, 107, 88, 0.22);
+  --line-soft: rgba(20, 32, 28, 0.1);
+  --header-bg: rgba(244, 245, 242, 0.9);
+  --on-accent: #ffffff;
+  --btn-bg: #1d6b58;
+  --btn-radius: 8px;
+  --em-grad: linear-gradient(90deg, #1d6b58, #1d6b58);
+  --em-style: normal;
+  --radius: 10px;
+  --display: var(--font-manrope), sans-serif;
+  --display-weight: 700;
+}
+.landing[data-theme="inmo"] .hero::before {
+  display: none;
+}
+.landing[data-theme="inmo"] .heroGrid {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+.landing[data-theme="inmo"] .heroGrid > :first-child {
+  order: 2;
+}
+.landing[data-theme="inmo"] .headline,
+.landing[data-theme="inmo"] h2 {
+  letter-spacing: -0.03em;
+}
+.landing[data-theme="inmo"] .headline em,
+.landing[data-theme="inmo"] h2 em {
+  font-weight: 800;
+}
+.landing[data-theme="inmo"] .painGrid {
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line-soft);
+}
+.landing[data-theme="inmo"] .pain {
+  display: grid;
+  grid-template-columns: 150px 1fr 1.5fr;
+  gap: 28px;
+  align-items: baseline;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--line-soft);
+  border-radius: 0;
+  padding: 28px 0;
+}
+.landing[data-theme="inmo"] .pain:hover {
+  transform: none;
+  border-color: var(--line-soft);
+}
+.landing[data-theme="inmo"] .pain .tag,
+.landing[data-theme="inmo"] .pain h3 {
+  margin: 0;
+}
+.landing[data-theme="inmo"] .tag {
+  justify-self: start;
+  border-radius: 6px;
+}
+.landing[data-theme="inmo"] .pain p strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.landing[data-theme="inmo"] .proofCard,
+.landing[data-theme="inmo"] .panel,
+.landing[data-theme="inmo"] .faqItem {
+  box-shadow: 0 1px 2px rgba(20, 32, 28, 0.06);
+}
+.landing[data-theme="inmo"] .step::before {
+  content: counter(paso);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 99px;
+  background: var(--gold);
+  color: var(--on-accent);
+  letter-spacing: 0;
+  font-size: 0.9rem;
+}
+.landing[data-theme="inmo"] .step {
+  border-top-color: var(--line-soft);
+}
+.landing[data-theme="inmo"] .final {
+  --ink: #f4f5f2;
+  --muted: #b6c2bc;
+  --faint: #9aa7a1;
+  --gold: #5cc6a4;
+  --gold-hi: #7fd9bb;
+  --btn-bg: #5cc6a4;
+  --on-accent: #0c1512;
+  --em-grad: linear-gradient(90deg, #7fd9bb, #7fd9bb);
+  background: #14201c;
+  color: var(--ink);
+}
+
+/* Teléfono siempre oscuro en los temas claros */
+.landing[data-theme="calma"] .phone,
+.landing[data-theme="inmo"] .phone {
+  --surface: #121210;
+  --ink: #f4f1e8;
+  --muted: #a39d8e;
+  --faint: #8a8577;
+  --line-soft: rgba(244, 241, 232, 0.08);
+  color: var(--ink);
+}
+.landing[data-theme="calma"] .phone {
+  --gold: #e0937a;
+  --gold-hi: #f2b8a2;
+  --gold-rgb: 224, 147, 122;
+}
+.landing[data-theme="inmo"] .phone {
+  --gold: #4fbf9c;
+  --gold-hi: #7fd9bb;
+  --gold-rgb: 79, 191, 156;
+}
+
+@media (max-width: 900px) {
+  .landing[data-theme="cancha"] .heroGrid,
+  .landing[data-theme="inmo"] .heroGrid {
+    grid-template-columns: 1fr;
+  }
+  .landing[data-theme="cancha"] .heroGrid > :first-child,
+  .landing[data-theme="inmo"] .heroGrid > :first-child {
+    order: 0;
+  }
+  .landing[data-theme="inmo"] .pain {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }

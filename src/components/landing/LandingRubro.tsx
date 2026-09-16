@@ -53,7 +53,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
   };
 
   return (
-    <div className={`${styles.landing} ${landingFontVars}`}>
+    <div className={`${styles.landing} ${landingFontVars(config.theme)}`} data-theme={config.theme}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}

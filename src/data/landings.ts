@@ -47,8 +47,12 @@ export interface CtaLink {
   label: string;
 }
 
+// Identidad visual de la landing: paleta, tipografía y layout (ver landing.module.css).
+export type LandingTheme = "calma" | "cancha" | "hotel" | "inmo";
+
 export interface LandingConfig {
   slug: string;
+  theme: LandingTheme;
   shortLabel: string; // etiqueta corta para los links entre rubros
   eyebrow: string; // es el <h1> de la página: la búsqueda que queremos rankear
   h1: string; // titular grande (visual); se renderiza como <p>
@@ -115,6 +119,7 @@ const PRECIO_A_MEDIDA =
 
 const pilates: LandingConfig = {
   slug: "turnos-pilates",
+  theme: "calma",
   shortLabel: "Turnos para estudios de pilates",
   eyebrow: "Sistema de turnos para estudios de pilates",
   h1: "Tus alumnas reservan solas.",
@@ -251,6 +256,7 @@ const pilates: LandingConfig = {
 
 const canchas: LandingConfig = {
   slug: "reservas-canchas",
+  theme: "cancha",
   shortLabel: "Reservas para canchas",
   eyebrow: "Sistema de reservas para canchas de pádel y fútbol 5",
   h1: "Tu cancha se reserva sola.",
@@ -328,8 +334,8 @@ const canchas: LandingConfig = {
     },
     { q: "¿Cuánto cuesta?", a: PRECIO_A_MEDIDA },
   ],
-  finalHeading: "¿Lo vemos juntos en",
-  finalHeadingEm: "15 minutos?",
+  finalHeading: "¿Cuántas canchas tenés?",
+  finalHeadingEm: "Arrancamos por ahí.",
   finalLede:
     "Te mostramos el sistema funcionando y nos contás cómo trabaja tu complejo. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
@@ -346,6 +352,7 @@ const canchas: LandingConfig = {
 
 const hoteles: LandingConfig = {
   slug: "hoteles",
+  theme: "hotel",
   shortLabel: "Motor de reservas para hoteles",
   eyebrow: "Motor de reservas directas para hoteles y alojamientos",
   h1: "Que te reserven a vos,",
@@ -424,8 +431,8 @@ const hoteles: LandingConfig = {
     },
     { q: "¿Cuánto cuesta?", a: PRECIO_A_MEDIDA },
   ],
-  finalHeading: "¿Lo vemos juntos en",
-  finalHeadingEm: "15 minutos?",
+  finalHeading: "La próxima reserva,",
+  finalHeadingEm: "que sea directa.",
   finalLede:
     "Te mostramos el motor de reservas funcionando y nos contás cómo trabaja tu alojamiento. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
@@ -442,6 +449,7 @@ const hoteles: LandingConfig = {
 
 const inmobiliarias: LandingConfig = {
   slug: "inmobiliarias",
+  theme: "inmo",
   shortLabel: "Web para inmobiliarias",
   eyebrow: "Página web para inmobiliarias",
   h1: "Tu cartera de propiedades,",
@@ -533,8 +541,8 @@ const inmobiliarias: LandingConfig = {
     },
     { q: "¿Cuánto cuesta?", a: PRECIO_A_MEDIDA },
   ],
-  finalHeading: "¿Lo vemos juntos en",
-  finalHeadingEm: "15 minutos?",
+  finalHeading: "¿Vemos cómo quedaría",
+  finalHeadingEm: "tu cartera online?",
   finalLede:
     "Te mostramos cómo se vería tu web con tu cartera y nos contás cómo trabajás hoy. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:

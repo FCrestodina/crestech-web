@@ -1,9 +1,15 @@
+# CI mínimo: typecheck + lint + build en cada push a develop/main y en cada PR (develop sumado el
+# 2026-09-16, acción 8 de la optimización del sistema: antes solo corría en main).
 name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [develop, main]
   pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:

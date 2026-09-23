@@ -26,7 +26,15 @@ export function tachar(texto: string | undefined): string | undefined {
 export function esRuido(error: unknown): boolean {
   if (!(error instanceof Error)) return false;
   const codigo = (error as { code?: string }).code;
-  return error.name === "AbortError" || codigo === "ECONNRESET" || codigo === "EPIPE";
+  return (
+    error.name === "AbortError" ||
+    codigo === "ECONNRESET" ||
+    codigo === "EPIPE" ||
+    // Next responde 404 cuando piden una página dinámica que no existe (dynamicParams = false) y
+    // lo hace tirando esta excepción interna, que además loguea con console.error. Es un link
+    // roto o un bot (en Crestech, /favicon.ico caía en /[rubro]), nunca algo para arreglar.
+    error.message === "Internal: NoFallbackError"
+  );
 }
 
 // Agrupación: sin source maps, el stack es del bundle compilado y funciones distintas comparten

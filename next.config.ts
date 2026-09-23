@@ -55,6 +55,12 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Navegadores y bots piden /favicon.ico aunque el HTML declare otro ícono. Sin archivo, caía en
+  // /[rubro] como si fuera un rubro, daba 404 y Next lo logueaba como error (Sentry, 2026-09-23).
+  // Se sirve el mismo ícono de app/icon.tsx (PNG, que los navegadores aceptan con ese nombre).
+  async rewrites() {
+    return [{ source: "/favicon.ico", destination: "/icon" }];
+  },
 };
 
 // Sentry: al terminar el build sube los source maps, así los errores muestran el archivo y la línea

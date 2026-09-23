@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: "¿Qué pasa si necesito cambios después de la entrega?",
-    a: "Cada proyecto incluye rondas de revisión durante la producción y 15 días de soporte post-entrega para ajustes menores. Los cambios de mayor alcance se cotizan por separado.",
+    a: "Cada proyecto incluye rondas de revisión durante la producción. En la web y los sistemas, después de la entrega queda un servicio mensual que cubre el servidor, que todo siga andando y los ajustes chicos; el sitio funciona mientras ese servicio esté al día. Los cambios de mayor alcance se cotizan por separado.",
   },
   {
     q: "¿Cómo se realizan los pagos?",

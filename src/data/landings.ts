@@ -115,7 +115,7 @@ export function cupioLink(path: string, campaign: string): string {
 }
 
 const PRECIO_A_MEDIDA =
-  "Presupuesto cerrado según lo que necesites: pagás una vez por el desarrollo y, si querés, un mantenimiento mensual opcional para que nos ocupemos de que todo siga funcionando.";
+  "Presupuesto cerrado según lo que necesites: el desarrollo se paga en dos partes, la mitad al arrancar y la mitad en la entrega, y después queda un servicio mensual que cubre el servidor, los ajustes chicos y que todo siga funcionando.";
 
 const pilates: LandingConfig = {
   slug: "turnos-pilates",

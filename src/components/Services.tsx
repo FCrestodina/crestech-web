@@ -30,7 +30,7 @@ const services: Service[] = [
     ),
     title: "Diseño & Desarrollo Web",
     description:
-      "Sitios web y sistemas a medida: turnos, reservas y catálogos. Incluye mantenimiento opcional.",
+      "Sitios web y sistemas a medida: turnos, reservas y catálogos. Con servicio mensual de mantenimiento.",
     tags: ["Sitio web", "Sistemas a medida", "Responsive", "Mantenimiento"],
   },
   {

@@ -287,8 +287,8 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                         Somos un estudio chico. El presupuesto es cerrado y pensado para tu negocio.
                       </p>
                       <p>
-                        Pagás una vez por el desarrollo y, si querés, un mantenimiento mensual opcional para que
-                        nos ocupemos de que todo siga funcionando.
+                        El desarrollo se paga en dos partes, la mitad al arrancar y la mitad en la entrega. Después
+                        queda un servicio mensual que cubre el servidor, los ajustes chicos y que todo siga funcionando.
                       </p>
                     </>
                   )}

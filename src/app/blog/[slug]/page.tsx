@@ -103,7 +103,7 @@ export default async function PostPage({
       />
       <article style={{ maxWidth: 720, margin: "0 auto" }}>
         <Link href="/blog" style={{ color: "var(--gold-mid)", fontSize: 13, fontWeight: 600 }}>
-          ← Blog
+          Blog
         </Link>
         <h1
           className="font-display"

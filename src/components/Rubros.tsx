@@ -105,7 +105,7 @@ export default function Rubros() {
                   {c.text}
                 </p>
                 <span style={{ fontSize: 12, letterSpacing: "0.1em", color: "var(--gold-mid)", fontWeight: 600 }}>
-                  Ver la página →
+                  Ver la página
                 </span>
               </Link>
             </Reveal>
@@ -123,7 +123,7 @@ export default function Rubros() {
               margin: "48px auto 0",
             }}
           >
-            ¿Trabajás con turnos en otro rubro? Probá{" "}
+            Para turnos en otros rubros, probá{" "}
             <a
               href={cupioLink("/", "home-rubros")}
               target="_blank"
@@ -133,7 +133,7 @@ export default function Rubros() {
             >
               Cupio
             </a>{" "}
-            gratis 7 días. ¿Necesitás otra cosa?{" "}
+            gratis 7 días. Para otro tipo de sistema,{" "}
             <a href="#contacto" style={{ color: "var(--gold-mid)", fontWeight: 600 }}>
               Contanos tu caso
             </a>{" "}

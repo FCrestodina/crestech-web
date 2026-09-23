@@ -95,7 +95,7 @@ export const SECUENCIAS: SecuenciaDidactica[] = [
         nombre: "Generador de QR",
         momento: "Armado de la actividad",
         descripcion:
-          "Genera los QR de cada operación —compras, descuentos y reintegros— para imprimir o proyectar. Sirve para una demostración con proyector o para una feria de comercios con varios puestos.",
+          "Genera los QR de cada operación (compras, descuentos y reintegros) para imprimir o proyectar. Sirve para una demostración con proyector o para una feria de comercios con varios puestos.",
         url: `${BILLETERA}/generar`,
       },
       {

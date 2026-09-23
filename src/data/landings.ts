@@ -125,7 +125,7 @@ const pilates: LandingConfig = {
   h1: "Tus alumnas reservan solas.",
   h1em: "Vos solo das la clase.",
   heroSub:
-    "Cupio, nuestro sistema de turnos online: **tus alumnas ven los lugares libres, reservan desde el celular y reciben un recordatorio antes de la clase**. Lo configuramos con vos y lo dejamos andando.",
+    "Cupio, nuestro sistema de turnos online: tus alumnas ven los lugares libres, reservan desde el celular y reciben un recordatorio antes de la clase. Lo configuramos con vos y lo dejamos andando.",
   heroSecondary: { href: cupioLink("/registro", "turnos-pilates"), label: "Probar gratis 7 días" },
   demo: {
     appTitle: "TU ESTUDIO",
@@ -142,24 +142,24 @@ const pilates: LandingConfig = {
       {
         slot: 1,
         clock: "23:41",
-        toast: "Reserva confirmada: Reformer, mañana 09:00. ¡Te esperamos, Sofi!",
+        toast: "Reserva confirmada: Reformer, mañana 09:00. Te esperamos, Sofi.",
       },
       {
         slot: 0,
         clock: "09:15",
         toast:
-          "Recordatorio: mañana tenés Reformer 08:00. Si no podés venir, cancelá desde Cupio y liberás el lugar 🙌",
+          "Recordatorio: mañana tenés Reformer 08:00. Si no podés venir, cancelá desde Cupio y liberás el lugar.",
       },
       {
         slot: 2,
         clock: "08:31",
         bookedLabel: "Lugar liberado",
-        toast: "Se liberó un lugar en Mat 10:00 y estabas primera en la lista de espera. ¡Reservalo!",
+        toast: "Se liberó un lugar en Mat 10:00 y estabas primera en la lista de espera. Reservalo.",
       },
     ],
     caption: "Son las 23:41. Una alumna acaba de reservar. Vos no contestaste nada.",
   },
-  painsEyebrow: "¿Te suena?",
+  painsEyebrow: "Problemas de todos los días",
   painsHeading: "El cuaderno de turnos te está",
   painsHeadingEm: "robando horas",
   painsLede: "Dar clases es tu trabajo. Contestar mensajes a toda hora, no.",
@@ -168,27 +168,27 @@ const pilates: LandingConfig = {
       tag: "Reservas",
       title: "Turnos por WhatsApp, uno por uno",
       body:
-        'Anotás en un cuaderno o un Excel, los horarios se pisan, y contestás "¿hay lugar mañana?" veinte veces por día. **Con Cupio, cada alumna ve los lugares libres y reserva sola** — de día o a las 11 de la noche.',
+        'Anotás en un cuaderno o un Excel, los horarios se pisan, y contestás "¿hay lugar mañana?" veinte veces por día. Con Cupio, cada alumna ve los lugares libres y reserva sola, de día o a las 11 de la noche.',
     },
     {
       tag: "Ausentismo",
       title: "Camas vacías que nadie avisó",
       body:
-        "La alumna se olvida, no avisa, y esa cama quedó vacía cuando otra la quería. **Cupio le manda un recordatorio al celular antes de la clase**, y si cancela a tiempo, el lugar se libera y le avisa a la primera de la lista de espera.",
+        "La alumna se olvida, no avisa, y esa cama quedó vacía cuando otra la quería. Cupio le manda un recordatorio al celular antes de la clase. Si cancela a tiempo, el lugar se libera y le avisa a la primera de la lista de espera.",
     },
     {
       tag: "Fijas",
       title: "Las fijas y los packs, anotados a mano",
       body:
-        "La que viene siempre martes y jueves, el pack de 8 clases, quién ya usó las suyas. **Con Cupio cada alumna deja su lugar fijo reservado todas las semanas**, y si trabajás con packs, ponés un tope de clases por mes, igual para todas.",
+        "La que viene siempre martes y jueves, el pack de 8 clases, quién ya usó las suyas. Con Cupio cada alumna deja su lugar fijo reservado todas las semanas. Si trabajás con packs, ponés un tope de clases por mes, igual para todas.",
     },
   ],
-  proofEyebrow: "No es una promesa",
+  proofEyebrow: "Cupio ya está en uso",
   proofHeading: "Ya está online:",
   proofHeadingEm: "probalo hoy",
   proofLede:
     "Cupio es el sistema de turnos que desarrollamos y mantenemos nosotros. Está funcionando en cupio.com.ar: podés crear la agenda de tu estudio y probarlo gratis 7 días, o escribirnos y lo armamos juntos con tus horarios. (Las capturas son de una sala de ejemplo.)",
-  proofCta: { href: cupioLink("/turnos/pilates", "turnos-pilates"), label: "Ver Cupio para estudios de pilates →" },
+  proofCta: { href: cupioLink("/turnos/pilates", "turnos-pilates"), label: "Ver Cupio para estudios de pilates" },
   proofPhotos: [
     { src: "/cupio/app-sala.png", alt: "Vista de la alumna en Cupio: su próxima clase y su lugar fijo semanal" },
     { src: "/cupio/app-reservar.png", alt: "Clases del día en Cupio con los lugares libres, una clase completa y la lista de espera" },
@@ -206,18 +206,18 @@ const pilates: LandingConfig = {
   proofCardLabel: "Cupio · sistema de turnos",
   proofCardTitle: "Lo que incluye",
   features: [
-    { strong: "Clases con cupo", rest: "— definís cuántas camas o reformers tiene cada clase, y reservan hasta que se llena." },
-    { strong: "Lugar fijo semanal", rest: "— la alumna de todos los martes deja su lugar reservado todas las semanas." },
-    { strong: "Lista de espera", rest: "— si la clase está llena, se anota y le avisamos cuando se libera un lugar." },
-    { strong: "Recordatorios en el celular", rest: "— automáticos, antes de cada clase, para bajar las ausencias." },
-    { strong: "Tope de clases por mes", rest: "— cuántas clases puede reservar cada alumna en el mes, si trabajás con un pack." },
-    { strong: "Agenda y lista de asistencia", rest: "— ves quién viene a cada clase y marcás quién faltó." },
+    { strong: "Clases con cupo", rest: "definís cuántas camas o reformers tiene cada clase." },
+    { strong: "Lugar fijo semanal", rest: "la alumna que viene todos los martes deja su lugar reservado para todas las semanas, sin tener que reservarlo cada vez." },
+    { strong: "Lista de espera", rest: "si la clase está llena, se anota. Cuando alguien cancela, le avisamos." },
+    { strong: "Recordatorios en el celular", rest: "automáticos, antes de cada clase, para bajar las ausencias." },
+    { strong: "Tope de clases por mes", rest: "cuántas clases puede reservar cada alumna en el mes, si trabajás con un pack." },
+    { strong: "Agenda y lista de asistencia", rest: "ves quién viene a cada clase y marcás quién faltó." },
   ],
   pricing: {
     heading: "Una suscripción, sin desarrollo",
     body: [
-      "Cupio se paga por mes según cuántas alumnas tengas, con débito automático de Mercado Pago. **Los primeros 7 días son gratis.**",
-      "¿Necesitás algo que Cupio no hace, como cobrar las clases online o facturar? También lo desarrollamos a medida.",
+      "Cupio se paga por mes según cuántas alumnas tengas, con débito automático de Mercado Pago. Los primeros 7 días son gratis.",
+      "Para cobrar las clases online o facturar, desarrollamos sistemas a medida.",
     ],
   },
   faq: [
@@ -231,15 +231,15 @@ const pilates: LandingConfig = {
     },
     {
       q: "¿Puedo cobrar las clases por el sistema?",
-      a: "Cupio no maneja cobros: lo que les cobrás a tus alumnas lo seguís manejando como hoy. Si necesitás cobros online o facturación, lo desarrollamos a medida.",
+      a: "Cupio no maneja cobros: lo que les cobrás a tus alumnas lo seguís manejando como hoy. Para cobros online o facturación, desarrollamos sistemas a medida.",
     },
     {
       q: "¿Cuánto cuesta?",
       a: "Una suscripción mensual según cuántas alumnas tengas, con débito automático de Mercado Pago, y los primeros 7 días son gratis. Si querés, te ayudamos a configurarlo.",
     },
   ],
-  finalHeading: "¿Lo vemos juntos en",
-  finalHeadingEm: "15 minutos?",
+  finalHeading: "Conocé Cupio",
+  finalHeadingEm: "en 15 minutos",
   finalLede:
     "Te mostramos Cupio funcionando y lo configuramos con los horarios de tu estudio. Si te sirve, arrancás con 7 días gratis. Si no, te llevás ideas gratis.",
   whatsappMessage:
@@ -262,7 +262,7 @@ const canchas: LandingConfig = {
   h1: "Tu cancha se reserva sola.",
   h1em: "Hasta a la medianoche.",
   heroSub:
-    "Sistema de reservas a medida para tu complejo: **los jugadores ven los horarios libres, reservan online y dejan la seña por Mercado Pago**. Vos dejás de atender el teléfono.",
+    "Sistema de reservas a medida para tu complejo: los jugadores ven los horarios libres, reservan online y dejan la seña por Mercado Pago. Vos dejás de atender el teléfono.",
   demo: {
     appTitle: "TU COMPLEJO",
     day: "Viernes",
@@ -278,13 +278,13 @@ const canchas: LandingConfig = {
         slot: 3,
         clock: "23:55",
         toast:
-          "Hola Nico 👋 Reserva confirmada: Cancha 1 · Pádel, viernes 22:00. Seña recibida por Mercado Pago ✓",
+          "Hola Nico. Reserva confirmada: Cancha 1 · Pádel, viernes 22:00. Seña recibida por Mercado Pago.",
       },
     ],
     caption:
       "Son las 23:55 de un martes. Alguien acaba de reservar el viernes a la noche. Vos no atendiste ningún llamado.",
   },
-  painsEyebrow: "¿Te suena?",
+  painsEyebrow: "Reservas que se complican",
   painsHeading: "Atender la cancha te come",
   painsHeadingEm: "el día entero",
   painsLede: "Tu laburo es que la cancha esté impecable. Contestar el teléfono a toda hora, no.",
@@ -293,35 +293,35 @@ const canchas: LandingConfig = {
       tag: "Reservas",
       title: "El teléfono no para de sonar",
       body:
-        "Anotás reservas por WhatsApp y teléfono, se pisan los horarios, y el que llama cuando estás ocupado se va a otra cancha. **Con el sistema, ven los horarios libres y reservan solos.**",
+        "Anotás reservas por WhatsApp y teléfono, se pisan los horarios, y el que llama cuando estás ocupado se va a otra cancha. Con el sistema, ven los horarios libres y reservan solos.",
     },
     {
       tag: "Señas",
       title: "Reservan y no aparecen",
       body:
-        "Sin seña, el que falta no pierde nada — y vos perdés el turno entero. **Con la seña por Mercado Pago integrada al reservar**, el que reserva, viene (o por lo menos paga).",
+        "Sin seña, el que falta no pierde nada y vos perdés el turno entero. Con la seña por Mercado Pago integrada al reservar, el que reserva viene o por lo menos paga.",
     },
     {
       tag: "Gestión",
       title: "La planilla del mostrador",
       body:
-        "¿Qué cancha está libre el sábado a las 20? ¿Quién señó y quién no? **Todo en un panel que ves desde el celular**, sin papeles ni Excel.",
+        "Desde el celular ves qué cancha está libre el sábado a las 20 y quién dejó la seña, sin papeles ni Excel.",
     },
   ],
-  proofEyebrow: "No es una promesa",
+  proofEyebrow: "Una base que ya funciona",
   proofHeading: "La base ya está",
   proofHeadingEm: "funcionando",
   proofLede:
     "Cupio, el sistema de turnos que desarrollamos, ya está online: grilla de horarios, reservas las 24 horas, cupos, recordatorios y avisos de cancelación. Para tu complejo lo adaptamos a canchas, franjas horarias y señas con Mercado Pago.",
-  proofCta: { href: cupioLink("/", "reservas-canchas"), label: "Ver Cupio funcionando →" },
+  proofCta: { href: cupioLink("/", "reservas-canchas"), label: "Ver Cupio funcionando" },
   proofCardLabel: "A medida para tu complejo",
   proofCardTitle: "Lo que incluye tu sistema",
   features: [
-    { strong: "Reservas online", rest: "— grilla por cancha y horario, los jugadores reservan solos." },
-    { strong: "Señas y pagos con Mercado Pago", rest: "— integrados al momento de reservar." },
-    { strong: "Recordatorios y confirmaciones", rest: "— automáticos." },
-    { strong: "Panel de ocupación", rest: "— ves todas tus canchas desde el celular." },
-    { strong: "Facturación ARCA", rest: "— opcional." },
+    { strong: "Reservas online", rest: "grilla por cancha y horario, los jugadores reservan solos." },
+    { strong: "Señas y pagos con Mercado Pago", rest: "integrados al momento de reservar." },
+    { strong: "Recordatorios y confirmaciones", rest: "automáticos." },
+    { strong: "Panel de ocupación", rest: "ves todas tus canchas desde el celular." },
+    { strong: "Facturación ARCA", rest: "opcional." },
   ],
   faq: [
     {
@@ -334,8 +334,8 @@ const canchas: LandingConfig = {
     },
     { q: "¿Cuánto cuesta?", a: PRECIO_A_MEDIDA },
   ],
-  finalHeading: "¿Cuántas canchas tenés?",
-  finalHeadingEm: "Arrancamos por ahí.",
+  finalHeading: "Sistema de reservas",
+  finalHeadingEm: "para tu complejo",
   finalLede:
     "Te mostramos el sistema funcionando y nos contás cómo trabaja tu complejo. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
@@ -355,10 +355,10 @@ const hoteles: LandingConfig = {
   theme: "hotel",
   shortLabel: "Motor de reservas para hoteles",
   eyebrow: "Motor de reservas directas para hoteles y alojamientos",
-  h1: "Que te reserven a vos,",
-  h1em: "no a Booking.",
+  h1: "Reservas directas",
+  h1em: "en tu propia web.",
   heroSub:
-    "Una web propia con motor de reservas directas: **el huésped consulta disponibilidad, reserva y paga sin intermediarios**. Cada reserva directa es una comisión que no se va afuera.",
+    "Una web propia con motor de reservas directas: el huésped consulta disponibilidad, reserva y paga sin intermediarios. Cada reserva directa es una comisión que no se va afuera.",
   demo: {
     appTitle: "TU HOTEL",
     day: "Disponibilidad · Marzo",
@@ -374,13 +374,13 @@ const hoteles: LandingConfig = {
         slot: 0,
         clock: "22:18",
         toast:
-          "Hola Marta 👋 Reserva confirmada: habitación doble, vie 13 al dom 15. Te esperamos — cualquier consulta respondé este mensaje.",
+          "Hola Marta. Reserva confirmada: habitación doble, vie 13 al dom 15. Te esperamos. Cualquier consulta, respondé este mensaje.",
       },
     ],
     caption:
       "Una reserva directa, de noche, sin comisión de por medio y sin que nadie atienda el teléfono.",
   },
-  painsEyebrow: "¿Te suena?",
+  painsEyebrow: "Reservas y cobros",
   painsHeading: "Las comisiones y el teléfono",
   painsHeadingEm: "te comen el margen",
   painsLede:
@@ -390,35 +390,35 @@ const hoteles: LandingConfig = {
       tag: "Comisiones",
       title: "Cada reserva deja plata afuera",
       body:
-        "Los portales te traen huéspedes, pero se quedan con una comisión de cada reserva. **Con motor propio, el huésped que ya te conoce (o te encontró en Google) reserva directo con vos.**",
+        "Los portales te traen huéspedes, pero se quedan con una comisión de cada reserva. Con motor propio, el huésped que ya te conoce o te encontró en Google reserva directo con vos.",
     },
     {
       tag: "Consultas",
-      title: "¿Tenés lugar para el finde?",
+      title: "Consultas de disponibilidad",
       body:
-        "Responder disponibilidad por WhatsApp y teléfono todo el día, y de noche perder reservas por no contestar. **El calendario online responde solo, a cualquier hora.**",
+        "Responder disponibilidad por WhatsApp y teléfono todo el día, y de noche perder reservas por no contestar. El calendario online responde solo, a cualquier hora.",
     },
     {
       tag: "Cobros",
       title: "Señas por transferencia y a mano",
       body:
-        "Señas que hay que perseguir, comprobantes sueltos. **Pago online integrado al reservar, todo registrado.**",
+        "Señas que hay que perseguir, comprobantes sueltos. El pago online se integra al reservar y queda registrado.",
     },
   ],
-  proofEyebrow: "No es una promesa",
+  proofEyebrow: "Sistemas que ya funcionan",
   proofHeading: "Sistemas de reservas",
   proofHeadingEm: "que ya funcionan",
   proofLede:
     "Desarrollamos y mantenemos Cupio, un sistema de reservas online que ya está funcionando: disponibilidad en tiempo real, reservas las 24 horas y avisos automáticos. Para tu alojamiento lo llevamos a habitaciones, tarifas y temporadas, dentro de tu propia web.",
-  proofCta: { href: cupioLink("/", "hoteles"), label: "Ver Cupio funcionando →" },
+  proofCta: { href: cupioLink("/", "hoteles"), label: "Ver Cupio funcionando" },
   proofCardLabel: "A medida para tu alojamiento",
   proofCardTitle: "Lo que incluye tu motor de reservas",
   features: [
-    { strong: "Motor de reservas en tu propia web", rest: "— disponibilidad en tiempo real, sin intermediarios." },
-    { strong: "Pagos y señas online", rest: "— integrados al reservar." },
-    { strong: "Confirmaciones y recordatorios", rest: "— automáticos." },
-    { strong: "Panel de ocupación y tarifas", rest: "— gestionás habitaciones y temporadas desde el celular." },
-    { strong: "Web institucional incluida", rest: "— fotos, habitaciones y cómo llegar." },
+    { strong: "Motor de reservas en tu propia web", rest: "disponibilidad en tiempo real, sin intermediarios." },
+    { strong: "Pagos y señas online", rest: "integrados al reservar." },
+    { strong: "Confirmaciones y recordatorios", rest: "automáticos." },
+    { strong: "Panel de ocupación y tarifas", rest: "gestionás habitaciones y temporadas desde el celular." },
+    { strong: "Web institucional incluida", rest: "fotos, habitaciones y cómo llegar." },
   ],
   faq: [
     {
@@ -442,7 +442,7 @@ const hoteles: LandingConfig = {
   metaTitle: "Motor de reservas directas para hoteles | Crestech",
   metaDescription:
     "Web propia con motor de reservas directas: disponibilidad online, pagos integrados y confirmaciones automáticas. Menos comisiones, más reservas tuyas.",
-  ogTitle: "Que te reserven a vos, no a Booking.",
+  ogTitle: "Reservas directas en tu propia web.",
   ogDescription:
     "Web propia con motor de reservas directas: disponibilidad online, pagos integrados y confirmaciones automáticas.",
 };
@@ -455,7 +455,7 @@ const inmobiliarias: LandingConfig = {
   h1: "Tu cartera de propiedades,",
   h1em: "en tu propia web.",
   heroSub:
-    "Un sitio propio con todas tus propiedades: **fichas completas para compartir por WhatsApp con un link, búsqueda por zona y precio, y consultas que llegan directo a vos** — no a un portal.",
+    "Un sitio propio con todas tus propiedades: fichas para compartir por WhatsApp con un link, búsqueda por zona y precio, y consultas que llegan directo a vos.",
   demo: {
     appTitle: "TU INMOBILIARIA",
     day: "Venta · Zona Oeste",
@@ -470,15 +470,15 @@ const inmobiliarias: LandingConfig = {
       {
         slot: 0,
         clock: "21:37",
-        bookedLabel: "Consulta recibida ✓",
+        bookedLabel: "Consulta recibida",
         toast:
-          "Hola 👋 Te llegó una consulta por el PH de Ramos Mejía: 'Quisiera coordinar una visita el sábado'. Respondé desde acá.",
+          "Hola. Te llegó una consulta por el PH de Ramos Mejía: 'Quisiera coordinar una visita el sábado'. Respondé desde acá.",
       },
     ],
     caption:
       "Una consulta directa por una ficha tuya, compartida con un link. Sin portal en el medio.",
   },
-  painsEyebrow: "¿Te suena?",
+  painsEyebrow: "Problemas de gestión",
   painsHeading: "Tu cartera trabaja para",
   painsHeadingEm: "los portales, no para vos",
   painsLede:
@@ -488,22 +488,22 @@ const inmobiliarias: LandingConfig = {
       tag: "Fichas",
       title: "Fotos sueltas por WhatsApp",
       body:
-        "Mandás 14 fotos y un audio por cada consulta. **Con fichas web, compartís UN link con fotos, precio, mapa y características** — prolijo y profesional.",
+        "Mandás 14 fotos y un audio por cada consulta. Con fichas web, compartís un link con fotos, precio, mapa y características.",
     },
     {
       tag: "Portales",
       title: "Tu cartera vive en sitios ajenos",
       body:
-        "Dependés de portales que cobran por publicar y muestran tu propiedad al lado de la competencia. **Tu web propia es tuya, con tu marca, y posiciona en Google con tu nombre.**",
+        "Dependés de portales que cobran por publicar y muestran tu propiedad al lado de la competencia. Tu web propia lleva tu marca y posiciona en Google con tu nombre.",
     },
     {
       tag: "Consultas",
       title: "Interesados que se enfrían",
       body:
-        "Consultas que llegan tarde o se pierden entre mensajes. **Cada ficha tiene su botón de consulta que te llega directo**, con la propiedad ya identificada.",
+        "Consultas que llegan tarde o se pierden entre mensajes. Cada ficha tiene un botón de consulta que te llega directo, con la propiedad ya identificada.",
     },
   ],
-  proofEyebrow: "No es una promesa",
+  proofEyebrow: "Un caso real",
   proofHeading: "Ya la hicimos",
   proofHeadingEm: "para una inmobiliaria real",
   proofLede:
@@ -516,7 +516,7 @@ const inmobiliarias: LandingConfig = {
   adminHeading: "Cargás tu cartera",
   adminHeadingEm: "vos mismo",
   adminLede:
-    "Subís, editás y publicás propiedades desde un panel simple — fotos, precio, descripción y estado. Sin depender de nadie ni pagar un portal.",
+    "Subís, editás y publicás propiedades desde un panel con fotos, precio, descripción y estado. Sin depender de nadie ni pagar un portal.",
   adminPhotos: [
     { src: "/crestodina/admin-cartera.png", alt: "Listado de propiedades en el panel de Crestodina" },
     { src: "/crestodina/admin-carga.png", alt: "Carga y edición de una propiedad con fotos y datos" },
@@ -524,11 +524,11 @@ const inmobiliarias: LandingConfig = {
   proofCardLabel: "Caso real · Crestodina Propiedades",
   proofCardTitle: "Lo que incluye tu web",
   features: [
-    { strong: "Fichas de propiedades", rest: "— galería, mapa y características, listas para compartir por link." },
-    { strong: "Búsqueda por operación, zona y precio", rest: "— el interesado encuentra solo lo que busca." },
-    { strong: "Botón de consulta por propiedad", rest: "— las consultas te llegan directo al WhatsApp." },
-    { strong: "Panel de carga", rest: "— cargás y editás propiedades vos mismo, sin depender de nadie." },
-    { strong: "Tasaciones online", rest: "— opcionales." },
+    { strong: "Fichas de propiedades", rest: "galería, mapa y características, listas para compartir por link." },
+    { strong: "Búsqueda por operación, zona y precio", rest: "el interesado encuentra solo lo que busca." },
+    { strong: "Botón de consulta por propiedad", rest: "las consultas te llegan directo al WhatsApp." },
+    { strong: "Panel de carga", rest: "cargás y editás propiedades vos mismo, sin depender de nadie." },
+    { strong: "Tasaciones online", rest: "opcionales." },
   ],
   faq: [
     {
@@ -541,8 +541,8 @@ const inmobiliarias: LandingConfig = {
     },
     { q: "¿Cuánto cuesta?", a: PRECIO_A_MEDIDA },
   ],
-  finalHeading: "¿Vemos cómo quedaría",
-  finalHeadingEm: "tu cartera online?",
+  finalHeading: "Tu cartera",
+  finalHeadingEm: "en una web propia",
   finalLede:
     "Te mostramos cómo se vería tu web con tu cartera y nos contás cómo trabajás hoy. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:

@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 import { posts } from "@/data/posts";
 
 export const metadata: Metadata = {
-  title: "Blog — Crestech Studio",
+  title: "Blog | Crestech Studio",
   description: "Ideas concretas para hacer crecer tu negocio: turnos, marca, web y contenido.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "Blog — Crestech Studio",
+    title: "Blog | Crestech Studio",
     description: "Ideas concretas para hacer crecer tu negocio: turnos, marca, web y contenido.",
     siteName: "Crestech Studio",
     url: "/blog",
@@ -37,7 +37,7 @@ export default function BlogIndex() {
                   {p.title}
                 </h2>
                 <p style={{ color: "#999999", lineHeight: 1.7, marginBottom: 8 }}>{p.description}</p>
-                <span style={{ color: "var(--gold-mid)", fontSize: 13, fontWeight: 600 }}>Leer →</span>
+                <span style={{ color: "var(--gold-mid)", fontSize: 13, fontWeight: 600 }}>Leer</span>
               </Link>
             </article>
           ))}
@@ -45,7 +45,7 @@ export default function BlogIndex() {
 
         <p style={{ marginTop: 56 }}>
           <Link href="/" style={{ color: "#8a8577", fontSize: 13 }}>
-            ← Volver al sitio
+            Volver al sitio
           </Link>
         </p>
       </div>

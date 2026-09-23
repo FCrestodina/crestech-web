@@ -108,11 +108,11 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   </a>
                 ) : (
                   <a className={styles.btnGhost} href="#demo">
-                    Ver qué incluye ↓
+                    Ver qué incluye
                   </a>
                 )}
               </div>
-              <p className={styles.ctaNote}>Respuesta de una persona, no de un bot. Sin compromiso.</p>
+              <p className={styles.ctaNote}>Te responde una persona. Sin compromiso.</p>
             </div>
 
             <PhoneDemo demo={config.demo} />
@@ -204,7 +204,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                     {config.features.map((f) => (
                       <li key={f.strong}>
                         <div>
-                          <strong>{f.strong}</strong> <span>{f.rest}</span>
+                          <strong>{f.strong}:</strong> <span>{f.rest}</span>
                         </div>
                       </li>
                     ))}
@@ -251,9 +251,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
           <div className={styles.wrap}>
             <Reveal>
               <p className={styles.eyebrow}>Cómo trabajamos</p>
-              <h2>
-                Sin vueltas, <em>de principio a fin</em>
-              </h2>
+              <h2>De principio a fin</h2>
             </Reveal>
             <div className={styles.steps}>
               {PROCESS_STEPS.map((step, i) => (
@@ -284,10 +282,9 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                     </>
                   ) : (
                     <>
-                      <h3>De startup, no de agencia</h3>
+                      <h3>Precio para negocios chicos</h3>
                       <p>
-                        Somos un estudio chico y eso se nota en el precio:{" "}
-                        <strong>presupuesto cerrado, pensado para tu negocio, no para corporaciones</strong>.
+                        Somos un estudio chico. El presupuesto es cerrado y pensado para tu negocio.
                       </p>
                       <p>
                         Pagás una vez por el desarrollo y, si querés, un mantenimiento mensual opcional para que
@@ -300,11 +297,11 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
               <Reveal delay={120}>
                 <div className={styles.panel}>
                   <p className={styles.eyebrow}>Quién está del otro lado</p>
-                  <h3>Un equipo de especialistas, no un intermediario.</h3>
+                  <h3>Un equipo de especialistas</h3>
                   <p>
-                    En <strong>Crestech</strong> cada parte la trabaja quien sabe del tema: diseño,
-                    fotografía, redes, marketing y desarrollo. Armamos lo que tu negocio necesita —
-                    solo la web, web y fotos, o todo junto— y nos adaptamos a tu caso.
+                    En Crestech cada parte la trabaja quien sabe del tema: diseño, fotografía, redes,
+                    marketing y desarrollo. Armamos lo que tu negocio necesita: solo la web, web y fotos,
+                    o todo junto. Nos adaptamos a tu caso.
                   </p>
                 </div>
               </Reveal>
@@ -353,7 +350,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   Escribinos
                 </a>
                 <p className={styles.ctaNote}>
-                  Te respondemos a la brevedad. Sin compromiso, sin bot, sin spam después.
+                  Te respondemos a la brevedad. Sin compromiso.
                 </p>
               </div>
             </Reveal>

@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 import { SECUENCIAS } from "@/data/secuencias-didacticas";
 
 export const metadata: Metadata = {
-  title: "Crestech Didáctico — Secuencias didácticas para el aula",
+  title: "Crestech Didáctico | Secuencias didácticas para el aula",
   description:
     "Recursos web que desarrollamos para trabajar en clase: se entra con un link, no hay que instalar nada y ningún chico necesita una cuenta. Cada secuencia viene con su manual del docente.",
   alternates: { canonical: "/didactico" },
@@ -186,7 +186,7 @@ export default function DidacticoPage() {
                               paddingBottom: 2,
                             }}
                           >
-                            Probar {r.nombre} →
+                            Probar {r.nombre}
                           </a>
                         </div>
                       ))}
@@ -196,7 +196,7 @@ export default function DidacticoPage() {
                       <span
                         style={{ marginTop: 22, fontSize: 13, color: "var(--text-dim)" }}
                       >
-                        Incluye manual del docente — {s.manualSinPublicar}
+                        Incluye manual del docente: {s.manualSinPublicar}
                       </span>
                     )}
                     {s.manual && (
@@ -211,7 +211,7 @@ export default function DidacticoPage() {
                           textDecoration: "none",
                         }}
                       >
-                        ↓ Manual del docente — {s.manual.detalle}
+                        Manual del docente: {s.manual.detalle}
                       </a>
                     )}
                   </div>
@@ -224,14 +224,14 @@ export default function DidacticoPage() {
         <section style={{ padding: "0 24px 110px", textAlign: "center" }}>
           <Reveal>
             <p style={{ fontSize: 17, color: "var(--text-secondary)", marginBottom: 24 }}>
-              ¿Tenés una secuencia en papel y querés llevarla al aula digital?
+              Llevamos tu secuencia en papel al aula digital.
             </p>
             <Link href="/#contacto" className="btn-gold" style={{ textDecoration: "none" }}>
               Hablemos
             </Link>
             <p style={{ marginTop: 56 }}>
               <Link href="/" style={{ color: "#8a8577", fontSize: 13 }}>
-                ← Volver al sitio
+                Volver al sitio
               </Link>
             </p>
           </Reveal>

@@ -50,7 +50,7 @@ export const posts: Post[] = [
       { type: "p", text: "Cuando alguien falta sin avisar, no perdés solo esa franja: perdés la chance de que otra persona la hubiera reservado. Si el aviso llega a tiempo, ese lugar se libera y lo toma alguien más." },
       { type: "h2", text: "Cómo recuperar la mayor parte" },
       { type: "p", text: "No hace falta eliminar el 100% de los faltazos para que valga la pena: bajar aunque sea la mitad ya se paga solo. Una agenda online con reservas las 24 horas y recordatorios automáticos ataca las causas más comunes a la vez; la seña, si tu rubro la admite, cierra el resto." },
-      { type: "p", text: `[Cupio](${CUPIO}) hace la parte de la agenda, la lista de espera y los recordatorios, y lo podés probar gratis 7 días. Si además necesitás cobrar señas online, lo armamos a medida: mirá cómo funciona en [reservas online para canchas](/reservas-canchas).` },
+      { type: "p", text: `[Cupio](${CUPIO}) hace la parte de la agenda, la lista de espera y los recordatorios, y lo podés probar gratis 7 días. Para cobrar señas online, desarrollamos sistemas a medida: mirá cómo funciona en [reservas online para canchas](/reservas-canchas).` },
     ],
   },
 ];

@@ -30,7 +30,7 @@ const services: Service[] = [
     ),
     title: "Diseño & Desarrollo Web",
     description:
-      "Sitios web y sistemas a medida — turnos, reservas, catálogos. Rápidos, bien diseñados y pensados para convertir. Con mantenimiento opcional.",
+      "Sitios web y sistemas a medida: turnos, reservas y catálogos. Incluye mantenimiento opcional.",
     tags: ["Sitio web", "Sistemas a medida", "Responsive", "Mantenimiento"],
   },
   {
@@ -44,7 +44,7 @@ const services: Service[] = [
     ),
     title: "Fotografía",
     description:
-      "Producción de fotos profesionales de tu local, productos o equipo. Vamos presencialmente a capturar el material que tu marca necesita.",
+      "Producción de fotos de tu local, productos o equipo. Vamos presencialmente a capturar el material que tu marca necesita.",
     tags: ["Producto", "Local", "Equipo", "Edición"],
   },
   {
@@ -58,7 +58,7 @@ const services: Service[] = [
     ),
     title: "Contenido & Redes Sociales",
     description:
-      "Manejo integral de tus redes con una community manager: planificación, posteos, reels y stories con identidad consistente, pensados para hacer crecer tu comunidad.",
+      "Manejo de redes con una community manager: planificación, posteos, reels y stories para tu marca.",
     tags: ["Instagram", "Community", "Reels", "Calendario"],
   },
   {
@@ -189,8 +189,7 @@ export default function Services() {
           lineHeight: 1.8,
         }}
       >
-        Una sola marca, un solo equipo, una sola conversación. Empezá por la web, sumá
-        las fotos, o llevate todo: vos elegís hasta dónde.
+        Elegís los servicios que necesitás: web, fotos, redes o una combinación.
       </p>
     </section>
   );

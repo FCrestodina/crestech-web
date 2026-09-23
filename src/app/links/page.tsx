@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { landings, waLink } from "@/data/landings";
 
 export const metadata: Metadata = {
-  title: "Crestech — Links",
+  title: "Crestech | Links",
   description: "Todo Crestech en un lugar: WhatsApp, Cupio y soluciones por rubro.",
   robots: { index: false }, // hub para la bio de IG, no para buscadores
 };
@@ -62,7 +62,7 @@ export default function LinksPage() {
           </a>
 
           <a href={CUPIO_URL} target="_blank" rel="noopener noreferrer" style={linkStyle} data-umami-event="links-cupio">
-            Cupio — sistema de turnos online
+            Cupio | sistema de turnos online
           </a>
 
           {landings.map((l) => (
@@ -76,7 +76,7 @@ export default function LinksPage() {
           </a>
 
           <Link href="/" style={{ ...linkStyle, border: "none", color: "#8a8577", fontSize: 13 }} data-umami-event="links-home">
-            Ver el sitio completo →
+            Ver el sitio completo
           </Link>
         </div>
       </div>

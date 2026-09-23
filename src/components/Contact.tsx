@@ -174,12 +174,12 @@ export default function Contact() {
 
           {leadStatus === "ok" && (
             <p role="status" style={{ fontSize: 14, color: "#cccccc", marginTop: 4 }}>
-              ¡Listo! Te vamos a escribir por mail a la brevedad.
+              Listo. Te vamos a escribir por mail a la brevedad.
             </p>
           )}
           {leadStatus === "unavailable" && (
             <p role="status" style={{ fontSize: 14, color: "#cccccc", marginTop: 4 }}>
-              Por ahora escribinos por WhatsApp o al mail de abajo 👇
+              Por ahora escribinos por WhatsApp o al mail de abajo.
             </p>
           )}
           {leadStatus === "error" && (

@@ -13,7 +13,7 @@ const siteUrl =
 // Cada página define el suyo (la home, en app/page.tsx).
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Crestech Studio — Branding, Contenido & Desarrollo Digital",
+  title: "Crestech Studio | Branding, Contenido & Desarrollo Digital",
   description:
     "Equipo digital: branding, fotografía, contenido para redes y desarrollo web. Combinamos los servicios que tu negocio necesita.",
   openGraph: {

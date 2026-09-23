@@ -1,3 +1,4 @@
+import { withSentryConfig } from "@sentry/nextjs/config";
 import type { NextConfig } from "next";
 
 // Content-Security-Policy: sitio estático (SSG). El App Router de Next emite ~26 scripts
@@ -56,4 +57,14 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// Sentry: al terminar el build sube los source maps, así los errores muestran el archivo y la línea
+// del código fuente y no el bundle compilado. Solo si hay SENTRY_AUTH_TOKEN (production en Railway):
+// en dev, CI y test compila igual sin subir nada. No agrega código al navegador (no hay
+// instrumentation-client). La configuración del SDK está en src/lib/sentry.ts.
+export default withSentryConfig(nextConfig, {
+  org: "crestech-0b",
+  project: "crestech-web",
+  authToken: process.env.SENTRY_AUTH_TOKEN,
+  telemetry: false,
+  sourcemaps: { deleteSourcemapsAfterUpload: true },
+});

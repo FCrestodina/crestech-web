@@ -37,11 +37,15 @@ export async function POST(request: Request) {
         text: `Nombre: ${nombre}\nEmail: ${email || "(no dejó)"}\n\nMensaje:\n${mensaje}`,
       }),
     });
+    // Un lead que no salió es un cliente perdido: va a Sentry (console.error manda aviso por mail).
+    // Sin el nombre ni el mail del visitante en el mensaje.
     if (!res.ok) {
+      console.error(`[lead] Resend respondió HTTP ${res.status}: el lead no se mandó`);
       return Response.json({ ok: false, error: "envio_fallo" }, { status: 502 });
     }
     return Response.json({ ok: true });
-  } catch {
+  } catch (e) {
+    console.error("[lead] no se pudo llamar a Resend: el lead no se mandó", e);
     return Response.json({ ok: false, error: "envio_fallo" }, { status: 502 });
   }
 }

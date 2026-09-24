@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "¿El diagnóstico tiene costo?",
-    a: "El primer vistazo no: es una charla para entender tu negocio y decirte qué vemos. El análisis a fondo sí se cobra, porque implica relevar en detalle cómo trabajás y armar un plan. Si ya sabés lo que necesitás, vamos directo a la propuesta.",
+    a: "El primer vistazo no: es una charla para entender tu negocio y decirte qué vemos. El análisis a fondo sí se cobra, porque implica relevar en detalle cómo trabajás y armar un plan, y si después avanzás con el proyecto, se descuenta del presupuesto. Si ya sabés lo que necesitás, vamos directo a la propuesta.",
   },
   {
     q: "¿Desde qué presupuesto puedo arrancar?",

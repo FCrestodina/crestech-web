@@ -9,7 +9,7 @@ const steps = [
   {
     title: "Análisis a fondo",
     description:
-      "Si hace falta, relevamos en detalle cómo trabajás y armamos un plan con prioridades, tiempos y costos. Es un servicio pago. Si ya sabés lo que necesitás, lo salteamos.",
+      "Si hace falta, relevamos en detalle cómo trabajás y armamos un plan con prioridades, tiempos y costos. Es un servicio pago que se descuenta del presupuesto si después avanzás. Si ya sabés lo que necesitás, lo salteamos.",
   },
   {
     title: "Propuesta y desarrollo",

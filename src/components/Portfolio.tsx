@@ -7,6 +7,7 @@ interface Project {
   challenge: string;
   description: string;
   result: string;
+  example?: string;
   tags: string[];
   color: string;
   accent: string;
@@ -22,6 +23,7 @@ const projects: Project[] = [
     challenge: "Quien da clases o atiende con turno pierde horas coordinando por WhatsApp, y los huecos que deja una cancelación no se llenan.",
     description: "Nuestro sistema de turnos online: cada profesional crea su agenda y sus clientes reservan solos desde el celular, con cupo por clase, turnos fijos, lista de espera y recordatorios. Suscripción mensual con Mercado Pago y 7 días de prueba gratis.",
     result: "Está online y cualquier profesional lo prueba gratis, sin hablar con nadie.",
+    example: "Si en un mes se cancelan 30 lugares y la lista de espera llena la mitad, son 15 clases cobradas que antes quedaban vacías.",
     tags: ["SaaS multi-tenant", "Turnos online", "Suscripción Mercado Pago", "PWA instalable"],
     color: "rgba(var(--gold-rgb),0.08)",
     accent: "var(--gold-mid)",
@@ -32,7 +34,7 @@ const projects: Project[] = [
     title: "Mixtura",
     challenge: "Un estudio de pilates con dos sedes necesitaba tener abonos, recuperaciones, cobros y facturación en un solo lugar.",
     description: "Sistema hecho a medida para un estudio de pilates con dos sedes, adaptado a su forma de trabajar: las alumnas ven sus clases y su abono, cancelan y recuperan solas; el estudio maneja horarios, abonos, cobros, reportes y facturación electrónica ARCA desde su propio panel.",
-    result: "En producción, con las dos sedes y la facturación electrónica saliendo desde el mismo panel.",
+    result: "Ya está en producción y el estudio lo está sumando a su día a día.",
     tags: ["A medida", "Panel de admin", "Facturación ARCA", "Recuperaciones"],
     color: "rgba(var(--gold-rgb),0.08)",
     accent: "var(--gold-mid)",
@@ -225,6 +227,12 @@ export default function Portfolio() {
                     <span style={{ fontSize: 11, letterSpacing: "0.15em", color: "var(--gold-mid)", fontWeight: 600 }}>RESULTADO </span>
                     {p.result}
                   </p>
+                  {p.example && (
+                    <p style={{ fontSize: 13, color: "#888888", lineHeight: 1.7, marginTop: -6, marginBottom: 18, fontStyle: "italic" }}>
+                      <span style={{ fontSize: 11, letterSpacing: "0.15em", color: "var(--gold-mid)", fontWeight: 600, fontStyle: "normal" }}>EJEMPLO </span>
+                      {p.example}
+                    </p>
+                  )}
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                     {p.tags.map((t) => (
                       <span

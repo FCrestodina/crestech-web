@@ -50,16 +50,6 @@ const projects: Project[] = [
     color: "rgba(var(--gold-rgb),0.05)",
     accent: "var(--gold-mid)",
   },
-  {
-    category: "Diseño Web",
-    title: "Portfolio Fotografía & Audiovisual",
-    challenge: "Una fotógrafa y filmmaker necesitaba un portfolio que se pareciera a su trabajo, no a una plantilla.",
-    description: "Landing interactiva (scrollytelling) para una fotógrafa y filmmaker: portfolio de proyectos con experiencia inmersiva, estética de cine analógico nocturno y un panel propio para gestionar fotos, proyectos y textos.",
-    result: "Actualiza fotos, proyectos y textos sola, sin depender de nosotros para cada cambio.",
-    tags: ["Scrollytelling", "Portfolio", "Animaciones GSAP", "Panel de admin"],
-    color: "rgba(var(--gold-rgb),0.05)",
-    accent: "var(--gold-mid)",
-  },
 ];
 
 export default function Portfolio() {
@@ -90,7 +80,7 @@ export default function Portfolio() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(460px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))",
             gap: 24,
           }}
         >
@@ -129,7 +119,7 @@ export default function Portfolio() {
                       src={p.image}
                       alt={p.imageAlt ?? p.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       style={{ objectFit: "cover" }}
                     />
                   ) : (

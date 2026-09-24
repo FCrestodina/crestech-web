@@ -28,53 +28,46 @@ export default function Process() {
     <section
       id="proceso"
       style={{
-        padding: "100px 24px",
-        borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
+        padding: "100px 24px 110px",
+        background: "linear-gradient(180deg, rgba(var(--gold-rgb),0.05), rgba(var(--gold-rgb),0) 70%)",
+        borderTop: "1px solid rgba(var(--gold-rgb),0.12)",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Reveal>
-          <div style={{ textAlign: "center", marginBottom: 72 }}>
-            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
-              PROCESO
-            </span>
+          <div style={{ marginBottom: 64, display: "flex", flexWrap: "wrap", alignItems: "baseline", gap: "8px 24px" }}>
             <h2
               className="font-display"
-              style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, marginTop: 16, color: "#ffffff" }}
+              style={{ fontSize: "clamp(30px, 4.5vw, 46px)", fontWeight: 500, color: "#ffffff" }}
             >
               Cómo trabajamos
             </h2>
-            <div className="gold-line" style={{ width: 160, margin: "24px auto 0" }} />
+            <span style={{ fontSize: 15, color: "#8a8a8a" }}>
+              Cuatro pasos, del primer vistazo a que tu negocio crezca.
+            </span>
           </div>
         </Reveal>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: 24,
-          }}
-        >
+        <ol className="timeline">
           {steps.map((step, i) => (
-            <Reveal key={step.title} delay={i * 100}>
-              <div className="process-step">
-                <div
-                  className="gold-line"
-                  style={{ width: 32, marginBottom: 24 }}
-                />
+            <li key={step.title} className="timeline-step">
+              <Reveal delay={i * 100}>
+                <span className="timeline-dot font-display" aria-hidden="true">
+                  {i + 1}
+                </span>
                 <h3
                   className="font-display"
-                  style={{ fontSize: 20, fontWeight: 500, color: "#ffffff", marginBottom: 12 }}
+                  style={{ fontSize: 20, fontWeight: 500, color: "#ffffff", marginBottom: 10 }}
                 >
                   {step.title}
                 </h3>
                 <p style={{ fontSize: 14, color: "#999999", lineHeight: 1.7 }}>
                   {step.description}
                 </p>
-              </div>
-            </Reveal>
+              </Reveal>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

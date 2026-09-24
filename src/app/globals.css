@@ -188,18 +188,25 @@ html.js .reveal-init {
   border-color: rgba(var(--gold-rgb),0.35);
 }
 
-/* FAQ items */
+/* FAQ: el padding vive en el botón y en el panel, no en el contenedor, para
+   que toda la superficie del cuadro sea clickeable. */
+.faq-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr);
+  gap: 64px;
+  align-items: start;
+}
 .faq-item {
   width: 100%;
   background: rgba(var(--gold-rgb),0.03);
   border: 1px solid rgba(var(--gold-rgb),0.15);
   border-radius: 2px;
-  padding: 24px 28px;
   transition: border-color 0.2s, background 0.2s;
   text-align: left;
   margin-bottom: 8px;
 }
-.faq-item:hover {
+.faq-item:hover,
+.faq-item-open {
   border-color: rgba(var(--gold-rgb),0.4);
   background: rgba(var(--gold-rgb),0.06);
 }
@@ -208,18 +215,220 @@ html.js .reveal-init {
   width: 100%;
   background: none;
   border: none;
-  padding: 0;
+  padding: 24px 28px;
   margin: 0;
   cursor: pointer;
   text-align: left;
   color: inherit;
   font: inherit;
 }
+.faq-panel {
+  padding: 0 28px 24px;
+}
 .faq-question {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+}
+
+/* Columna de encabezado que acompaña al scroll (Servicios y FAQ). */
+.split-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+  gap: 72px;
+  align-items: start;
+}
+.split-aside {
+  position: sticky;
+  top: 110px;
+}
+
+/* Servicios: lista numerada, sin tarjetas */
+.service-list {
+  list-style: none;
+  border-top: 1px solid rgba(var(--gold-rgb),0.2);
+}
+.service-row {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 24px;
+  padding: 40px 0;
+  border-bottom: 1px solid rgba(var(--gold-rgb),0.2);
+}
+.service-num {
+  font-size: 56px;
+  line-height: 0.9;
+  font-weight: 500;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(var(--gold-rgb),0.6);
+  transition: color 0.3s;
+}
+.service-row:hover .service-num { color: rgba(var(--gold-rgb),0.25); }
+
+/* Proceso: línea de tiempo horizontal (vertical en celular) */
+.timeline {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  position: relative;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold-mid), rgba(var(--gold-rgb),0.1));
+}
+.timeline-step { position: relative; }
+.timeline-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-mid);
+  background: var(--bg);
+  color: var(--gold-light);
+  font-size: 16px;
+  margin-bottom: 28px;
+  position: relative;
+}
+
+/* Rubros: índice en filas */
+.rubros-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px 48px;
+  margin-bottom: 48px;
+}
+.rubros-head > div { max-width: 620px; }
+.rubro-list {
+  list-style: none;
+  border-top: 1px solid rgba(var(--gold-rgb),0.2);
+}
+.rubro-row {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1.1fr) minmax(0, 1.3fr) 32px;
+  gap: 24px;
+  align-items: center;
+  padding: 30px 16px;
+  border-bottom: 1px solid rgba(var(--gold-rgb),0.2);
+  text-decoration: none;
+  transition: background 0.25s;
+}
+.rubro-row:hover { background: rgba(var(--gold-rgb),0.05); }
+.rubro-index { font-size: 12px; letter-spacing: 0.15em; color: var(--text-dim); }
+.rubro-name { display: block; font-size: clamp(22px, 2.6vw, 30px); font-weight: 500; color: #ffffff; line-height: 1.15; }
+.rubro-arrow {
+  font-size: 22px;
+  color: var(--gold-mid);
+  transition: transform 0.25s;
+  justify-self: end;
+}
+.rubro-row:hover .rubro-arrow { transform: translateX(6px); }
+
+/* Portfolio: casos en filas alternadas */
+.portfolio-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 32px;
+  margin-bottom: 72px;
+  border-bottom: 1px solid rgba(var(--gold-rgb),0.2);
+}
+.case-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+.case-row-flip .case-media { order: 2; }
+.case-media {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(var(--gold-rgb),0.2);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+}
+.case-media img { transition: transform 0.6s ease; }
+a.case-row:hover .case-media img { transform: scale(1.03); }
+.case-visit {
+  display: inline-flex;
+  gap: 6px;
+  margin-top: 24px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  border-bottom: 1px solid rgba(var(--gold-rgb),0.4);
+  padding-bottom: 3px;
+  align-self: flex-start;
+}
+.case-body { display: flex; flex-direction: column; }
+
+/* Didáctico: panel elevado con tarjetas con captura */
+.didactico-panel {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 48px;
+  border-radius: 20px;
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(var(--gold-rgb),0.10), transparent 60%),
+    #111111;
+  border: 1px solid rgba(var(--gold-rgb),0.18);
+}
+.didactico-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.didactico-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid var(--acento);
+  transition: transform 0.25s, border-color 0.25s;
+}
+.didactico-card:hover { transform: translateY(-4px); border-color: var(--acento); }
+.didactico-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 900px) {
+  .split-layout,
+  .faq-layout { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .split-aside { position: static; }
+  .case-row { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .case-row-flip .case-media { order: 0; }
+  .timeline { grid-template-columns: minmax(0, 1fr); gap: 36px; padding-left: 64px; }
+  .timeline::before { top: 0; bottom: 0; left: 22px; right: auto; width: 1px; height: auto; background: linear-gradient(180deg, var(--gold-mid), rgba(var(--gold-rgb),0.1)); }
+  .timeline-dot { position: absolute; left: -64px; top: -8px; margin-bottom: 0; }
+  .rubro-row { grid-template-columns: minmax(0, 1fr) 24px; gap: 10px 16px; padding: 24px 4px; }
+  .rubro-index { display: none; }
+  .rubro-row > :nth-child(3) { grid-column: 1; }
+  .rubro-arrow { grid-row: 1; grid-column: 2; }
+  .didactico-panel { padding: 36px 20px; border-radius: 14px; }
+}
+@media (max-width: 560px) {
+  .service-row { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 32px 0; }
+  .service-num { font-size: 40px; }
 }
 
 /* WhatsApp floating button */

@@ -52,26 +52,34 @@ export default function FAQ() {
         borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
       }}
     >
-      <div style={{ maxWidth: 800, margin: "0 auto" }}>
+      <div className="faq-layout" style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Reveal>
-          <div style={{ textAlign: "center", marginBottom: 72 }}>
+          <div className="split-aside">
             <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
               FAQ
             </span>
             <h2
               className="font-display"
-              style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, marginTop: 16, color: "#ffffff" }}
+              style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 500, marginTop: 16, color: "#ffffff", lineHeight: 1.1 }}
             >
               Preguntas frecuentes
             </h2>
-            <div className="gold-line" style={{ width: 160, margin: "24px auto 0" }} />
+            <p style={{ fontSize: 15, color: "#999999", lineHeight: 1.7, marginTop: 20, maxWidth: 300 }}>
+              ¿No está tu pregunta?{" "}
+              <a href="#contacto" style={{ color: "var(--gold-mid)", fontWeight: 600 }}>
+                Escribinos
+              </a>{" "}
+              y te respondemos.
+            </p>
           </div>
         </Reveal>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           {faqs.map((faq, i) => (
-            <Reveal key={i} delay={i * 60}>
-              <div className="faq-item">
+            <Reveal key={i} delay={i * 40}>
+              {/* El botón ocupa todo el cuadro (el padding es suyo, no del
+                  contenedor), así un click en cualquier parte lo despliega. */}
+              <div className={`faq-item${open === i ? " faq-item-open" : ""}`}>
                 <button
                   onClick={() => setOpen(open === i ? null : i)}
                   className="faq-trigger"
@@ -84,6 +92,7 @@ export default function FAQ() {
                       {faq.q}
                     </span>
                     <span
+                      aria-hidden="true"
                       style={{
                         color: "var(--gold-mid)",
                         fontSize: 20,
@@ -103,6 +112,7 @@ export default function FAQ() {
                     id={`faq-panel-${i}`}
                     role="region"
                     aria-labelledby={`faq-trigger-${i}`}
+                    className="faq-panel"
                   >
                     <p
                       style={{
@@ -112,7 +122,6 @@ export default function FAQ() {
                         textAlign: "left",
                         paddingTop: 16,
                         borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
-                        marginTop: 16,
                       }}
                     >
                       {faq.a}

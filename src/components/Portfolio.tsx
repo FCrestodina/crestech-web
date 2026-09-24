@@ -60,16 +60,6 @@ const projects: Project[] = [
     color: "rgba(var(--gold-rgb),0.05)",
     accent: "var(--gold-mid)",
   },
-  {
-    category: "Desarrollo Web",
-    title: "Billetera Virtual Educativa",
-    challenge: "Enseñar a usar dinero digital en 6° y 7° grado, sin plata real y sin pedirles datos personales a los chicos.",
-    description: "Simulador de billetera digital para alumnos de primaria del programa Buenos Aires Aprende. Pagos con QR, historial de transacciones y panel docente.",
-    result: "Funciona en vivo en el aula: la docente proyecta los QR y los chicos pagan desde el celular.",
-    tags: ["Pagos con QR", "Panel docente", "Historial de pagos", "Educación"],
-    color: "rgba(var(--gold-rgb),0.05)",
-    accent: "var(--gold-mid)",
-  },
 ];
 
 export default function Portfolio() {
@@ -100,7 +90,7 @@ export default function Portfolio() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(460px, 100%), 1fr))",
             gap: 24,
           }}
         >
@@ -139,7 +129,7 @@ export default function Portfolio() {
                       src={p.image}
                       alt={p.imageAlt ?? p.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       style={{ objectFit: "cover" }}
                     />
                   ) : (

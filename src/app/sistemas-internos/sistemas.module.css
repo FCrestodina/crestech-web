@@ -1,0 +1,141 @@
+.rotulo {
+  margin-top: 20px;
+  max-width: 700px;
+  padding: 12px 16px;
+  border-left: 2px solid var(--gold-mid);
+  background: rgba(var(--gold-rgb), 0.06);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.lista {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 96px;
+}
+
+.pantalla {
+  display: grid;
+  gap: 28px;
+}
+
+.etiqueta {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-mid);
+}
+
+.texto h2 {
+  margin-top: 12px;
+  font-size: clamp(24px, 3.2vw, 32px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.texto p {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* Escritorio con el celular apoyado en la esquina de abajo a la derecha. */
+.escena {
+  position: relative;
+  padding: 0 6% 8% 0;
+}
+
+.escritorio {
+  display: block;
+  cursor: zoom-in;
+  border: 1px solid rgba(var(--gold-rgb), 0.18);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.celular {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 21%;
+  border: 3px solid #1f1f1f;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.escritorio img,
+.celular img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sinCelular {
+  padding: 0;
+}
+
+.rubros {
+  margin-top: 24px;
+  max-width: 760px;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.rubros li {
+  padding: 14px 18px;
+  border: 1px solid rgba(var(--gold-rgb), 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.rubros strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+@media (min-width: 900px) {
+  .pantalla {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.7fr);
+    align-items: center;
+    gap: 56px;
+  }
+
+  .invertida {
+    grid-template-columns: minmax(0, 1.7fr) minmax(0, 0.8fr);
+  }
+
+  .invertida .texto {
+    order: 2;
+  }
+}
+
+/* En el celular la captura de escritorio no se lee: se muestra la del celular, sola. */
+@media (max-width: 899px) {
+  .lista {
+    gap: 72px;
+  }
+
+  .escena {
+    padding: 0;
+  }
+
+  .escena:not(.sinCelular) .escritorio {
+    display: none;
+  }
+
+  .celular {
+    position: static;
+    width: min(300px, 80%);
+    margin: 0 auto;
+  }
+}

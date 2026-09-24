@@ -84,8 +84,21 @@ export function yaSeMandoHace(huellaEvento: string[], ahora = Date.now()): boole
   return false;
 }
 
+// El optimizador de imágenes de Next loguea con console.error cuando le piden un archivo de
+// /_next/static/media que no existe. Esos archivos llevan el hash del build y los del build actual
+// siempre existen: el pedido es de una página cacheada de un build anterior o de un bot probando
+// rutas (en Crestodina, 2026-09-23, un logo que el sitio nunca tuvo). Una imagen rota del propio
+// sitio (en /public o externa) sigue avisando: el filtro mira solo /_next/static/media/.
+export function esImagenInexistenteDelBuild(evento: ErrorEvent): boolean {
+  const textos = [evento.message, ...(evento.exception?.values ?? []).map((v) => v.value)];
+  return textos.some(
+    (t) => typeof t === "string" && t.includes("isn't a valid image for /_next/static/media/"),
+  );
+}
+
 export function antesDeEnviar(evento: ErrorEvent, hint: { originalException?: unknown }): ErrorEvent | null {
   if (esRuido(hint.originalException)) return null;
+  if (esImagenInexistenteDelBuild(evento)) return null;
 
   if (evento.request) {
     delete evento.request.query_string;

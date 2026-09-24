@@ -1,25 +1,30 @@
 interface Service {
+  step: string;
   icon: React.ReactNode;
   title: string;
   description: string;
   tags: string[];
-  featured?: boolean;
 }
 
+// Las tres etapas de "socio digital de la pyme" (DEC-008): entender el
+// negocio, armar el sistema y hacerlo crecer. El orden es el del trabajo.
 const services: Service[] = [
   {
-    featured: true,
+    step: "01 · ENTENDER",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <path d="M18 3 L22 13 L33 14 L24.5 21 L27 32 L18 26 L9 32 L11.5 21 L3 14 L14 13 Z" stroke="#D4AF37" strokeWidth="1.5" fill="none" strokeLinejoin="round" />
+        <circle cx="15" cy="15" r="10" stroke="#D4AF37" strokeWidth="1.5" />
+        <line x1="22.5" y1="22.5" x2="32" y2="32" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" />
+        <polyline points="10,17 14,13 17,16 21,11" stroke="#D4AF37" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: "Pack Completo",
+    title: "Diagnóstico",
     description:
-      "Tu negocio online, de punta a punta: web + fotografía + identidad + contenido y redes, todo bajo una misma marca. Nos encargamos de todo para que vos te ocupes de tu negocio.",
-    tags: ["Web", "Fotografía", "Redes", "Identidad"],
+      "Miramos cómo trabajás hoy: cómo te llegan los clientes, cómo manejás turnos, cobros y consultas, y dónde se te va el tiempo o la plata. El primer vistazo es gratis. Si hace falta ir a fondo, hacemos un análisis pago que termina en un plan concreto.",
+    tags: ["Primer vistazo gratis", "Análisis a fondo", "Plan de acción"],
   },
   {
+    step: "02 · ARMAR",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
         <rect x="4" y="6" width="28" height="20" rx="2" stroke="#D4AF37" strokeWidth="1.5" />
@@ -28,53 +33,13 @@ const services: Service[] = [
         <line x1="18" y1="26" x2="18" y2="30" stroke="#D4AF37" strokeWidth="1.5" />
       </svg>
     ),
-    title: "Diseño & Desarrollo Web",
+    title: "Sistemas",
     description:
-      "Sitios web y sistemas a medida: turnos, reservas y catálogos. Con servicio mensual de mantenimiento.",
-    tags: ["Sitio web", "Sistemas a medida", "Responsive", "Mantenimiento"],
+      "Turnos, reservas, catálogos, paneles de gestión y sitios web, hechos para cómo trabaja tu negocio. Si ya existe algo que sirve, como Cupio para turnos, arrancamos por ahí, y después de la entrega queda un servicio mensual que lo mantiene andando.",
+    tags: ["Turnos y reservas", "Sistemas a medida", "Sitio web", "Servicio mensual"],
   },
   {
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <rect x="4" y="9" width="28" height="20" rx="2" stroke="#D4AF37" strokeWidth="1.5" />
-        <circle cx="18" cy="19" r="5.5" stroke="#D4AF37" strokeWidth="1.5" />
-        <rect x="11" y="5" width="9" height="4" rx="1" stroke="#D4AF37" strokeWidth="1.5" />
-        <circle cx="27" cy="14" r="1.4" fill="#D4AF37" />
-      </svg>
-    ),
-    title: "Fotografía",
-    description:
-      "Producción de fotos de tu local, productos o equipo. Vamos presencialmente a capturar el material que tu marca necesita.",
-    tags: ["Producto", "Local", "Equipo", "Edición"],
-  },
-  {
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <path d="M6 9 h24 a2 2 0 0 1 2 2 v11 a2 2 0 0 1 -2 2 H15 l-6 6 v-6 H6 a2 2 0 0 1 -2 -2 V11 a2 2 0 0 1 2 -2 z" stroke="#D4AF37" strokeWidth="1.5" fill="none" />
-        <circle cx="13" cy="16.5" r="1.3" fill="#D4AF37" />
-        <circle cx="18" cy="16.5" r="1.3" fill="#D4AF37" />
-        <circle cx="23" cy="16.5" r="1.3" fill="#D4AF37" />
-      </svg>
-    ),
-    title: "Contenido & Redes Sociales",
-    description:
-      "Manejo de redes con una community manager: planificación, posteos, reels y stories para tu marca.",
-    tags: ["Instagram", "Community", "Reels", "Calendario"],
-  },
-  {
-    icon: (
-      <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-        <circle cx="18" cy="18" r="16" stroke="#D4AF37" strokeWidth="1.5" />
-        <path d="M11 18 L18 10 L25 18 L18 26 Z" stroke="#D4AF37" strokeWidth="1.5" fill="none" />
-        <circle cx="18" cy="18" r="3" fill="#D4AF37" />
-      </svg>
-    ),
-    title: "Branding & Identidad Visual",
-    description:
-      "Diseño de marca que comunica quién sos desde el primer vistazo: logo, paleta, tipografía y sistema visual coherente.",
-    tags: ["Logo", "Paleta", "Tipografía", "Manual de marca"],
-  },
-  {
+    step: "03 · CRECER",
     icon: (
       <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
         <line x1="5" y1="30" x2="31" y2="30" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" />
@@ -82,10 +47,10 @@ const services: Service[] = [
         <polyline points="23,9 29,9 29,15" stroke="#D4AF37" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    title: "Marketing & Estrategia",
+    title: "Marca y contenido",
     description:
-      "Estrategia para que todo lo anterior tenga sentido: posicionamiento, campañas y acciones que conectan tu marca con los clientes correctos.",
-    tags: ["Estrategia", "Campañas", "Posicionamiento", "Análisis"],
+      "Para que el sistema se llene de clientes: identidad visual, fotos de tu local y tus productos, manejo de redes con una community manager y campañas.",
+    tags: ["Identidad visual", "Fotografía", "Redes", "Campañas"],
   },
 ];
 
@@ -111,43 +76,23 @@ export default function Services() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(min(440px, 100%), 1fr))",
+          gridTemplateColumns: "repeat(auto-fit, minmax(min(320px, 100%), 1fr))",
           gap: 24,
         }}
       >
         {services.map((s) => (
-          <div
-            key={s.title}
-            className="service-card"
-            style={
-              s.featured
-                ? {
-                    position: "relative",
-                    border: "1px solid rgba(var(--gold-rgb),0.55)",
-                    background:
-                      "linear-gradient(150deg, rgba(var(--gold-rgb),0.10), rgba(var(--gold-rgb),0.02) 70%)",
-                  }
-                : undefined
-            }
-          >
-            {s.featured && (
-              <span
-                style={{
-                  position: "absolute",
-                  top: 18,
-                  right: 18,
-                  fontSize: 11,
-                  letterSpacing: "0.18em",
-                  color: "#0a0a0a",
-                  background: "linear-gradient(135deg, #F5DC7B, var(--gold-mid))",
-                  padding: "4px 10px",
-                  borderRadius: 2,
-                  fontWeight: 700,
-                }}
-              >
-                RECOMENDADO
-              </span>
-            )}
+          <div key={s.title} className="service-card">
+            <div
+              style={{
+                fontSize: 11,
+                letterSpacing: "0.2em",
+                color: "var(--gold-mid)",
+                fontWeight: 600,
+                marginBottom: 20,
+              }}
+            >
+              {s.step}
+            </div>
             <div style={{ marginBottom: 20 }}>{s.icon}</div>
             <h3
               className="font-display"
@@ -155,7 +100,7 @@ export default function Services() {
             >
               {s.title}
             </h3>
-            <p style={{ fontSize: 14, color: s.featured ? "#bbbbbb" : "#999999", lineHeight: 1.7, marginBottom: 20 }}>
+            <p style={{ fontSize: 14, color: "#999999", lineHeight: 1.7, marginBottom: 20 }}>
               {s.description}
             </p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
@@ -189,7 +134,7 @@ export default function Services() {
           lineHeight: 1.8,
         }}
       >
-        Elegís los servicios que necesitás: web, fotos, redes o una combinación.
+        Podés arrancar por cualquiera de las tres. Si ya sabés lo que necesitás, vamos directo a la propuesta.
       </p>
     </section>
   );

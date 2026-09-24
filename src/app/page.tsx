@@ -22,8 +22,8 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Process />
         <Services />
+        <Process />
         <Rubros />
         <Portfolio />
         <Didactico />

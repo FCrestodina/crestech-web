@@ -69,13 +69,13 @@ export default function About() {
           >
             El equipo detrás
             <br />
-            <span className="gold-gradient-text">de tu marca</span>
+            <span className="gold-gradient-text">de tu negocio</span>
           </h2>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 16 }}>
-            Crestech es un equipo de especialistas: community manager, fotografía, marketing, diseño gráfico y desarrollo web. Cada proyecto lo trabaja quien sabe del tema, bajo una misma identidad visual.
+            En Crestech está quien entiende el negocio, quien arma el sistema y quien lo hace crecer: desarrollo web, marketing, diseño gráfico, fotografía y community manager. Cada parte la trabaja quien sabe del tema.
           </p>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 32 }}>
-            Podés contratar solo la web, web y fotos, web y manejo de redes, o todos los servicios. La mayor parte del trabajo es remota; cuando el proyecto incluye fotografía, vamos a tu local a producirla.
+            Podés arrancar por el diagnóstico, contratar solo el sistema o sumarle marca y redes. La mayor parte del trabajo es remota; cuando el proyecto incluye fotografía, vamos a tu local a producirla.
           </p>
 
           <div

@@ -17,11 +17,15 @@ const faqs = [
   },
   {
     q: "¿Ofrecen servicios por separado o solo paquetes?",
-    a: "Podés contratar un servicio puntual (solo logo, solo web, solo automatización) o combinar varios. Lo conversamos en la consulta inicial.",
+    a: "Podés contratar un servicio puntual (solo logo, solo web, solo automatización) o combinar varios. Lo conversamos en el primer vistazo.",
+  },
+  {
+    q: "¿El diagnóstico tiene costo?",
+    a: "El primer vistazo no: es una charla para entender tu negocio y decirte qué vemos. El análisis a fondo sí se cobra, porque implica relevar en detalle cómo trabajás y armar un plan. Si ya sabés lo que necesitás, vamos directo a la propuesta.",
   },
   {
     q: "¿Desde qué presupuesto puedo arrancar?",
-    a: "Trabajamos por proyecto y armamos la propuesta según lo que necesitás, así no pagás de más por cosas que no vas a usar. En una charla de 15 minutos te pasamos el número exacto según tu caso, sin compromiso.",
+    a: "Trabajamos por proyecto y armamos la propuesta según lo que necesitás, así no pagás de más por cosas que no vas a usar. En el primer vistazo, que es gratis, te pasamos el número según tu caso.",
   },
   {
     q: "¿Sirve si mi negocio es chico o recién empiezo?",

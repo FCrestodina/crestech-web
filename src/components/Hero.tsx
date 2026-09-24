@@ -48,7 +48,7 @@ export default function Hero() {
               fontWeight: 500,
             }}
           >
-            ESTUDIO DIGITAL
+            SOCIO DIGITAL DE LA PYME
           </span>
         </div>
 
@@ -75,14 +75,15 @@ export default function Hero() {
             letterSpacing: "0.04em",
             lineHeight: 1.7,
             marginBottom: 52,
+            textWrap: "balance",
           }}
         >
-          Branding, fotografía, contenido para redes y desarrollo web. Un equipo de especialistas que se adapta a lo que tu negocio necesita.
+          Entendemos cómo funciona tu negocio, te armamos el sistema y lo hacemos crecer.
         </p>
 
         <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="#servicios" className="btn-gold">VER SERVICIOS</a>
-          <a href="#contacto" className="btn-outline">HABLEMOS</a>
+          <a href="#contacto" className="btn-gold">PEDÍ UN PRIMER VISTAZO</a>
+          <a href="#servicios" className="btn-outline">CÓMO TRABAJAMOS</a>
         </div>
       </div>
 

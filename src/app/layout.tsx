@@ -13,12 +13,12 @@ const siteUrl =
 // Cada página define el suyo (la home, en app/page.tsx).
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Crestech Studio | Branding, Contenido & Desarrollo Digital",
+  title: "Crestech Studio | Diagnóstico, sistemas y marca para pymes",
   description:
-    "Equipo digital: branding, fotografía, contenido para redes y desarrollo web. Combinamos los servicios que tu negocio necesita.",
+    "Socio digital de la pyme: entendemos cómo funciona tu negocio, te armamos el sistema (turnos, reservas, web) y lo hacemos crecer con marca, fotos y redes.",
   openGraph: {
     title: "Crestech Studio",
-    description: "Branding, Contenido & Desarrollo Digital",
+    description: "Socio digital de la pyme",
     siteName: "Crestech Studio",
     url: "/",
     type: "website",
@@ -31,7 +31,7 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "Crestech Studio",
   description:
-    "Equipo digital: branding, fotografía, contenido para redes sociales, desarrollo web y sistemas de turnos y reservas.",
+    "Socio digital de la pyme: diagnóstico del negocio, sistemas de turnos, reservas y web a medida, y marca, fotografía y redes para hacerlo crecer.",
   url: siteUrl,
   logo: `${siteUrl}/icon`,
   image: `${siteUrl}/opengraph-image`,
@@ -40,6 +40,7 @@ const jsonLd = {
   areaServed: "AR",
   sameAs: ["https://instagram.com/crestech.studio", "https://t.me/CrestechOK"],
   knowsAbout: [
+    "Consultoría digital para pymes",
     "Branding",
     "Fotografía",
     "Contenido para redes sociales",

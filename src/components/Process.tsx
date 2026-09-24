@@ -2,24 +2,24 @@ import Reveal from "./Reveal";
 
 const steps = [
   {
-    title: "Consulta inicial",
+    title: "Primer vistazo",
     description:
-      "Hablamos sin costo. Entendemos tu proyecto, tus objetivos y qué resultado esperás. Sin compromiso.",
+      "Una charla sin costo: nos contás cómo funciona tu negocio y te decimos qué vemos y por dónde arrancaríamos.",
   },
   {
-    title: "Propuesta & presupuesto",
+    title: "Análisis a fondo",
     description:
-      "Preparamos una propuesta detallada con alcance, tiempos y precio. Sin letra chica.",
+      "Si hace falta, relevamos en detalle cómo trabajás y armamos un plan con prioridades, tiempos y costos. Es un servicio pago. Si ya sabés lo que necesitás, lo salteamos.",
   },
   {
-    title: "Producción",
+    title: "Propuesta y desarrollo",
     description:
-      "Arrancamos. Revisiones incluidas en cada etapa para que el resultado sea exactamente lo que imaginaste.",
+      "Precio cerrado antes de arrancar, 50% al inicio y 50% contra entrega, con revisiones en cada etapa.",
   },
   {
-    title: "Entrega & soporte",
+    title: "Entrega y crecimiento",
     description:
-      "Recibís todos los archivos finales con soporte post-entrega incluido para ajustes menores.",
+      "Te entregamos el sistema andando, con un servicio mensual que lo mantiene. Desde ahí, marca y contenido para hacerlo crecer.",
   },
 ];
 

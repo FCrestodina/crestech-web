@@ -4,7 +4,9 @@ import Reveal from "./Reveal";
 interface Project {
   category: string;
   title: string;
+  challenge: string;
   description: string;
+  result: string;
   tags: string[];
   color: string;
   accent: string;
@@ -17,7 +19,9 @@ const projects: Project[] = [
   {
     category: "Producto propio · SaaS",
     title: "Cupio",
+    challenge: "Quien da clases o atiende con turno pierde horas coordinando por WhatsApp, y los huecos que deja una cancelación no se llenan.",
     description: "Nuestro sistema de turnos online: cada profesional crea su agenda y sus clientes reservan solos desde el celular, con cupo por clase, turnos fijos, lista de espera y recordatorios. Suscripción mensual con Mercado Pago y 7 días de prueba gratis.",
+    result: "Está online y cualquier profesional lo prueba gratis, sin hablar con nadie.",
     tags: ["SaaS multi-tenant", "Turnos online", "Suscripción Mercado Pago", "PWA instalable"],
     color: "rgba(var(--gold-rgb),0.08)",
     accent: "var(--gold-mid)",
@@ -26,7 +30,9 @@ const projects: Project[] = [
   {
     category: "Software a medida",
     title: "Mixtura",
+    challenge: "Un estudio de pilates con dos sedes necesitaba tener abonos, recuperaciones, cobros y facturación en un solo lugar.",
     description: "Sistema hecho a medida para un estudio de pilates con dos sedes, adaptado a su forma de trabajar: las alumnas ven sus clases y su abono, cancelan y recuperan solas; el estudio maneja horarios, abonos, cobros, reportes y facturación electrónica ARCA desde su propio panel.",
+    result: "En producción, con las dos sedes y la facturación electrónica saliendo desde el mismo panel.",
     tags: ["A medida", "Panel de admin", "Facturación ARCA", "Recuperaciones"],
     color: "rgba(var(--gold-rgb),0.08)",
     accent: "var(--gold-mid)",
@@ -35,7 +41,9 @@ const projects: Project[] = [
   {
     category: "Diseño Web",
     title: "Crestodina Propiedades",
+    challenge: "Una inmobiliaria con más de 40 años en Caballito necesitaba mostrar su cartera en su propia web, sin depender de los portales.",
     description: "Plataforma inmobiliaria con listado de propiedades en venta y alquiler, buscador por barrio, sistema de tasaciones online y consultas integradas.",
+    result: "Cargan y ordenan las propiedades desde su propio panel, y cada consulta llega directo por WhatsApp.",
     tags: ["Búsqueda por zona", "Fichas para compartir", "Tasaciones online", "Consultas directas"],
     color: "rgba(var(--gold-rgb),0.05)",
     accent: "var(--gold-mid)",
@@ -43,7 +51,9 @@ const projects: Project[] = [
   {
     category: "Diseño Web",
     title: "Portfolio Fotografía & Audiovisual",
+    challenge: "Una fotógrafa y filmmaker necesitaba un portfolio que se pareciera a su trabajo, no a una plantilla.",
     description: "Landing interactiva (scrollytelling) para una fotógrafa y filmmaker: portfolio de proyectos con experiencia inmersiva, estética de cine analógico nocturno y un panel propio para gestionar fotos, proyectos y textos.",
+    result: "Actualiza fotos, proyectos y textos sola, sin depender de nosotros para cada cambio.",
     tags: ["Scrollytelling", "Portfolio", "Animaciones GSAP", "Panel de admin"],
     color: "rgba(var(--gold-rgb),0.05)",
     accent: "var(--gold-mid)",
@@ -51,7 +61,9 @@ const projects: Project[] = [
   {
     category: "Desarrollo Web",
     title: "Billetera Virtual Educativa",
+    challenge: "Enseñar a usar dinero digital en 6° y 7° grado, sin plata real y sin pedirles datos personales a los chicos.",
     description: "Simulador de billetera digital para alumnos de primaria del programa Buenos Aires Aprende. Pagos con QR, historial de transacciones y panel docente.",
+    result: "Funciona en vivo en el aula: la docente proyecta los QR y los chicos pagan desde el celular.",
     tags: ["Pagos con QR", "Panel docente", "Historial de pagos", "Educación"],
     color: "rgba(var(--gold-rgb),0.05)",
     accent: "var(--gold-mid)",
@@ -71,7 +83,7 @@ export default function Portfolio() {
         <Reveal>
           <div style={{ textAlign: "center", marginBottom: 72 }}>
             <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
-              TRABAJOS
+              CASOS
             </span>
             <h2
               className="font-display"
@@ -202,8 +214,16 @@ export default function Portfolio() {
                   >
                     {p.title}
                   </h3>
-                  <p className="portfolio-card-desc" style={{ fontSize: 14, color: "#888888", lineHeight: 1.7, marginBottom: 18 }}>
+                  <p style={{ fontSize: 14, color: "#bbbbbb", lineHeight: 1.7, marginBottom: 12 }}>
+                    <span style={{ fontSize: 11, letterSpacing: "0.15em", color: "var(--gold-mid)", fontWeight: 600 }}>DESAFÍO </span>
+                    {p.challenge}
+                  </p>
+                  <p className="portfolio-card-desc" style={{ fontSize: 14, color: "#888888", lineHeight: 1.7, marginBottom: 12 }}>
                     {p.description}
+                  </p>
+                  <p style={{ fontSize: 14, color: "#bbbbbb", lineHeight: 1.7, marginBottom: 18 }}>
+                    <span style={{ fontSize: 11, letterSpacing: "0.15em", color: "var(--gold-mid)", fontWeight: 600 }}>RESULTADO </span>
+                    {p.result}
                   </p>
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                     {p.tags.map((t) => (

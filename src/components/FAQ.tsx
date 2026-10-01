@@ -20,7 +20,7 @@ const faqs = [
     a: "Podés contratar un servicio puntual (solo logo, solo web, solo automatización) o combinar varios. Lo conversamos en el primer vistazo.",
   },
   {
-    q: "¿El diagnóstico tiene costo?",
+    q: "¿El primer vistazo tiene costo?",
     a: "El primer vistazo no: es una charla para entender tu negocio y decirte qué vemos. El análisis a fondo sí se cobra, porque implica relevar en detalle cómo trabajás y armar un plan, y si después avanzás con el proyecto, se descuenta del presupuesto. Si ya sabés lo que necesitás, vamos directo a la propuesta.",
   },
   {

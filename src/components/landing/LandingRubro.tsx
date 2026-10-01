@@ -25,7 +25,7 @@ function WaIcon({ size = 20 }: { size?: number }) {
 
 const PROCESS_STEPS = [
   {
-    title: "Hablamos 15 minutos",
+    title: "Primer vistazo, sin cargo",
     body: "Por WhatsApp o llamada. Nos contás cómo lo manejás hoy y qué te gustaría sacarte de encima. Sin compromiso.",
   },
   {
@@ -34,7 +34,7 @@ const PROCESS_STEPS = [
   },
   {
     title: "Lo dejamos andando",
-    body: "Lo programamos, lo cargamos con tus datos y te enseñamos a usarlo. Quedás con soporte directo para ajustes.",
+    body: "Lo programamos, lo cargamos con tus datos y te enseñamos a usarlo. Después queda el servicio mensual para que siga funcionando.",
   },
 ];
 

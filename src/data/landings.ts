@@ -3,8 +3,11 @@
 // Espejo de cómo el config.yaml del Prospector suma rubros.
 //
 // Todo lo que la sección de prueba afirma tiene que ser cierto HOY del sistema que
-// se cita. Pilates vende Cupio (SaaS propio): Cupio NO cobra al cliente final ni
-// manda WhatsApp — los avisos van por notificación push. El resto de los rubros
+// se cita. Pilates vende Cupio (SaaS propio): Cupio no manda WhatsApp, los avisos
+// van por notificación push. Cobrar al alumno y facturar existen en Cupio (niveles
+// Cobro y Facturación) pero no están abiertos a todos (PLAN_COBRO_PUBLICO y
+// PLAN_FACTURACION_PUBLICO en Cupio): cuando se abran, cambiar la FAQ y el precio de
+// pilates. Cupio todavía no tiene clientes: no decir "en uso". El resto de los rubros
 // venden desarrollo a medida y citan a Cupio como la base que ya está online.
 
 export interface DemoSlot {
@@ -178,12 +181,12 @@ const pilates: LandingConfig = {
     },
     {
       tag: "Fijas",
-      title: "Las fijas y los packs, anotados a mano",
+      title: "Las fijas y los abonos, anotados a mano",
       body:
-        "La que viene siempre martes y jueves, el pack de 8 clases, quién ya usó las suyas. Con Cupio cada alumna deja su lugar fijo reservado todas las semanas. Si trabajás con packs, ponés un tope de clases por mes, igual para todas.",
+        "La que viene siempre martes y jueves, el abono de 8 clases, quién ya usó las suyas. Con Cupio cada alumna deja su lugar fijo reservado todas las semanas, y cada reserva descuenta una clase de su abono: si cancela a tiempo, la clase vuelve.",
     },
   ],
-  proofEyebrow: "Cupio ya está en uso",
+  proofEyebrow: "Cupio ya está online",
   proofHeading: "Ya está online:",
   proofHeadingEm: "probalo hoy",
   proofLede:
@@ -208,16 +211,17 @@ const pilates: LandingConfig = {
   features: [
     { strong: "Clases con cupo", rest: "definís cuántas camas o reformers tiene cada clase." },
     { strong: "Lugar fijo semanal", rest: "la alumna que viene todos los martes deja su lugar reservado para todas las semanas, sin tener que reservarlo cada vez." },
-    { strong: "Lista de espera", rest: "si la clase está llena, se anota. Cuando alguien cancela, le avisamos." },
+    { strong: "Lista de espera", rest: "si la clase está llena, se anota. Cuando alguien cancela, la primera de la lista recibe un aviso." },
     { strong: "Recordatorios en el celular", rest: "automáticos, antes de cada clase, para bajar las ausencias." },
-    { strong: "Tope de clases por mes", rest: "cuántas clases puede reservar cada alumna en el mes, si trabajás con un pack." },
+    { strong: "Abonos por alumna", rest: "cargás su abono (por ejemplo, 8 clases en 30 días), cada reserva descuenta una y ella ve cuántas le quedan." },
+    { strong: "Varios profes", rest: "cada clase con el nombre de quien la da, y cada profe puede entrar a ver sus clases del día." },
     { strong: "Agenda y lista de asistencia", rest: "ves quién viene a cada clase y marcás quién faltó." },
   ],
   pricing: {
     heading: "Una suscripción, sin desarrollo",
     body: [
       "Cupio se paga por mes según cuántas alumnas tengas, con débito automático de Mercado Pago. Los primeros 7 días son gratis.",
-      "Para cobrar las clases online o facturar, desarrollamos sistemas a medida.",
+      "Cobrar los abonos por Mercado Pago y facturar desde Cupio todavía no está abierto a todos los estudios: si lo necesitás, escribinos.",
     ],
   },
   faq: [
@@ -227,11 +231,11 @@ const pilates: LandingConfig = {
     },
     {
       q: "¿Sirve para pilates reformer, con pocos lugares por clase?",
-      a: "Sí. Cada clase tiene su cupo (por ejemplo, 4 reformers) y cuando se llena, las demás se anotan en la lista de espera y reciben un aviso si se libera un lugar.",
+      a: "Sí. Cada clase tiene su cupo (por ejemplo, 4 reformers) y cuando se llena, las demás se anotan en la lista de espera. Si se libera un lugar, la primera de la lista recibe un aviso.",
     },
     {
       q: "¿Puedo cobrar las clases por el sistema?",
-      a: "Cupio no maneja cobros: lo que les cobrás a tus alumnas lo seguís manejando como hoy. Para cobros online o facturación, desarrollamos sistemas a medida.",
+      a: "Todavía no para todos los estudios: cobrar los abonos por Mercado Pago y facturar desde Cupio está armado, pero no abierto a todos. Mientras tanto, lo que les cobrás a tus alumnas lo seguís manejando como hoy. Si lo necesitás, escribinos.",
     },
     {
       q: "¿Cuánto cuesta?",

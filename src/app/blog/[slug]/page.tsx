@@ -69,6 +69,7 @@ export async function generateMetadata({
       type: "article",
       url: `/blog/${slug}`,
       publishedTime: post.date,
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Crestech Studio" }],
     },
   };
 }

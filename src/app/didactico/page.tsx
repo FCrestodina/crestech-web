@@ -6,7 +6,7 @@ import { SECUENCIAS } from "@/data/secuencias-didacticas";
 export const metadata: Metadata = {
   title: "Crestech Didáctico | Secuencias didácticas para el aula",
   description:
-    "Recursos web que desarrollamos para trabajar en clase: se entra con un link, no hay que instalar nada y ningún chico necesita una cuenta. Cada secuencia viene con su manual del docente.",
+    "Recursos web para trabajar en clase: se entra con un link, sin instalar nada ni crear cuentas. Cada secuencia viene con su manual del docente.",
   alternates: { canonical: "/didactico" },
   openGraph: {
     title: "Crestech Didáctico",
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     url: "/didactico",
     type: "website",
     locale: "es_AR",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Crestech Studio" }],
   },
 };
 

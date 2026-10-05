@@ -19,8 +19,29 @@ export interface Post {
 }
 
 const CUPIO = "https://cupio.com.ar?utm_source=crestech&utm_medium=blog";
+const cupio = (path: string) => `https://cupio.com.ar${path}?utm_source=crestech&utm_medium=blog`;
 
 export const posts: Post[] = [
+  {
+    slug: "abonos-de-clases-sin-planilla",
+    title: "Cómo llevar los abonos de clases sin planilla",
+    description:
+      "Qué definir de un abono, por qué la planilla aparte se rompe y cómo hacer que cada reserva descuente la clase sola.",
+    date: "2026-10-05",
+    body: [
+      { type: "p", text: "Si das clases con abono (8 clases al mes, 12 en 30 días, el pack que uses), seguro conocés la escena: una alumna dice que le quedan dos clases, tu planilla dice una, y nadie sabe quién tiene razón. El problema casi nunca es la planilla en sí. Es que las reservas van por un lado y la cuenta del abono por otro." },
+      { type: "h2", text: "Definí qué es un abono en tu estudio" },
+      { type: "p", text: "Antes de elegir una herramienta, poné en claro cuatro cosas: cuántas clases tiene, en cuántos días se usan, para qué clases vale (todas o solo algunas, por ejemplo reformer sí y mat no) y qué pasa cuando alguien cancela. Lo más común, y lo que menos reclamos genera, es que la clase vuelva al abono si se cancela con la anticipación que vos pediste." },
+      { type: "h2", text: "Por qué la planilla aparte se rompe" },
+      { type: "p", text: "Cada reserva por WhatsApp es un dato que después hay que pasar a mano a otro lado. Un olvido alcanza para que la cuenta quede mal, y los errores aparecen justo cuando la alumna quiere reservar y vos tenés que revisar el historial para darle una respuesta. Con dos o tres alumnas se sostiene; con cuarenta, no." },
+      { type: "h2", text: "Que la reserva descuente la clase" },
+      { type: "p", text: `La solución es que la cuenta la lleve el mismo lugar donde se reserva. Es lo que hace [Cupio](${CUPIO}), el sistema de turnos que desarrollamos: cargás el abono de cada alumna, cada reserva descuenta una clase, si cancela a tiempo la clase vuelve y ella ve en su celular cuántas le quedan. Si querés, podés pedir que solo reserve quien tiene un abono con clases disponibles.` },
+      { type: "p", text: `Funciona igual para [estudios de pilates](${cupio("/turnos/pilates")}), [clases de yoga](${cupio("/turnos/yoga")}), [funcional y crossfit](${cupio("/turnos/funcional")}) y [escuelas de danza](${cupio("/turnos/danza")}).` },
+      { type: "h2", text: "Y el cobro" },
+      { type: "p", text: "Mientras cobres por fuera (transferencia, efectivo o Mercado Pago), alcanza con marcar el abono como pagado cuando te llega la plata. Lo importante es que la cuenta de clases ya no dependa de tu memoria." },
+      { type: "p", text: "Si tenés un estudio de pilates y querés verlo con tus horarios, mirá [turnos para estudios de pilates](/turnos-pilates) o escribinos: te lo mostramos funcionando en 15 minutos." },
+    ],
+  },
   {
     slug: "como-bajar-los-faltazos",
     title: "Cómo bajar los faltazos en tu negocio de turnos",

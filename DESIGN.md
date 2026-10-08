@@ -734,3 +734,21 @@ The brand uses STACKED shadows — multiple small offsets layered to fake natura
 - Don't promote the geometric sans to weight 700. The brand's display ceiling is 600.
 - Don't pair the marketing 100-px pill CTA shape with the 6-px nav radius on the same screen — pick a scale and stay there.
 - Don't set body paragraphs in the mono face. The mono is for code + technical labels only.
+
+## Reglas de UI (nota `buenas-practicas-ui` del vault)
+
+> Agregado el 2026-10-08. Es criterio de uso, vale para cualquier look: el look sale de las secciones de arriba de este archivo. Lo que el repo rompe hoy está abajo, en "Deuda medida": no se suma deuda nueva de ese tipo y, al tocar una de esas pantallas, se corrige ahí mismo.
+
+- **Un solo botón Primary por vista**; el resto Secondary (contorno), Ghost o Link. Repetir el *mismo* CTA en el hero y en el cierre de una landing larga no cuenta: es una sola acción.
+- **Nunca `outline: none` sin foco visible de reemplazo** (anillo u outline en `:focus-visible`). Cambiar solo el color del borde no alcanza.
+- **El estado nunca solo por color**: texto o ícono al lado.
+- **Tablas sin sombra.**
+- **Colores por token del tema**, nunca hex ni clases primitivas (`bg-red-500`) en un componente.
+- Contraste AA (4.5:1 texto normal, 3:1 grande) y touch target de 44×44px en mobile.
+
+### Deuda medida (2026-10-08)
+
+- **Hex en `style={{}}` de componentes:** 85 líneas. Ej. `Contact.tsx:72` (`#ffffff`), `:81` (`#999999`), `:164` (`#8a8577`, que no existe como token); `Services.tsx` 14 más. Los tokens existen (`--bg`, `--gold-*`, `--text*` en `src/app/globals.css:3`): usarlos. `lib/og.tsx` no cuenta (imagen OG).
+- **Varios Primary por vista:** `btn-gold` en `Hero.tsx:85`, `Didactico.tsx:61` y `Contact.tsx:125,199` en la misma home; `sistemas-internos/page.tsx:149,255`. Sin verificar si los dos de `Contact.tsx` se ven a la vez.
+- Sin deuda en: foco (`:focus-visible` global en `globals.css:35`), estado solo por color, sombra en tablas.
+- Ojo: el `DESIGN.md` de arriba describe un look estilo Vercel (tinta negra + Geist) que no coincide con la marca dorada real del sitio.

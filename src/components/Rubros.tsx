@@ -24,8 +24,8 @@ const casos = [
   {
     slug: "inmobiliarias",
     rubro: "Inmobiliarias",
-    caso: "Caso real · Crestodina Propiedades",
-    text: "Tu cartera de propiedades en tu propia web, con buscador por zona y precio, tasaciones y consultas directas.",
+    caso: "Producto propio · Crestech House",
+    text: "Tu web con tu marca y un panel donde cargás cada propiedad una vez y sale en Zonaprop, Argenprop, MercadoLibre e Instagram.",
   },
 ];
 

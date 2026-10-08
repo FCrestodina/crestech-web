@@ -455,11 +455,11 @@ const inmobiliarias: LandingConfig = {
   slug: "inmobiliarias",
   theme: "inmo",
   shortLabel: "Web para inmobiliarias",
-  eyebrow: "Página web para inmobiliarias",
-  h1: "Tu cartera de propiedades,",
-  h1em: "en tu propia web.",
+  eyebrow: "Crestech House · Sistema para inmobiliarias",
+  h1: "Cargás cada propiedad una vez,",
+  h1em: "sale en todos lados.",
   heroSub:
-    "Un sitio propio con todas tus propiedades: fichas para compartir por WhatsApp con un link, búsqueda por zona y precio, y consultas que llegan directo a vos.",
+    "Tu web con tu marca y un panel desde el que publicás en Zonaprop, Argenprop, MercadoLibre e Instagram. Las consultas te llegan por WhatsApp con la propiedad ya identificada.",
   demo: {
     appTitle: "TU INMOBILIARIA",
     day: "Venta · Zona Oeste",
@@ -480,13 +480,13 @@ const inmobiliarias: LandingConfig = {
       },
     ],
     caption:
-      "Una consulta directa por una ficha tuya, compartida con un link. Sin portal en el medio.",
+      "Una consulta por una ficha tuya, con la propiedad ya identificada.",
   },
   painsEyebrow: "Problemas de gestión",
-  painsHeading: "Tu cartera trabaja para",
-  painsHeadingEm: "los portales, no para vos",
+  painsHeading: "Cargar propiedades",
+  painsHeadingEm: "te come el día",
   painsLede:
-    "Mandás fotos por WhatsApp todo el día y tus propiedades viven en sitios ajenos. Hay una forma más prolija.",
+    "Mandás fotos por WhatsApp todo el día y cargás la misma propiedad en cada portal. Hay una forma más prolija.",
   pains: [
     {
       tag: "Fichas",
@@ -496,9 +496,9 @@ const inmobiliarias: LandingConfig = {
     },
     {
       tag: "Portales",
-      title: "Tu cartera vive en sitios ajenos",
+      title: "La misma propiedad, cargada cinco veces",
       body:
-        "Dependés de portales que cobran por publicar y muestran tu propiedad al lado de la competencia. Tu web propia lleva tu marca y posiciona en Google con tu nombre.",
+        "Tu web, Zonaprop, Argenprop, MercadoLibre e Instagram: cada uno con su formulario. Y cuando se vende o cambia el precio, hay que tocar los cinco. Con el panel la cargás una vez y se actualiza en todos.",
     },
     {
       tag: "Consultas",
@@ -511,7 +511,7 @@ const inmobiliarias: LandingConfig = {
   proofHeading: "Ya la hicimos",
   proofHeadingEm: "para una inmobiliaria real",
   proofLede:
-    "Crestodina Propiedades es la plataforma que desarrollamos para una inmobiliaria familiar de Caballito con más de 40 años: listado de propiedades en venta y alquiler, tasaciones online y consultas integradas. Tu inmobiliaria puede tener la suya, con tu marca y tu cartera.",
+    "Crestodina Propiedades, una inmobiliaria familiar de Caballito con más de 40 años, trabaja con Crestech House: carga sus propiedades desde el panel, publica en los portales y recibe las consultas por WhatsApp. Tu inmobiliaria puede tener lo mismo, con tu marca y tu diseño. Mirá la demo en crestech-house-production.up.railway.app.",
   proofPhotos: [
     { src: "/crestodina/home.jpg", alt: "Home de Crestodina Propiedades con buscador de propiedades" },
     { src: "/crestodina/detalle.jpg", alt: "Ficha de una propiedad en Crestodina Propiedades" },
@@ -520,19 +520,19 @@ const inmobiliarias: LandingConfig = {
   adminHeading: "Cargás tu cartera",
   adminHeadingEm: "vos mismo",
   adminLede:
-    "Subís, editás y publicás propiedades desde un panel con fotos, precio, descripción y estado. Sin depender de nadie ni pagar un portal.",
+    "Subís, editás y publicás propiedades desde un panel con fotos, precio, descripción y estado. Y si preferís, le escribís al asistente como por WhatsApp: \"bajale 5% al PH de Gorriti\" y lo hace, con historial para deshacer.",
   adminPhotos: [
     { src: "/crestodina/admin-cartera.png", alt: "Listado de propiedades en el panel de Crestodina" },
     { src: "/crestodina/admin-carga.png", alt: "Carga y edición de una propiedad con fotos y datos" },
   ],
   proofCardLabel: "Caso real · Crestodina Propiedades",
-  proofCardTitle: "Lo que incluye tu web",
+  proofCardTitle: "Lo que incluye Crestech House",
   features: [
+    { strong: "Publicación en portales", rest: "Zonaprop, Argenprop, MercadoLibre e Instagram desde el mismo panel." },
     { strong: "Fichas de propiedades", rest: "galería, mapa y características, listas para compartir por link." },
-    { strong: "Búsqueda por operación, zona y precio", rest: "el interesado encuentra solo lo que busca." },
-    { strong: "Botón de consulta por propiedad", rest: "las consultas te llegan directo al WhatsApp." },
-    { strong: "Panel de carga", rest: "cargás y editás propiedades vos mismo, sin depender de nadie." },
-    { strong: "Tasaciones online", rest: "opcionales." },
+    { strong: "Botón de consulta por propiedad", rest: "las consultas te llegan al WhatsApp con la propiedad identificada." },
+    { strong: "Asistente en el panel", rest: "le pedís los cambios en palabras comunes y los hace." },
+    { strong: "Diseño propio", rest: "colores, tipografías y secciones elegidas para tu marca." },
   ],
   faq: [
     {
@@ -541,24 +541,27 @@ const inmobiliarias: LandingConfig = {
     },
     {
       q: "¿Tengo que dejar de publicar en los portales?",
-      a: "No. Tu web suma un canal propio: cada propiedad tiene su ficha con tu marca, lista para compartir por WhatsApp con un link.",
+      a: "No. Conectás tus cuentas una vez y publicás en Zonaprop, Argenprop, MercadoLibre e Instagram desde el panel. Los avisos pagos de cada portal se contratan con el portal, como siempre.",
     },
-    { q: "¿Cuánto cuesta?", a: PRECIO_A_MEDIDA },
+    {
+      q: "¿Cuánto cuesta?",
+      a: "Hay tres planes mensuales en pesos: Inicial $28.000 (hasta 25 propiedades y un portal), Profesional $52.000 (hasta 80 propiedades, todos los portales y el asistente) y Premium $88.000 (hasta 250 propiedades, diseño propio de cada sección y dominio incluido). La instalación es sin cargo para las primeras 5 inmobiliarias.",
+    },
   ],
-  finalHeading: "Tu cartera",
-  finalHeadingEm: "en una web propia",
+  finalHeading: "Toda tu cartera",
+  finalHeadingEm: "en un solo panel",
   finalLede:
     "Te mostramos cómo se vería tu web con tu cartera y nos contás cómo trabajás hoy. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:
-    "Hola, tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
+    "Hola, tengo una inmobiliaria y quiero ver Crestech House funcionando.",
   whatsappMessageNav:
-    "Hola, tengo una inmobiliaria y quiero ver cómo sería mi web con la cartera de propiedades.",
-  metaTitle: "Página web para inmobiliarias con tu cartera | Crestech",
+    "Hola, tengo una inmobiliaria y quiero ver Crestech House funcionando.",
+  metaTitle: "Sistema para inmobiliarias: web propia y publicación en portales | Crestech House",
   metaDescription:
-    "Web propia para tu inmobiliaria: fichas de propiedades para compartir por WhatsApp, búsqueda por zona y precio, y consultas que llegan directo a vos.",
-  ogTitle: "Tu cartera de propiedades, en tu propia web.",
+    "Web con tu marca y un panel para cargar cada propiedad una vez y publicarla en Zonaprop, Argenprop, MercadoLibre e Instagram. Planes desde $28.000 por mes.",
+  ogTitle: "Cargás cada propiedad una vez, sale en todos lados.",
   ogDescription:
-    "Fichas para compartir por WhatsApp, búsqueda por zona y precio, y consultas directas a vos.",
+    "Web con tu marca, publicación en Zonaprop, Argenprop, MercadoLibre e Instagram, y consultas por WhatsApp.",
 };
 
 export const landings: LandingConfig[] = [pilates, canchas, hoteles, inmobiliarias];

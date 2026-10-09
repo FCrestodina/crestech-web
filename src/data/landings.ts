@@ -83,6 +83,12 @@ export interface LandingConfig {
   proofCta?: CtaLink; // botón debajo del texto de la prueba
   proofPhotos?: ProofPhoto[]; // fotos reales del caso (negocio, equipo, sistema)
   proofPhotosPhone?: boolean; // si true, las proofPhotos son capturas de celular (390x844) y se muestran en marco de teléfono, completas
+  incluye?: {
+    eyebrow: string;
+    heading: string;
+    headingEm: string;
+    cards: { title: string; body: string; img: string; alt: string }[]; // capturas 1280x800 armadas sobre el color del producto
+  };
   adminPhotos?: ProofPhoto[]; // capturas del panel de gestión (390x844, marco de teléfono); sin datos personales
   adminEyebrow?: string;
   adminHeading?: string;
@@ -197,15 +203,17 @@ const pilates: LandingConfig = {
     { src: "/cupio/app-reservar.png", alt: "Clases del día en Cupio con los lugares libres, una clase completa y la lista de espera" },
   ],
   proofPhotosPhone: true,
-  adminEyebrow: "Del lado del estudio",
-  adminHeading: "Y vos ves",
-  adminHeadingEm: "cómo viene cada clase",
-  adminLede:
-    "La agenda del mes con la ocupación de cada clase y, en cada día, quién viene. Desde la compu o el celular.",
-  adminPhotos: [
-    { src: "/cupio/admin-agenda.png", alt: "Agenda del mes en Cupio con la ocupación de cada clase por color" },
-    { src: "/cupio/admin-dia.png", alt: "Clases de un día en Cupio con las alumnas anotadas en cada una" },
-  ],
+  incluye: {
+    eyebrow: "Lo que incluye",
+    heading: "Todo el estudio",
+    headingEm: "en el celular",
+    cards: [
+      { title: "Reservan solas", body: "Ven los horarios con lugares libres y reservan desde el celular, a cualquier hora, sin escribirte.", img: "/cupio/card-reservar.jpg", alt: "Calendario de Cupio con los turnos libres de cada día para reservar" },
+      { title: "Tu agenda, de un vistazo", body: "El mes entero con la ocupación de cada clase: cuáles están llenas y dónde quedan lugares.", img: "/cupio/card-agenda.jpg", alt: "Agenda mensual de Cupio con la ocupación de cada clase" },
+      { title: "Lugar fijo y lista de espera", body: "La que viene siempre deja su lugar reservado todas las semanas. Si la clase está llena, se anota y le avisamos cuando se libera.", img: "/cupio/card-espera.jpg", alt: "Turnos de una alumna en Cupio con dos lugares fijos semanales" },
+      { title: "Tus alumnas en orden", body: "Quién está al día y quién debe, cuántas clases le quedan del abono y su WhatsApp a un toque, sin planillas ni cuadernos.", img: "/cupio/card-alumnos.jpg", alt: "Lista de alumnas en Cupio con el estado del abono" },
+    ],
+  },
   proofCardLabel: "Cupio · sistema de turnos",
   proofCardTitle: "Lo que incluye",
   features: [
@@ -516,15 +524,17 @@ const inmobiliarias: LandingConfig = {
     { src: "/crestech-house/home.jpg", alt: "Home de la inmobiliaria demo de Crestech House con buscador de propiedades" },
     { src: "/crestech-house/detalle.jpg", alt: "Ficha de una propiedad en la inmobiliaria demo de Crestech House" },
   ],
-  adminEyebrow: "Del lado de la gestión",
-  adminHeading: "Cargás tu cartera",
-  adminHeadingEm: "vos mismo",
-  adminLede:
-    "Subís, editás y publicás propiedades desde un panel con fotos, precio, descripción y estado. Y si preferís, le escribís al asistente como por WhatsApp: \"bajale 5% al PH de Gorriti\" y lo hace, con historial para deshacer.",
-  adminPhotos: [
-    { src: "/crestech-house/admin-panel.png", alt: "Panel de Crestech House con las propiedades y los portales conectados" },
-    { src: "/crestech-house/admin-edicion.png", alt: "Edición de una propiedad con su estado en cada portal y sus fotos" },
-  ],
+  incluye: {
+    eyebrow: "Lo que incluye",
+    heading: "Todo lo que necesitás",
+    headingEm: "en un solo sistema",
+    cards: [
+      { title: "Tu web, con tu marca", body: "Tus colores, tu logo y tus secciones, con buscador por tipo y barrio y fichas con galería y mapa.", img: "/crestech-house/card-web.jpg", alt: "Home de la inmobiliaria demo de Crestech House con su buscador de propiedades" },
+      { title: "Un panel, todos los portales", body: "Cargás la propiedad una vez y la publicás en Zonaprop, Argenprop, MercadoLibre e Instagram desde el mismo lugar.", img: "/crestech-house/card-portales.jpg", alt: "Panel de Crestech House en el celular con los portales conectados" },
+      { title: "Un asistente que hace los cambios", body: "Le escribís como por WhatsApp, \"bajale 5% al PH\", y te muestra el cambio para que lo confirmes.", img: "/crestech-house/card-asistente.jpg", alt: "Asistente del panel proponiendo bajar un 5% el precio de una propiedad" },
+      { title: "Todas las consultas juntas", body: "Lo que entra por la web, por WhatsApp o por MercadoLibre, en un solo lugar y por etapa: nueva, contactada, visita, negociación.", img: "/crestech-house/card-consultas.jpg", alt: "Panel de consultas de Crestech House ordenadas por etapa" },
+    ],
+  },
   proofCardLabel: "Producto propio · Crestech House",
   proofCardTitle: "Lo que incluye Crestech House",
   features: [

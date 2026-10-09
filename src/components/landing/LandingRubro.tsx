@@ -215,6 +215,35 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
           </div>
         </section>
 
+        {/* LO QUE INCLUYE */}
+        {config.incluye && (
+          <section id="incluye">
+            <div className={styles.wrap}>
+              <Reveal>
+                <p className={styles.eyebrow}>{config.incluye.eyebrow}</p>
+                <h2>
+                  {config.incluye.heading} <em>{config.incluye.headingEm}</em>
+                </h2>
+              </Reveal>
+              <div className={styles.incluyeGrid}>
+                {config.incluye.cards.map((c, i) => (
+                  <Reveal key={c.title} delay={i * 80}>
+                    <article className={styles.incluyeCard}>
+                      <div className={styles.incluyeMedia}>
+                        <Image src={c.img} alt={c.alt} fill sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 25vw" />
+                      </div>
+                      <div className={styles.incluyeBody}>
+                        <h3>{c.title}</h3>
+                        <p>{c.body}</p>
+                      </div>
+                    </article>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* PANEL DE GESTIÓN */}
         {config.adminPhotos && (
           <section id="panel">

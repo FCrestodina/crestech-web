@@ -5,7 +5,6 @@ import Process from "@/components/Process";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Clientes from "@/components/Clientes";
-import Productos from "@/components/Productos";
 import Didactico from "@/components/Didactico";
 import About from "@/components/About";
 import FAQ from "@/components/FAQ";
@@ -26,7 +25,6 @@ export default function Home() {
         <Clientes />
         <Services />
         <Process />
-        <Productos />
         <Portfolio />
         <Didactico />
         <About />

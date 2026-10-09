@@ -18,6 +18,33 @@ interface Project {
 
 const projects: Project[] = [
   {
+    category: "Producto propio · SaaS",
+    title: "Cupio",
+    challenge: "Quien da clases o atiende con turno pierde horas coordinando por WhatsApp, y los huecos que deja una cancelación no se llenan.",
+    description: "Nuestro sistema de turnos online: cada profesional crea su agenda y sus clientes reservan solos desde el celular, con cupo por clase, turnos fijos, lista de espera y recordatorios. Suscripción mensual con Mercado Pago y 7 días de prueba gratis.",
+    result: "Está online y cualquier profesional lo prueba gratis, sin hablar con nadie.",
+    example: "Si en un mes se cancelan 30 lugares y la lista de espera llena la mitad, son 15 clases cobradas que antes quedaban vacías.",
+    tags: ["SaaS multi-tenant", "Turnos online", "Suscripción Mercado Pago", "PWA instalable"],
+    color: "rgba(var(--gold-rgb),0.08)",
+    accent: "var(--gold-mid)",
+    image: "/cupio/portada.jpg",
+    imageAlt: "Logo de Cupio y dos pantallas del sistema: la reserva de turnos y la agenda del profesional",
+    url: "/turnos-pilates",
+  },
+  {
+    category: "Producto propio · Inmobiliarias",
+    title: "Crestech House",
+    challenge: "Una inmobiliaria carga la misma propiedad en su web, en Zonaprop, en Argenprop, en MercadoLibre y en Instagram, y cada cambio de precio o venta hay que repetirlo en todos.",
+    description: "Nuestro sistema para inmobiliarias: sitio con la marca y el diseño de cada una, un panel donde se carga cada propiedad una sola vez y sale en los portales, un asistente al que se le piden los cambios como por WhatsApp, y consultas que llegan al WhatsApp con la propiedad ya identificada.",
+    result: "La demo está online: entrá y mirá el sitio de una inmobiliaria de ejemplo. Planes mensuales desde $28.000.",
+    tags: ["Publicación en portales", "Asistente IA", "Diseño por inmobiliaria", "Consultas por WhatsApp"],
+    color: "rgba(var(--gold-rgb),0.05)",
+    accent: "var(--gold-mid)",
+    image: "/crestech-house/portada.jpg",
+    imageAlt: "Crestech House: el sitio de la inmobiliaria demo en escritorio y en el celular",
+    url: "/inmobiliarias",
+  },
+  {
     category: "Sitio a medida · Clubes y asociaciones civiles",
     title: "Impulso Deportivo",
     challenge: "Una asociación civil que capacita y asesora a clubes de barrio necesitaba un sitio que explicara qué hace y a quién ayuda.",
@@ -35,6 +62,8 @@ const projects: Project[] = [
 function hostOf(url: string) {
   return new URL(url).hostname.replace(/^www\./, "");
 }
+
+const esInterno = (url: string) => url.startsWith("/");
 
 export default function Portfolio() {
   return (
@@ -65,14 +94,16 @@ export default function Portfolio() {
         <div style={{ display: "flex", flexDirection: "column", gap: 96 }}>
           {projects.map((p, i) => {
             const CardTag = p.url ? "a" : "div";
-            const cardProps = p.url
-              ? {
-                  href: p.url,
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  "aria-label": `Ver ${p.title} (abre en una pestaña nueva)`,
-                }
-              : {};
+            const cardProps = !p.url
+              ? {}
+              : esInterno(p.url)
+                ? { href: p.url, "aria-label": `Ver ${p.title}` }
+                : {
+                    href: p.url,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    "aria-label": `Ver ${p.title} (abre en una pestaña nueva)`,
+                  };
             return (
             <Reveal key={p.title}>
               <CardTag
@@ -138,7 +169,15 @@ export default function Portfolio() {
                   </div>
                   {p.url && (
                     <span className="case-visit">
-                      {hostOf(p.url)} <span aria-hidden="true">↗</span>
+                      {esInterno(p.url) ? (
+                        <>
+                          Ver qué incluye <span aria-hidden="true">→</span>
+                        </>
+                      ) : (
+                        <>
+                          {hostOf(p.url)} <span aria-hidden="true">↗</span>
+                        </>
+                      )}
                     </span>
                   )}
                 </div>

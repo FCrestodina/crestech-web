@@ -6,19 +6,19 @@ const casos = [
   {
     slug: "turnos-pilates",
     rubro: "Estudios de pilates",
-    caso: "Con Cupio · sistema de turnos",
+    caso: "Producto propio · Cupio",
     text: "Tus alumnas reservan solas desde el celular, con cupo por clase, lugar fijo semanal y recordatorios antes de cada clase.",
   },
   {
     slug: "reservas-canchas",
     rubro: "Canchas de pádel y fútbol",
-    caso: "A medida",
+    caso: "A medida · Sobre Cupio",
     text: "Reservas online por cancha y horario, con la seña por Mercado Pago al momento de reservar.",
   },
   {
     slug: "hoteles",
     rubro: "Hoteles y alojamientos",
-    caso: "A medida",
+    caso: "A medida · Sobre Cupio",
     text: "Motor de reservas directas en tu propia web: disponibilidad online y pago al reservar, sin comisión de portales.",
   },
   {
@@ -49,11 +49,11 @@ export default function Rubros() {
                 className="font-display"
                 style={{ fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 500, marginTop: 16, color: "#ffffff", lineHeight: 1.1 }}
               >
-                Sistemas a medida para tu negocio
+                Lo que armamos para tu rubro
               </h2>
             </div>
             <p style={{ fontSize: 16, color: "#999999", lineHeight: 1.7, maxWidth: 340 }}>
-              Algunos de los sistemas que ya desarrollamos. Entrá y mirá cómo funcionan.
+              Dos productos propios que ya funcionan, Cupio y Crestech House, y adaptaciones a medida sobre esa base. Entrá a cada rubro y mirá qué incluye.
             </p>
           </div>
         </Reveal>

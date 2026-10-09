@@ -62,6 +62,13 @@ export interface LandingConfig {
   h1em: string;
   heroSub: string; // admite **negrita**
   heroSecondary?: CtaLink; // reemplaza el botón "Ver qué incluye" del hero
+  // Formato de producto: en el hero va una captura real en vez del celular de ejemplo, "Lo que incluye" sube,
+  // y se omiten dolores, prueba y proceso. El precio se muestra en tarjetas de planes.
+  producto?: {
+    heroImg: { src: string; alt: string; width: number; height: number };
+    planes: { nombre: string; precio: string; detalle: string[]; destacado?: boolean }[];
+    planesNota: string;
+  };
   demo: {
     appTitle: string;
     day: string;
@@ -466,10 +473,23 @@ const inmobiliarias: LandingConfig = {
   theme: "inmo",
   shortLabel: "Web para inmobiliarias",
   eyebrow: "Crestech House · Sistema para inmobiliarias",
-  h1: "Cargás cada propiedad una vez,",
-  h1em: "sale en todos lados.",
+  h1: "Tu web con tu marca y todos los portales",
+  h1em: "en un solo panel.",
   heroSub:
-    "Tu web con tu marca y un panel desde el que publicás en Zonaprop, Argenprop, MercadoLibre e Instagram. Las consultas te llegan por WhatsApp con la propiedad ya identificada.",
+    "Cargás cada propiedad una vez y sale en tu web, Zonaprop, Argenprop, MercadoLibre e Instagram. Las consultas te llegan con la propiedad ya identificada. La demo es el sistema real, con propiedades de ejemplo: entrá y recorrela.",
+  heroSecondary: {
+    href: "https://crestech-house-production.up.railway.app?utm_source=crestech&utm_medium=web&utm_campaign=inmobiliarias-hero",
+    label: "Ver la demo ↗",
+  },
+  producto: {
+    heroImg: { src: "/crestech-house/incluye-web.jpg", alt: "Home de la inmobiliaria demo de Crestech House con su buscador de propiedades", width: 1280, height: 800 },
+    planes: [
+      { nombre: "Inicial", precio: "$28.000", detalle: ["Hasta 25 propiedades", "Tu web con tu marca", "Un portal"] },
+      { nombre: "Profesional", precio: "$52.000", detalle: ["Hasta 80 propiedades", "Todos los portales", "Asistente en el panel"], destacado: true },
+      { nombre: "Premium", precio: "$88.000", detalle: ["Hasta 250 propiedades", "Diseño propio de cada sección", "Dominio incluido"] },
+    ],
+    planesNota: "Precios mensuales en pesos. La instalación es sin cargo para las primeras 5 inmobiliarias.",
+  },
   demo: {
     appTitle: "TU INMOBILIARIA",
     day: "Venta · Zona Oeste",
@@ -532,7 +552,7 @@ const inmobiliarias: LandingConfig = {
     headingEm: "en un solo sistema",
     cta: { href: "https://crestech-house-production.up.railway.app?utm_source=crestech&utm_medium=web&utm_campaign=inmobiliarias-incluye", label: "Ver la demo funcionando" },
     cards: [
-      { title: "Tu web, con tu marca", body: "Tus colores, tu logo y tus secciones, con buscador por tipo y barrio y fichas con galería y mapa.", img: "/crestech-house/incluye-web.jpg", alt: "Home de la inmobiliaria demo de Crestech House con su buscador de propiedades", width: 1280, height: 800 },
+      { title: "Fichas que se comparten", body: "Cada propiedad con su galería, precio, mapa y características, en un link listo para mandar por WhatsApp.", img: "/crestech-house/detalle.jpg", alt: "Ficha de una propiedad en la inmobiliaria demo de Crestech House", width: 1280, height: 800 },
       { title: "Un panel, todos los portales", body: "Cargás la propiedad una vez y la publicás en Zonaprop, Argenprop, MercadoLibre e Instagram desde el mismo lugar.", img: "/crestech-house/incluye-portales.jpg", alt: "Panel de Crestech House en el celular con los portales conectados", width: 780, height: 1688 },
       { title: "Un asistente que hace los cambios", body: "Le escribís como por WhatsApp, \"bajale 5% al PH\", y te muestra el cambio para que lo confirmes.", img: "/crestech-house/incluye-asistente.jpg", alt: "Asistente del panel proponiendo bajar un 5% el precio de una propiedad", width: 780, height: 1688 },
       { title: "Todas las consultas juntas", body: "Lo que entra por la web, por WhatsApp o por MercadoLibre, en un solo lugar y por etapa: nueva, contactada, visita, negociación.", img: "/crestech-house/incluye-consultas.jpg", alt: "Panel de consultas de Crestech House ordenadas por etapa", width: 1600, height: 1000 },
@@ -556,13 +576,9 @@ const inmobiliarias: LandingConfig = {
       q: "¿Tengo que dejar de publicar en los portales?",
       a: "No. Conectás tus cuentas una vez y publicás en Zonaprop, Argenprop, MercadoLibre e Instagram desde el panel. Los avisos pagos de cada portal se contratan con el portal, como siempre.",
     },
-    {
-      q: "¿Cuánto cuesta?",
-      a: "Hay tres planes mensuales en pesos: Inicial $28.000 (hasta 25 propiedades y un portal), Profesional $52.000 (hasta 80 propiedades, todos los portales y el asistente) y Premium $88.000 (hasta 250 propiedades, diseño propio de cada sección y dominio incluido). La instalación es sin cargo para las primeras 5 inmobiliarias.",
-    },
   ],
-  finalHeading: "Toda tu cartera",
-  finalHeadingEm: "en un solo panel",
+  finalHeading: "¿Querés verla con",
+  finalHeadingEm: "tus propiedades?",
   finalLede:
     "Te mostramos cómo se vería tu web con tu cartera y nos contás cómo trabajás hoy. Si te sirve, avanzamos. Si no, te llevás ideas gratis.",
   whatsappMessage:

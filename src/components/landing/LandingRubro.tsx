@@ -103,7 +103,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                     href={config.heroSecondary.href}
                     target="_blank"
                     rel="noopener"
-                    data-umami-event="landing-cupio-hero"
+                    data-umami-event={config.producto ? "landing-demo-hero" : "landing-cupio-hero"}
                   >
                     {config.heroSecondary.label}
                   </a>
@@ -116,10 +116,76 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
               <p className={styles.ctaNote}>Te responde una persona. Sin compromiso.</p>
             </div>
 
-            <PhoneDemo demo={config.demo} />
+            {config.producto ? (
+              <div className={styles.heroShot}>
+                <div className={styles.heroShotBar} aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                </div>
+                <div className={styles.heroShotImg}>
+                  <FotoAmpliable
+                    src={config.producto.heroImg.src}
+                    alt={config.producto.heroImg.alt}
+                    width={config.producto.heroImg.width}
+                    height={config.producto.heroImg.height}
+                    sizes="(max-width: 900px) 100vw, 45vw"
+                  />
+                </div>
+              </div>
+            ) : (
+              <PhoneDemo demo={config.demo} />
+            )}
           </div>
         </div>
 
+        {/* LO QUE INCLUYE (formato producto: va primero) */}
+        {config.producto && config.incluye && (
+          <section id="incluye">
+            <div className={styles.wrap}>
+              <Reveal>
+                <p className={styles.eyebrow}>{config.incluye.eyebrow}</p>
+                <h2>
+                  {config.incluye.heading} <em>{config.incluye.headingEm}</em>
+                </h2>
+                <a
+                  className={`${styles.btnGhost} ${styles.proofCta}`}
+                  href={config.incluye.cta.href}
+                  target="_blank"
+                  rel="noopener"
+                  data-umami-event={`landing-${config.slug}-incluye`}
+                >
+                  {config.incluye.cta.label}&nbsp;<span aria-hidden="true">↗</span>
+                </a>
+              </Reveal>
+              <div className={styles.incluyeGrid}>
+                {config.incluye.cards.map((c, i) => (
+                  <Reveal key={c.title} delay={i * 80}>
+                    <article className={styles.incluyeCard}>
+                      <div className={styles.incluyeMedia}>
+                        <FotoAmpliable
+                          src={c.img}
+                          alt={c.alt}
+                          width={c.width}
+                          height={c.height}
+                          sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 25vw"
+                        />
+                      </div>
+                      <div className={styles.incluyeBody}>
+                        <h3>{c.title}</h3>
+                        <p>{c.body}</p>
+                      </div>
+                    </article>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* DOLORES Y PRUEBA (no van en el formato producto) */}
+        {!config.producto && (
+          <>
         {/* DOLORES */}
         <section id="dolores">
           <div className={styles.wrap}>
@@ -216,8 +282,11 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
           </div>
         </section>
 
+          </>
+        )}
+
         {/* LO QUE INCLUYE */}
-        {config.incluye && (
+        {!config.producto && config.incluye && (
           <section id="incluye">
             <div className={styles.wrap}>
               <Reveal>
@@ -292,6 +361,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
         )}
 
         {/* PROCESO */}
+        {!config.producto && (
         <section id="proceso">
           <div className={styles.wrap}>
             <Reveal>
@@ -310,8 +380,42 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
             </div>
           </div>
         </section>
+        )}
+
+        {/* PLANES (formato producto) */}
+        {config.producto && (
+          <section id="precio">
+            <div className={styles.wrap}>
+              <Reveal>
+                <p className={styles.eyebrow}>Planes</p>
+                <h2>
+                  Un precio por mes, <em>sin sorpresas</em>
+                </h2>
+              </Reveal>
+              <div className={styles.planes}>
+                {config.producto.planes.map((plan, i) => (
+                  <Reveal key={plan.nombre} delay={i * 80}>
+                    <div className={`${styles.plan} ${plan.destacado ? styles.planDestacado : ""}`}>
+                      <h3>{plan.nombre}</h3>
+                      <p className={styles.planPrecio}>
+                        {plan.precio} <span>por mes</span>
+                      </p>
+                      <ul>
+                        {plan.detalle.map((d) => (
+                          <li key={d}>{d}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+              <p className={styles.planesNota}>{config.producto.planesNota}</p>
+            </div>
+          </section>
+        )}
 
         {/* PRECIO + QUIÉN */}
+        {!config.producto && (
         <section id="precio">
           <div className={styles.wrap}>
             <div className={styles.duo}>
@@ -353,6 +457,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
             </div>
           </div>
         </section>
+        )}
 
         {/* PREGUNTAS FRECUENTES */}
         <section id="preguntas">

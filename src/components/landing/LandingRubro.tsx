@@ -103,7 +103,7 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                     href={config.heroSecondary.href}
                     target="_blank"
                     rel="noopener"
-                    data-umami-event={config.producto ? "landing-demo-hero" : "landing-cupio-hero"}
+                    data-umami-event={config.heroSecondary.href.includes("cupio.com.ar") ? "landing-cupio-hero" : "landing-demo-hero"}
                   >
                     {config.heroSecondary.label}
                   </a>
@@ -117,22 +117,34 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
             </div>
 
             {config.producto ? (
-              <div className={styles.heroShot}>
-                <div className={styles.heroShotBar} aria-hidden="true">
-                  <i />
-                  <i />
-                  <i />
-                </div>
-                <div className={styles.heroShotImg}>
+              config.producto.heroImg.height > config.producto.heroImg.width ? (
+                <div className={styles.heroShotPhone}>
                   <FotoAmpliable
                     src={config.producto.heroImg.src}
                     alt={config.producto.heroImg.alt}
                     width={config.producto.heroImg.width}
                     height={config.producto.heroImg.height}
-                    sizes="(max-width: 900px) 100vw, 45vw"
+                    sizes="(max-width: 900px) 80vw, 320px"
                   />
                 </div>
-              </div>
+              ) : (
+                <div className={styles.heroShot}>
+                  <div className={styles.heroShotBar} aria-hidden="true">
+                    <i />
+                    <i />
+                    <i />
+                  </div>
+                  <div className={styles.heroShotImg}>
+                    <FotoAmpliable
+                      src={config.producto.heroImg.src}
+                      alt={config.producto.heroImg.alt}
+                      width={config.producto.heroImg.width}
+                      height={config.producto.heroImg.height}
+                      sizes="(max-width: 900px) 100vw, 45vw"
+                    />
+                  </div>
+                </div>
+              )
             ) : (
               <PhoneDemo demo={config.demo} />
             )}
@@ -386,30 +398,46 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
         {config.producto && (
           <section id="precio">
             <div className={styles.wrap}>
-              <Reveal>
-                <p className={styles.eyebrow}>Planes</p>
-                <h2>
-                  Un precio por mes, <em>sin sorpresas</em>
-                </h2>
-              </Reveal>
-              <div className={styles.planes}>
-                {config.producto.planes.map((plan, i) => (
-                  <Reveal key={plan.nombre} delay={i * 80}>
-                    <div className={`${styles.plan} ${plan.destacado ? styles.planDestacado : ""}`}>
-                      <h3>{plan.nombre}</h3>
-                      <p className={styles.planPrecio}>
-                        {plan.precio} <span>por mes</span>
-                      </p>
-                      <ul>
-                        {plan.detalle.map((d) => (
-                          <li key={d}>{d}</li>
-                        ))}
-                      </ul>
+              {config.producto.planes ? (
+                <>
+                  <Reveal>
+                    <p className={styles.eyebrow}>Planes</p>
+                    <h2>
+                      Un precio por mes, <em>sin sorpresas</em>
+                    </h2>
+                  </Reveal>
+                  <div className={styles.planes}>
+                    {config.producto.planes.map((plan, i) => (
+                      <Reveal key={plan.nombre} delay={i * 80}>
+                        <div className={`${styles.plan} ${plan.destacado ? styles.planDestacado : ""}`}>
+                          <h3>{plan.nombre}</h3>
+                          <p className={styles.planPrecio}>
+                            {plan.precio} <span>por mes</span>
+                          </p>
+                          <ul>
+                            {plan.detalle.map((d) => (
+                              <li key={d}>{d}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </Reveal>
+                    ))}
+                  </div>
+                  {config.producto.planesNota && <p className={styles.planesNota}>{config.producto.planesNota}</p>}
+                </>
+              ) : (
+                config.pricing && (
+                  <Reveal>
+                    <div className={styles.panel}>
+                      <p className={styles.eyebrow}>Precio</p>
+                      <h3>{config.pricing.heading}</h3>
+                      {config.pricing.body.map((p) => (
+                        <p key={p}>{rich(p)}</p>
+                      ))}
                     </div>
                   </Reveal>
-                ))}
-              </div>
-              <p className={styles.planesNota}>{config.producto.planesNota}</p>
+                )
+              )}
             </div>
           </section>
         )}

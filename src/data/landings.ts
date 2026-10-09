@@ -66,8 +66,9 @@ export interface LandingConfig {
   // y se omiten dolores, prueba y proceso. El precio se muestra en tarjetas de planes.
   producto?: {
     heroImg: { src: string; alt: string; width: number; height: number };
-    planes: { nombre: string; precio: string; detalle: string[]; destacado?: boolean }[];
-    planesNota: string;
+    // Sin planes, la sección de precio muestra `pricing` (Cupio no publica precios todavía).
+    planes?: { nombre: string; precio: string; detalle: string[]; destacado?: boolean }[];
+    planesNota?: string;
   };
   demo: {
     appTitle: string;
@@ -144,6 +145,9 @@ const pilates: LandingConfig = {
   heroSub:
     "Cupio, nuestro sistema de turnos online: tus alumnas ven los lugares libres, reservan desde el celular y reciben un recordatorio antes de la clase. Lo configuramos con vos y lo dejamos andando.",
   heroSecondary: { href: cupioLink("/registro", "turnos-pilates"), label: "Probar gratis 7 días" },
+  producto: {
+    heroImg: { src: "/cupio/incluye-reservar.jpg", alt: "Calendario de Cupio en el celular con los turnos libres de cada día para reservar", width: 780, height: 1688 },
+  },
   demo: {
     appTitle: "TU ESTUDIO",
     day: "Mañana · Jueves",

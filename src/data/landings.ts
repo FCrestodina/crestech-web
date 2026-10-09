@@ -66,7 +66,7 @@ export interface LandingConfig {
   // y se omiten dolores, prueba y proceso. El precio se muestra en tarjetas de planes.
   producto?: {
     heroImg: { src: string; alt: string; width: number; height: number };
-    // Sin planes, la sección de precio muestra `pricing` (Cupio no publica precios todavía).
+    // Sin planes, la sección de precio muestra `pricing`.
     planes?: { nombre: string; precio: string; detalle: string[]; destacado?: boolean }[];
     planesNota?: string;
   };
@@ -147,6 +147,13 @@ const pilates: LandingConfig = {
   heroSecondary: { href: cupioLink("/registro", "turnos-pilates"), label: "Probar gratis 7 días" },
   producto: {
     heroImg: { src: "/cupio/incluye-reservar.jpg", alt: "Calendario de Cupio en el celular con los turnos libres de cada día para reservar", width: 780, height: 1688 },
+    planes: [
+      { nombre: "Hasta 30 alumnas", precio: "$4.900", detalle: ["Reservas online y recordatorios", "Lugar fijo y lista de espera", "Abonos y varios profes"] },
+      { nombre: "Hasta 100 alumnas", precio: "$8.900", detalle: ["Reservas online y recordatorios", "Lugar fijo y lista de espera", "Abonos y varios profes"] },
+      { nombre: "Hasta 300 alumnas", precio: "$9.900", detalle: ["Todo lo de los otros planes", "$35 por mes por cada alumna más"] },
+    ],
+    planesNota:
+      "Precios mensuales en pesos, con débito automático de Mercado Pago. Los primeros 7 días son gratis. Cobrar los abonos y facturar desde Cupio todavía no está abierto a todos los estudios: si lo necesitás, escribinos.",
   },
   demo: {
     appTitle: "TU ESTUDIO",
@@ -238,13 +245,6 @@ const pilates: LandingConfig = {
     { strong: "Varios profes", rest: "cada clase con el nombre de quien la da, y cada profe puede entrar a ver sus clases del día." },
     { strong: "Agenda y lista de asistencia", rest: "ves quién viene a cada clase y marcás quién faltó." },
   ],
-  pricing: {
-    heading: "Una suscripción, sin desarrollo",
-    body: [
-      "Cupio se paga por mes según cuántas alumnas tengas, con débito automático de Mercado Pago. Los primeros 7 días son gratis.",
-      "Cobrar los abonos por Mercado Pago y facturar desde Cupio todavía no está abierto a todos los estudios: si lo necesitás, escribinos.",
-    ],
-  },
   faq: [
     {
       q: "¿Qué es Cupio?",
@@ -260,7 +260,7 @@ const pilates: LandingConfig = {
     },
     {
       q: "¿Cuánto cuesta?",
-      a: "Una suscripción mensual según cuántas alumnas tengas, con débito automático de Mercado Pago, y los primeros 7 días son gratis. Si querés, te ayudamos a configurarlo.",
+      a: "Desde $4.900 por mes según cuántas alumnas tengas, con débito automático de Mercado Pago, y los primeros 7 días son gratis. Si querés, te ayudamos a configurarlo.",
     },
   ],
   finalHeading: "Conocé Cupio",
@@ -487,6 +487,13 @@ const inmobiliarias: LandingConfig = {
   },
   producto: {
     heroImg: { src: "/crestech-house/incluye-web.jpg", alt: "Home de la inmobiliaria demo de Crestech House con su buscador de propiedades", width: 1280, height: 800 },
+    planes: [
+      { nombre: "Inicial", precio: "$35.000", detalle: ["Hasta 25 propiedades", "Tu sitio con tu diseño y tu dominio", "Panel, emprendimientos y consultas de la web", "Sin publicación en portales"] },
+      { nombre: "Profesional", precio: "$72.000", detalle: ["Hasta 80 propiedades", "Todo lo del Inicial", "Zonaprop, Argenprop, MercadoLibre e Instagram", "Asistente en el panel"] },
+      { nombre: "Premium", precio: "$127.000", detalle: ["Hasta 250 propiedades", "Todo lo del Profesional", "Un usuario por vendedor, con sus consultas", "Métricas e historial de cambios", "Soporte prioritario"] },
+    ],
+    planesNota:
+      "Precios finales por mes, en pesos. Sin costo de instalación. El dominio y los avisos pagos de cada portal los contrata la inmobiliaria.",
   },
   demo: {
     appTitle: "TU INMOBILIARIA",
@@ -565,12 +572,6 @@ const inmobiliarias: LandingConfig = {
     { strong: "Asistente en el panel", rest: "le pedís los cambios en palabras comunes y los hace." },
     { strong: "Diseño propio", rest: "colores, tipografías y secciones elegidas para tu marca." },
   ],
-  pricing: {
-    heading: "Una suscripción por mes",
-    body: [
-      "Crestech House se paga con una suscripción mensual. Escribinos y te pasamos el precio para tu inmobiliaria.",
-    ],
-  },
   faq: [
     {
       q: "¿Puedo cargar las propiedades yo mismo?",
@@ -591,7 +592,7 @@ const inmobiliarias: LandingConfig = {
     "Hola, tengo una inmobiliaria y quiero ver Crestech House funcionando.",
   metaTitle: "Sistema para inmobiliarias: web propia y publicación en portales | Crestech House",
   metaDescription:
-    "Web con tu marca y un panel para cargar cada propiedad una vez y publicarla en Zonaprop, Argenprop, MercadoLibre e Instagram.",
+    "Web con tu marca y un panel para cargar cada propiedad una vez y publicarla en Zonaprop, Argenprop, MercadoLibre e Instagram. Planes desde $35.000 por mes.",
   ogTitle: "Cargás cada propiedad una vez, sale en todos lados.",
   ogDescription:
     "Web con tu marca, publicación en Zonaprop, Argenprop, MercadoLibre e Instagram, y consultas por WhatsApp.",

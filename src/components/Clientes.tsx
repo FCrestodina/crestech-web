@@ -7,19 +7,20 @@ interface Cliente {
   fondo: string;
   ancho: number;
   alto: number;
+  foto?: boolean; // foto en vez de logo: llena la caja de borde a borde
 }
 
 const clientes: Cliente[] = [
   { nombre: "Crestodina Propiedades", rubro: "Inmobiliaria", logo: "/clientes/crestodina.png", fondo: "#ffffff", ancho: 412, alto: 106 },
   { nombre: "Mixtura", rubro: "Estudio de pilates", logo: "/clientes/mixtura.png", fondo: "#ffffff", ancho: 225, alto: 104 },
   { nombre: "Impulso Deportivo", rubro: "Asociación civil", logo: "/clientes/impulso.webp", fondo: "#1b0b20", ancho: 460, alto: 461 },
-  { nombre: "Ayedg.ph", rubro: "Productora audiovisual", logo: "/clientes/ayeph.svg", fondo: "#0f0e14", ancho: 32, alto: 32 },
+  { nombre: "Ayedg.ph", rubro: "Productora audiovisual", logo: "/clientes/ayeph.jpg", fondo: "#0f0e14", ancho: 360, alto: 216, foto: true },
 ];
 
 function Item({ c, copia = false }: { c: Cliente; copia?: boolean }) {
   return (
     <li className="cliente" aria-hidden={copia || undefined}>
-      <span className="cliente-logo" style={{ background: c.fondo }}>
+      <span className={c.foto ? "cliente-logo cliente-logo-foto" : "cliente-logo"} style={{ background: c.fondo }}>
         <Image src={c.logo} alt="" width={c.ancho} height={c.alto} />
       </span>
       <span>

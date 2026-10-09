@@ -87,7 +87,8 @@ export interface LandingConfig {
     eyebrow: string;
     heading: string;
     headingEm: string;
-    cards: { title: string; body: string; img: string; alt: string }[]; // capturas 1280x800 armadas sobre el color del producto
+    cta: CtaLink; // link al producto funcionando
+    cards: { title: string; body: string; img: string; alt: string; width: number; height: number }[]; // capturas reales, se amplían al tocarlas
   };
   adminPhotos?: ProofPhoto[]; // capturas del panel de gestión (390x844, marco de teléfono); sin datos personales
   adminEyebrow?: string;
@@ -207,11 +208,12 @@ const pilates: LandingConfig = {
     eyebrow: "Lo que incluye",
     heading: "Todo el estudio",
     headingEm: "en el celular",
+    cta: { href: cupioLink("/turnos/pilates", "turnos-pilates-incluye"), label: "Ir a Cupio" },
     cards: [
-      { title: "Reservan solas", body: "Ven los horarios con lugares libres y reservan desde el celular, a cualquier hora, sin escribirte.", img: "/cupio/card-reservar.jpg", alt: "Calendario de Cupio con los turnos libres de cada día para reservar" },
-      { title: "Tu agenda, de un vistazo", body: "El mes entero con la ocupación de cada clase: cuáles están llenas y dónde quedan lugares.", img: "/cupio/card-agenda.jpg", alt: "Agenda mensual de Cupio con la ocupación de cada clase" },
-      { title: "Lugar fijo y lista de espera", body: "La que viene siempre deja su lugar reservado todas las semanas. Si la clase está llena, se anota y le avisamos cuando se libera.", img: "/cupio/card-espera.jpg", alt: "Turnos de una alumna en Cupio con dos lugares fijos semanales" },
-      { title: "Tus alumnas en orden", body: "Quién está al día y quién debe, cuántas clases le quedan del abono y su WhatsApp a un toque, sin planillas ni cuadernos.", img: "/cupio/card-alumnos.jpg", alt: "Lista de alumnas en Cupio con el estado del abono" },
+      { title: "Reservan solas", body: "Ven los horarios con lugares libres y reservan desde el celular, a cualquier hora, sin escribirte.", img: "/cupio/incluye-reservar.jpg", alt: "Calendario de Cupio con los turnos libres de cada día para reservar", width: 780, height: 1688 },
+      { title: "Tu agenda, de un vistazo", body: "El mes entero con la ocupación de cada clase: cuáles están llenas y dónde quedan lugares.", img: "/cupio/incluye-agenda.jpg", alt: "Agenda mensual de Cupio con la ocupación de cada clase", width: 780, height: 1688 },
+      { title: "Lugar fijo y lista de espera", body: "La que viene siempre deja su lugar reservado todas las semanas. Si la clase está llena, se anota y le avisamos cuando se libera.", img: "/cupio/incluye-espera.jpg", alt: "Turnos de una alumna en Cupio con dos lugares fijos semanales", width: 780, height: 1688 },
+      { title: "Tus alumnas en orden", body: "Quién está al día y quién debe, cuántas clases le quedan del abono y su WhatsApp a un toque, sin planillas ni cuadernos.", img: "/cupio/incluye-alumnos.jpg", alt: "Lista de alumnas en Cupio con el estado del abono", width: 780, height: 1688 },
     ],
   },
   proofCardLabel: "Cupio · sistema de turnos",
@@ -528,11 +530,12 @@ const inmobiliarias: LandingConfig = {
     eyebrow: "Lo que incluye",
     heading: "Todo lo que necesitás",
     headingEm: "en un solo sistema",
+    cta: { href: "https://crestech-house-production.up.railway.app?utm_source=crestech&utm_medium=web&utm_campaign=inmobiliarias-incluye", label: "Ver la demo funcionando" },
     cards: [
-      { title: "Tu web, con tu marca", body: "Tus colores, tu logo y tus secciones, con buscador por tipo y barrio y fichas con galería y mapa.", img: "/crestech-house/card-web.jpg", alt: "Home de la inmobiliaria demo de Crestech House con su buscador de propiedades" },
-      { title: "Un panel, todos los portales", body: "Cargás la propiedad una vez y la publicás en Zonaprop, Argenprop, MercadoLibre e Instagram desde el mismo lugar.", img: "/crestech-house/card-portales.jpg", alt: "Panel de Crestech House en el celular con los portales conectados" },
-      { title: "Un asistente que hace los cambios", body: "Le escribís como por WhatsApp, \"bajale 5% al PH\", y te muestra el cambio para que lo confirmes.", img: "/crestech-house/card-asistente.jpg", alt: "Asistente del panel proponiendo bajar un 5% el precio de una propiedad" },
-      { title: "Todas las consultas juntas", body: "Lo que entra por la web, por WhatsApp o por MercadoLibre, en un solo lugar y por etapa: nueva, contactada, visita, negociación.", img: "/crestech-house/card-consultas.jpg", alt: "Panel de consultas de Crestech House ordenadas por etapa" },
+      { title: "Tu web, con tu marca", body: "Tus colores, tu logo y tus secciones, con buscador por tipo y barrio y fichas con galería y mapa.", img: "/crestech-house/incluye-web.jpg", alt: "Home de la inmobiliaria demo de Crestech House con su buscador de propiedades", width: 1280, height: 800 },
+      { title: "Un panel, todos los portales", body: "Cargás la propiedad una vez y la publicás en Zonaprop, Argenprop, MercadoLibre e Instagram desde el mismo lugar.", img: "/crestech-house/incluye-portales.jpg", alt: "Panel de Crestech House en el celular con los portales conectados", width: 780, height: 1688 },
+      { title: "Un asistente que hace los cambios", body: "Le escribís como por WhatsApp, \"bajale 5% al PH\", y te muestra el cambio para que lo confirmes.", img: "/crestech-house/incluye-asistente.jpg", alt: "Asistente del panel proponiendo bajar un 5% el precio de una propiedad", width: 780, height: 1688 },
+      { title: "Todas las consultas juntas", body: "Lo que entra por la web, por WhatsApp o por MercadoLibre, en un solo lugar y por etapa: nueva, contactada, visita, negociación.", img: "/crestech-house/incluye-consultas.jpg", alt: "Panel de consultas de Crestech House ordenadas por etapa", width: 1600, height: 1000 },
     ],
   },
   proofCardLabel: "Producto propio · Crestech House",

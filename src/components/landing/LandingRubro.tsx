@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import PhoneDemo from "./PhoneDemo";
+import FotoAmpliable from "./FotoAmpliable";
 import { type LandingConfig, cupioLink, landings, waLink } from "@/data/landings";
 import { landingFontVars } from "@/lib/landingFonts";
 import styles from "./landing.module.css";
@@ -224,13 +225,28 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                 <h2>
                   {config.incluye.heading} <em>{config.incluye.headingEm}</em>
                 </h2>
+                <a
+                  className={`${styles.btnGhost} ${styles.proofCta}`}
+                  href={config.incluye.cta.href}
+                  target="_blank"
+                  rel="noopener"
+                  data-umami-event={`landing-${config.slug}-incluye`}
+                >
+                  {config.incluye.cta.label}&nbsp;<span aria-hidden="true">↗</span>
+                </a>
               </Reveal>
               <div className={styles.incluyeGrid}>
                 {config.incluye.cards.map((c, i) => (
                   <Reveal key={c.title} delay={i * 80}>
                     <article className={styles.incluyeCard}>
                       <div className={styles.incluyeMedia}>
-                        <Image src={c.img} alt={c.alt} fill sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 25vw" />
+                        <FotoAmpliable
+                          src={c.img}
+                          alt={c.alt}
+                          width={c.width}
+                          height={c.height}
+                          sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 25vw"
+                        />
                       </div>
                       <div className={styles.incluyeBody}>
                         <h3>{c.title}</h3>

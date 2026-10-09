@@ -1109,9 +1109,65 @@
 }
 .incluyeMedia {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
+  border-bottom: 1px solid var(--line-soft);
 }
-.incluyeMedia img { object-fit: cover; }
+/* Captura real: se ve la parte de arriba y al tocarla se abre entera */
+.ampliarBtn {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.ampliarBtn img { object-fit: cover; object-position: top left; }
+.ampliarBtn:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+.ampliarHint {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+}
+.ampliarDialog {
+  max-width: min(1200px, 94vw);
+  max-height: 92vh;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+.ampliarDialog::backdrop { background: rgba(0, 0, 0, 0.82); }
+.ampliarImg {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(1200px, 94vw);
+  max-height: 92vh;
+  border-radius: 10px;
+}
+.ampliarCerrar {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 0;
+  font-size: 22px;
+  line-height: 1;
+  color: #111;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
 .incluyeBody { padding: 20px 22px 24px; }
 .incluyeBody h3 {
   font-family: var(--display);

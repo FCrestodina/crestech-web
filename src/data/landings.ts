@@ -507,14 +507,14 @@ const inmobiliarias: LandingConfig = {
         "Consultas que llegan tarde o se pierden entre mensajes. Cada ficha tiene un botón de consulta que te llega directo, con la propiedad ya identificada.",
     },
   ],
-  proofEyebrow: "Un caso real",
-  proofHeading: "Ya la hicimos",
-  proofHeadingEm: "para una inmobiliaria real",
+  proofEyebrow: "La demo",
+  proofHeading: "Miralo funcionando",
+  proofHeadingEm: "antes de decidir",
   proofLede:
-    "Crestodina Propiedades, una inmobiliaria familiar de Caballito con más de 40 años, trabaja con Crestech House: carga sus propiedades desde el panel, publica en los portales y recibe las consultas por WhatsApp. Tu inmobiliaria puede tener lo mismo, con tu marca y tu diseño. Mirá la demo en crestech-house-production.up.railway.app.",
+    "Inmobiliaria Demo es una instalación de Crestech House con propiedades de ejemplo: el sitio, las fichas, el buscador y las consultas por WhatsApp funcionan igual que en tu inmobiliaria, con tu marca y tu diseño. Entrá en crestech-house-production.up.railway.app.",
   proofPhotos: [
-    { src: "/crestodina/home.jpg", alt: "Home de Crestodina Propiedades con buscador de propiedades" },
-    { src: "/crestodina/detalle.jpg", alt: "Ficha de una propiedad en Crestodina Propiedades" },
+    { src: "/crestech-house/home.jpg", alt: "Home de la inmobiliaria demo de Crestech House con buscador de propiedades" },
+    { src: "/crestech-house/detalle.jpg", alt: "Ficha de una propiedad en la inmobiliaria demo de Crestech House" },
   ],
   adminEyebrow: "Del lado de la gestión",
   adminHeading: "Cargás tu cartera",
@@ -522,10 +522,10 @@ const inmobiliarias: LandingConfig = {
   adminLede:
     "Subís, editás y publicás propiedades desde un panel con fotos, precio, descripción y estado. Y si preferís, le escribís al asistente como por WhatsApp: \"bajale 5% al PH de Gorriti\" y lo hace, con historial para deshacer.",
   adminPhotos: [
-    { src: "/crestodina/admin-cartera.png", alt: "Listado de propiedades en el panel de Crestodina" },
-    { src: "/crestodina/admin-carga.png", alt: "Carga y edición de una propiedad con fotos y datos" },
+    { src: "/crestech-house/admin-panel.png", alt: "Panel de Crestech House con las propiedades y los portales conectados" },
+    { src: "/crestech-house/admin-edicion.png", alt: "Edición de una propiedad con su estado en cada portal y sus fotos" },
   ],
-  proofCardLabel: "Caso real · Crestodina Propiedades",
+  proofCardLabel: "Producto propio · Crestech House",
   proofCardTitle: "Lo que incluye Crestech House",
   features: [
     { strong: "Publicación en portales", rest: "Zonaprop, Argenprop, MercadoLibre e Instagram desde el mismo panel." },

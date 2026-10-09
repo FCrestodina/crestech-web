@@ -5,7 +5,6 @@ import Process from "@/components/Process";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Didactico from "@/components/Didactico";
-import Rubros from "@/components/Rubros";
 import About from "@/components/About";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -24,7 +23,6 @@ export default function Home() {
         <Hero />
         <Services />
         <Process />
-        <Rubros />
         <Portfolio />
         <Didactico />
         <About />

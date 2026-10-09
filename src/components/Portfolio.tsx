@@ -36,7 +36,7 @@ const projects: Project[] = [
     title: "Crestech House",
     challenge: "Una inmobiliaria carga la misma propiedad en su web, en Zonaprop, en Argenprop, en MercadoLibre y en Instagram, y cada cambio de precio o venta hay que repetirlo en todos.",
     description: "Nuestro sistema para inmobiliarias: sitio con la marca y el diseño de cada una, un panel donde se carga cada propiedad una sola vez y sale en los portales, un asistente al que se le piden los cambios como por WhatsApp, y consultas que llegan al WhatsApp con la propiedad ya identificada.",
-    result: "La demo está online: entrá y mirá el sitio de una inmobiliaria de ejemplo. Planes mensuales desde $28.000.",
+    result: "La demo está online: entrá y mirá el sitio de una inmobiliaria de ejemplo.",
     tags: ["Publicación en portales", "Asistente IA", "Diseño por inmobiliaria", "Consultas por WhatsApp"],
     color: "rgba(var(--gold-rgb),0.05)",
     accent: "var(--gold-mid)",

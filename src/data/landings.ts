@@ -487,12 +487,6 @@ const inmobiliarias: LandingConfig = {
   },
   producto: {
     heroImg: { src: "/crestech-house/incluye-web.jpg", alt: "Home de la inmobiliaria demo de Crestech House con su buscador de propiedades", width: 1280, height: 800 },
-    planes: [
-      { nombre: "Inicial", precio: "$28.000", detalle: ["Hasta 25 propiedades", "Tu web con tu marca", "Un portal"] },
-      { nombre: "Profesional", precio: "$52.000", detalle: ["Hasta 80 propiedades", "Todos los portales", "Asistente en el panel"], destacado: true },
-      { nombre: "Premium", precio: "$88.000", detalle: ["Hasta 250 propiedades", "Diseño propio de cada sección", "Dominio incluido"] },
-    ],
-    planesNota: "Precios mensuales en pesos. La instalación es sin cargo para las primeras 5 inmobiliarias.",
   },
   demo: {
     appTitle: "TU INMOBILIARIA",
@@ -571,6 +565,12 @@ const inmobiliarias: LandingConfig = {
     { strong: "Asistente en el panel", rest: "le pedís los cambios en palabras comunes y los hace." },
     { strong: "Diseño propio", rest: "colores, tipografías y secciones elegidas para tu marca." },
   ],
+  pricing: {
+    heading: "Una suscripción por mes",
+    body: [
+      "Crestech House se paga con una suscripción mensual. Escribinos y te pasamos el precio para tu inmobiliaria.",
+    ],
+  },
   faq: [
     {
       q: "¿Puedo cargar las propiedades yo mismo?",
@@ -591,7 +591,7 @@ const inmobiliarias: LandingConfig = {
     "Hola, tengo una inmobiliaria y quiero ver Crestech House funcionando.",
   metaTitle: "Sistema para inmobiliarias: web propia y publicación en portales | Crestech House",
   metaDescription:
-    "Web con tu marca y un panel para cargar cada propiedad una vez y publicarla en Zonaprop, Argenprop, MercadoLibre e Instagram. Planes desde $28.000 por mes.",
+    "Web con tu marca y un panel para cargar cada propiedad una vez y publicarla en Zonaprop, Argenprop, MercadoLibre e Instagram.",
   ogTitle: "Cargás cada propiedad una vez, sale en todos lados.",
   ogDescription:
     "Web con tu marca, publicación en Zonaprop, Argenprop, MercadoLibre e Instagram, y consultas por WhatsApp.",

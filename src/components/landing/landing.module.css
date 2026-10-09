@@ -1183,8 +1183,22 @@
 @media (max-width: 900px) {
   .incluyeGrid { grid-template-columns: repeat(2, 1fr); }
 }
+/* Fila de un plan aparte (Plan Inteligencia Artificial) */
+.incluyeIA { margin-top: 72px; }
+.incluyeIATitulo {
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  text-transform: var(--display-case);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.15;
+}
+.incluyeIALede { margin-top: 12px; max-width: 60ch; color: var(--muted); }
+.incluyeGrid3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+  .incluyeGrid3 { grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 560px) {
-  .incluyeGrid { grid-template-columns: 1fr; }
+  .incluyeGrid, .incluyeGrid3 { grid-template-columns: 1fr; }
 }
 
 /* Formato producto: captura real en el hero, en un marco de navegador */
@@ -1227,7 +1241,7 @@
 /* Formato producto: planes en tarjetas */
 .planes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
   margin-top: 42px;
 }
@@ -1251,7 +1265,7 @@
   font-size: 2rem;
   line-height: 1.1;
 }
-.planPrecio span { font-size: 0.9rem; color: var(--muted); }
+.planPrecio span { display: block; font-size: 0.9rem; color: var(--muted); }
 .plan ul { list-style: none; display: grid; gap: 8px; }
 .plan li { font-size: 0.95rem; color: var(--muted); padding-left: 18px; position: relative; }
 .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--gold); }

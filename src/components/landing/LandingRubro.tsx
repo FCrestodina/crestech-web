@@ -191,6 +191,36 @@ export default function LandingRubro({ config }: { config: LandingConfig }) {
                   </Reveal>
                 ))}
               </div>
+              {config.producto.ia && (
+                <div className={styles.incluyeIA}>
+                  <Reveal>
+                    <p className={styles.eyebrow}>{config.producto.ia.eyebrow}</p>
+                    <h3 className={styles.incluyeIATitulo}>{config.producto.ia.titulo}</h3>
+                    <p className={styles.incluyeIALede}>{config.producto.ia.lede}</p>
+                  </Reveal>
+                  <div className={`${styles.incluyeGrid} ${styles.incluyeGrid3}`}>
+                    {config.producto.ia.cards.map((c, i) => (
+                      <Reveal key={c.title} delay={i * 80}>
+                        <article className={styles.incluyeCard}>
+                          <div className={styles.incluyeMedia}>
+                            <FotoAmpliable
+                              src={c.img}
+                              alt={c.alt}
+                              width={c.width}
+                              height={c.height}
+                              sizes="(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw"
+                            />
+                          </div>
+                          <div className={styles.incluyeBody}>
+                            <h3>{c.title}</h3>
+                            <p>{c.body}</p>
+                          </div>
+                        </article>
+                      </Reveal>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </section>
         )}

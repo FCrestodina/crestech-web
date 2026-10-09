@@ -69,6 +69,13 @@ export interface LandingConfig {
     // Sin planes, la sección de precio muestra `pricing`.
     planes?: { nombre: string; precio: string; detalle: string[]; destacado?: boolean }[];
     planesNota?: string;
+    // Fila de capturas de un plan aparte, debajo de "Lo que incluye" (en inmobiliarias, el Plan Inteligencia Artificial).
+    ia?: {
+      eyebrow: string;
+      titulo: string;
+      lede: string;
+      cards: { title: string; body: string; img: string; alt: string; width: number; height: number }[];
+    };
   };
   demo: {
     appTitle: string;
@@ -491,9 +498,20 @@ const inmobiliarias: LandingConfig = {
       { nombre: "Inicial", precio: "$35.000", detalle: ["Hasta 25 propiedades", "Tu sitio con tu diseño y tu dominio", "Panel, emprendimientos y consultas de la web", "Sin publicación en portales"] },
       { nombre: "Profesional", precio: "$72.000", detalle: ["Hasta 80 propiedades", "Todo lo del Inicial", "Zonaprop, Argenprop, MercadoLibre e Instagram", "Asistente en el panel"] },
       { nombre: "Premium", precio: "$127.000", detalle: ["Hasta 250 propiedades", "Todo lo del Profesional", "Un usuario por vendedor, con sus consultas", "Métricas e historial de cambios", "Soporte prioritario"] },
+      { nombre: "Inteligencia Artificial", precio: "$220.000", detalle: ["Todo lo del Premium", "Respuesta sugerida a cada consulta, lista para mandar", "Chat en tu web que contesta con tu cartera", "Aviso a interesados cuando entra una propiedad parecida"] },
     ],
     planesNota:
-      "Precios finales por mes, en pesos. Sin costo de instalación. El dominio y los avisos pagos de cada portal los contrata la inmobiliaria.",
+      "Precios finales por mes, en pesos. Sin costo de instalación. El dominio y los avisos pagos de cada portal los contrata la inmobiliaria. El bot de WhatsApp del plan Inteligencia Artificial llega más adelante.",
+    ia: {
+      eyebrow: "Plan Inteligencia Artificial",
+      titulo: "La IA trabaja con vos",
+      lede: "Todo lo del Premium, más tres funciones que ya andan en la demo. Siempre decide una persona: la IA propone y vos mandás.",
+      cards: [
+        { title: "Respuesta sugerida a cada consulta", body: "Escribe la respuesta con los datos de la ficha y lo que ya hablaron, sin inventar lo que la ficha no dice. Un botón la manda a MercadoLibre o la abre en WhatsApp.", img: "/crestech-house/ia-respuesta.jpg", alt: "Respuesta sugerida por la IA a una pregunta de MercadoLibre en el panel de Crestech House", width: 750, height: 1608 },
+        { title: "Chat en tu web", body: "Contesta a cualquier hora con las propiedades que tenés publicadas. Si hay interés, pide nombre y teléfono y te deja la consulta en el panel con un resumen.", img: "/crestech-house/ia-chat.jpg", alt: "Chat con inteligencia artificial en el sitio de la inmobiliaria demo respondiendo por un departamento en Palermo", width: 750, height: 960 },
+        { title: "Aviso a interesados", body: "Cuando cargás una propiedad, te muestra quiénes consultaron por algo parecido y les avisás por WhatsApp con un toque.", img: "/crestech-house/ia-interesados.jpg", alt: "Ficha del panel con los interesados que buscaban una propiedad parecida y el botón para avisarles", width: 750, height: 1688 },
+      ],
+    },
   },
   demo: {
     appTitle: "TU INMOBILIARIA",

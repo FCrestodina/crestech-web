@@ -44,19 +44,6 @@ const projects: Project[] = [
     imageAlt: "Crestech House: el sitio de la inmobiliaria demo en escritorio y en el celular",
     url: "/inmobiliarias",
   },
-  {
-    category: "Sitio a medida · Clubes y asociaciones civiles",
-    title: "Impulso Deportivo",
-    challenge: "Una asociación civil que capacita y asesora a clubes de barrio necesitaba un sitio que explicara qué hace y a quién ayuda.",
-    description: "Sitio institucional con su identidad: quiénes son, gestión, capacitaciones y deportes urbanos, con contacto directo por WhatsApp. Pensado para clubes, federaciones y organismos públicos del deporte.",
-    result: "Está online en su dominio propio.",
-    tags: ["A medida", "Sitio institucional", "Asociación civil", "Contacto por WhatsApp"],
-    color: "rgba(var(--gold-rgb),0.05)",
-    accent: "var(--gold-mid)",
-    image: "/impulso/portada.jpg",
-    imageAlt: "Logo de Impulso Deportivo con la home del sitio en escritorio y en el celular",
-    url: "https://www.impulsodeportivo.ar",
-  },
 ];
 
 function hostOf(url: string) {

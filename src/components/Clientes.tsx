@@ -15,6 +15,7 @@ const clientes: Cliente[] = [
   { nombre: "Mixtura", rubro: "Estudio de pilates", logo: "/clientes/mixtura.png", fondo: "#ffffff", ancho: 225, alto: 104 },
   { nombre: "Impulso Deportivo", rubro: "Asociación civil", logo: "/clientes/impulso.webp", fondo: "#1b0b20", ancho: 460, alto: 461 },
   { nombre: "Ayedg.ph", rubro: "Productora audiovisual", logo: "/clientes/ayeph.jpg", fondo: "#0f0e14", ancho: 360, alto: 216, foto: true },
+  { nombre: "La Casona de Susana", rubro: "Hostería", logo: "/clientes/casona-susana.webp", fondo: "#f5eee1", ancho: 320, alto: 320 },
 ];
 
 function Item({ c, copia = false }: { c: Cliente; copia?: boolean }) {

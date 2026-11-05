@@ -58,7 +58,7 @@ export default function Portfolio() {
       id="portfolio"
       style={{
         padding: "100px 24px",
-        borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
+        borderTop: "1px solid var(--hairline)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -70,11 +70,9 @@ export default function Portfolio() {
             >
               Proyectos
               <br />
-              <span className="gold-gradient-text">seleccionados</span>
+              <span className="gold-text">seleccionados</span>
             </h2>
-            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
-              CASOS · {String(projects.length).padStart(2, "0")}
-            </span>
+            <span className="eyebrow">{projects.length} {projects.length === 1 ? "caso" : "casos"}</span>
           </div>
         </Reveal>
 
@@ -111,8 +109,8 @@ export default function Portfolio() {
                 </div>
 
                 <div className="case-body">
-                  <span style={{ fontSize: 11, letterSpacing: "0.2em", color: "var(--gold-mid)", display: "block", marginBottom: 12 }}>
-                    {String(i + 1).padStart(2, "0")} · {p.category.toUpperCase()}
+                  <span className="eyebrow" style={{ display: "block", marginBottom: 12 }}>
+                    <span className="case-num">{String(i + 1).padStart(2, "0")}</span> · {p.category}
                   </span>
                   <h3
                     className="font-display"
@@ -121,35 +119,25 @@ export default function Portfolio() {
                     {p.title}
                   </h3>
                   <p style={{ fontSize: 15, color: "#bbbbbb", lineHeight: 1.7, marginBottom: 14 }}>
-                    <span style={{ fontSize: 11, letterSpacing: "0.15em", color: "var(--gold-mid)", fontWeight: 600 }}>DESAFÍO </span>
+                    <span className="lead-in">Desafío </span>
                     {p.challenge}
                   </p>
                   <p style={{ fontSize: 15, color: "#888888", lineHeight: 1.7, marginBottom: 14 }}>
                     {p.description}
                   </p>
                   <p style={{ fontSize: 15, color: "#bbbbbb", lineHeight: 1.7, marginBottom: 14 }}>
-                    <span style={{ fontSize: 11, letterSpacing: "0.15em", color: "var(--gold-mid)", fontWeight: 600 }}>RESULTADO </span>
+                    <span className="lead-in">Resultado </span>
                     {p.result}
                   </p>
                   {p.example && (
-                    <p style={{ fontSize: 13, color: "#888888", lineHeight: 1.7, marginBottom: 14, fontStyle: "italic" }}>
-                      <span style={{ fontSize: 11, letterSpacing: "0.15em", color: "var(--gold-mid)", fontWeight: 600, fontStyle: "normal" }}>EJEMPLO </span>
+                    <p style={{ fontSize: 13, color: "#888888", lineHeight: 1.7, marginBottom: 14 }}>
+                      <span className="lead-in">Ejemplo </span>
                       {p.example}
                     </p>
                   )}
                   <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 6 }}>
                     {p.tags.map((t) => (
-                      <span
-                        key={t}
-                        style={{
-                          fontSize: 11,
-                          letterSpacing: "0.1em",
-                          color: "var(--gold-mid)",
-                          border: "1px solid rgba(var(--gold-rgb),0.25)",
-                          padding: "3px 8px",
-                          borderRadius: 2,
-                        }}
-                      >
+                      <span key={t} className="tag">
                         {t}
                       </span>
                     ))}
@@ -177,7 +165,7 @@ export default function Portfolio() {
         <Reveal delay={200}>
           <div style={{ textAlign: "center", marginTop: 88 }}>
             <a href="#contacto" className="btn-outline">
-              HABLEMOS DE TU PROYECTO
+              Hablemos de tu proyecto
             </a>
           </div>
         </Reveal>

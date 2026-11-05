@@ -1,9 +1,9 @@
 const team = [
-  "Desarrollador Web",
+  "Desarrollador web",
   "Fotógrafa",
-  "Diseñadora Gráfica",
-  "Especialista en Marketing",
-  "Community Manager",
+  "Diseñadora gráfica",
+  "Especialista en marketing",
+  "Community manager",
 ];
 
 export default function About() {
@@ -12,8 +12,8 @@ export default function About() {
       id="nosotros"
       style={{
         padding: "100px 24px",
-        borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
-        borderBottom: "1px solid rgba(var(--gold-rgb),0.1)",
+        borderTop: "1px solid var(--hairline)",
+        borderBottom: "1px solid var(--hairline)",
       }}
     >
       <div
@@ -28,48 +28,24 @@ export default function About() {
       >
         {/* Equipo */}
         <div>
-          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>EL EQUIPO</span>
-          <div
-            style={{
-              marginTop: 24,
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 12,
-            }}
-          >
+          <span className="eyebrow">El equipo</span>
+          <ul className="team-list">
             {team.map((role) => (
-              <span
-                key={role}
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                  padding: "10px 18px",
-                  borderRadius: 999,
-                  border: "1px solid rgba(var(--gold-rgb),0.3)",
-                  background: "rgba(var(--gold-rgb),0.05)",
-                  fontSize: 14,
-                  color: "#ffffff",
-                  letterSpacing: "0.02em",
-                }}
-              >
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--gold-mid)" }} />
-                {role}
-              </span>
+              <li key={role}>{role}</li>
             ))}
-          </div>
+          </ul>
         </div>
 
         {/* Text */}
         <div>
-          <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>SOBRE NOSOTROS</span>
+          <span className="eyebrow">Sobre nosotros</span>
           <h2
             className="font-display"
             style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 500, marginTop: 16, marginBottom: 24, color: "#ffffff", lineHeight: 1.2 }}
           >
             El equipo detrás
             <br />
-            <span className="gold-gradient-text">de tu negocio</span>
+            <span className="gold-text">de tu negocio</span>
           </h2>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 16 }}>
             En Crestech está quien entiende el negocio, quien arma el sistema y quien lo hace crecer: desarrollo web, marketing, diseño gráfico, fotografía y community manager. Cada parte la trabaja quien sabe del tema.
@@ -83,7 +59,7 @@ export default function About() {
               display: "grid",
               gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
               gap: 24,
-              borderTop: "1px solid rgba(var(--gold-rgb),0.15)",
+              borderTop: "1px solid var(--hairline)",
               paddingTop: 28,
             }}
           >
@@ -98,7 +74,7 @@ export default function About() {
                   flexDirection: "column",
                   gap: 6,
                   paddingLeft: 16,
-                  borderLeft: "2px solid var(--gold-mid)",
+                  borderLeft: "1px solid var(--hairline)",
                 }}
               >
                 <div

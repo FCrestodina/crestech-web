@@ -2,54 +2,14 @@ import Logo from "./Logo";
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        padding: "120px 24px 80px",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Subtle grid background */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage:
-            "linear-gradient(rgba(var(--gold-rgb),0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--gold-rgb),0.04) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-          pointerEvents: "none",
-        }}
-      />
-
-      {/* Gold corner accents */}
-      <div style={{ position: "absolute", top: 40, left: 40, width: 60, height: 60, borderTop: "1px solid rgba(var(--gold-rgb),0.25)", borderLeft: "1px solid rgba(var(--gold-rgb),0.25)" }} />
-      <div style={{ position: "absolute", top: 40, right: 40, width: 60, height: 60, borderTop: "1px solid rgba(var(--gold-rgb),0.25)", borderRight: "1px solid rgba(var(--gold-rgb),0.25)" }} />
-      <div style={{ position: "absolute", bottom: 40, left: 40, width: 60, height: 60, borderBottom: "1px solid rgba(var(--gold-rgb),0.25)", borderLeft: "1px solid rgba(var(--gold-rgb),0.25)" }} />
-      <div style={{ position: "absolute", bottom: 40, right: 40, width: 60, height: 60, borderBottom: "1px solid rgba(var(--gold-rgb),0.25)", borderRight: "1px solid rgba(var(--gold-rgb),0.25)" }} />
-
-      <div style={{ position: "relative", maxWidth: 800, margin: "0 auto" }}>
+    <section id="hero" className="hero">
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Logo size={56} />
         </div>
 
         <div style={{ marginTop: 32, marginBottom: 12 }}>
-          <span
-            style={{
-              fontSize: 12,
-              letterSpacing: "0.3em",
-              color: "var(--gold-mid)",
-              fontWeight: 500,
-            }}
-          >
-            SOCIO DIGITAL DE LA PYME
-          </span>
+          <span className="eyebrow" style={{ fontSize: 15 }}>Socio digital de la pyme</span>
         </div>
 
         <h1
@@ -63,10 +23,8 @@ export default function Hero() {
           }}
         >
           <span style={{ color: "#ffffff", display: "block", marginBottom: 8 }}>Crestech</span>
-          <span className="gold-gradient-text" style={{ display: "block" }}>Studio</span>
+          <span className="gold-text" style={{ display: "block" }}>Studio</span>
         </h1>
-
-        <div className="gold-line" style={{ width: 200, margin: "0 auto 40px" }} />
 
         <p
           style={{
@@ -81,28 +39,10 @@ export default function Hero() {
           Entendemos cómo funciona tu negocio, te armamos el sistema y lo hacemos crecer.
         </p>
 
-        <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="#contacto" className="btn-gold">PEDÍ UN PRIMER VISTAZO</a>
-          <a href="#servicios" className="btn-outline">CÓMO TRABAJAMOS</a>
+        <div className="hero-actions">
+          <a href="#contacto" className="btn-gold">Pedí un primer vistazo</a>
+          <a href="#servicios" className="btn-outline">Cómo trabajamos</a>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 32,
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: 6,
-          opacity: 0.4,
-        }}
-      >
-        <span style={{ fontSize: 10, letterSpacing: "0.2em", color: "var(--gold-mid)" }}>SCROLL</span>
-        <div style={{ width: 1, height: 40, background: "linear-gradient(to bottom, var(--gold-mid), transparent)" }} />
       </div>
     </section>
   );

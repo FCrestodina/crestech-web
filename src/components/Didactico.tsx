@@ -31,9 +31,7 @@ export default function Didactico() {
         <Reveal>
           <div className="didactico-head">
             <div>
-              <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
-                EDUCACIÓN
-              </span>
+              <span className="eyebrow">Educación</span>
               <h2
                 className="font-display"
                 style={{
@@ -90,14 +88,13 @@ export default function Didactico() {
                   <div style={{ padding: "20px 22px 24px", display: "flex", flexDirection: "column", flex: 1 }}>
                     <span
                       style={{
-                        fontSize: 11,
-                        letterSpacing: "0.15em",
+                        fontSize: 12,
                         color: s.acento,
                         display: "block",
                         marginBottom: 10,
                       }}
                     >
-                      {s.grados.toUpperCase()}
+                      {s.grados}
                     </span>
                     <h3
                       className="font-display"

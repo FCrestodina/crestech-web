@@ -39,7 +39,7 @@ export default function Process() {
               className="font-display"
               style={{ fontSize: "clamp(30px, 4.5vw, 46px)", fontWeight: 500, color: "#ffffff" }}
             >
-              Cómo trabajamos
+              Del primer vistazo a la entrega
             </h2>
             <span style={{ fontSize: 15, color: "#8a8a8a" }}>
               Cuatro pasos, del primer vistazo a que tu negocio crezca.

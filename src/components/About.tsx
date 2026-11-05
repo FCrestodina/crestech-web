@@ -43,9 +43,9 @@ export default function About() {
             className="font-display"
             style={{ fontSize: "clamp(28px, 4vw, 44px)", fontWeight: 500, marginTop: 16, marginBottom: 24, color: "#ffffff", lineHeight: 1.2 }}
           >
-            El equipo detrás
+            Quiénes hacemos
             <br />
-            <span className="gold-text">de tu negocio</span>
+            <span className="gold-text">Crestech</span>
           </h2>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginBottom: 16 }}>
             En Crestech está quien entiende el negocio, quien arma el sistema y quien lo hace crecer: desarrollo web, marketing, diseño gráfico, fotografía y community manager. Cada parte la trabaja quien sabe del tema.

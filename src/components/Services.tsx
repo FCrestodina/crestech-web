@@ -65,9 +65,9 @@ export default function Services() {
             className="font-display"
             style={{ fontSize: "clamp(36px, 5vw, 60px)", fontWeight: 500, marginTop: 16, color: "#ffffff", lineHeight: 1.05 }}
           >
-            Lo que
+            Diagnóstico, sistema
             <br />
-            <span className="gold-text">hacemos</span>
+            <span className="gold-text">y marca</span>
           </h2>
           <p style={{ fontSize: 16, color: "#aaaaaa", lineHeight: 1.8, marginTop: 24, maxWidth: 360 }}>
             Tres etapas, en el orden en que se trabaja. Podés arrancar por cualquiera de las tres. Si ya sabés lo que necesitás, vamos directo a la propuesta.

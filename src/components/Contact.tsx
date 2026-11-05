@@ -73,9 +73,9 @@ export default function Contact() {
             lineHeight: 1.1,
           }}
         >
-          Contanos de
+          Trabajemos
           <br />
-          <span className="gold-text">tu negocio</span>
+          <span className="gold-text">juntos</span>
         </h2>
 
         <p style={{ fontSize: 16, color: "#999999", lineHeight: 1.7, marginBottom: 48 }}>

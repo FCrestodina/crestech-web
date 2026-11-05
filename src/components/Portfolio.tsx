@@ -68,9 +68,9 @@ export default function Portfolio() {
               className="font-display"
               style={{ fontSize: "clamp(36px, 6vw, 72px)", fontWeight: 500, color: "#ffffff", lineHeight: 1 }}
             >
-              Cupio y
+              Proyectos
               <br />
-              <span className="gold-text">Crestech House</span>
+              <span className="gold-text">seleccionados</span>
             </h2>
             <span className="eyebrow">{projects.length} {projects.length === 1 ? "caso" : "casos"}</span>
           </div>

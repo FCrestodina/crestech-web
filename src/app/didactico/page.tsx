@@ -41,7 +41,7 @@ export default function DidacticoPage() {
               >
                 Secuencias didácticas
                 <br />
-                <span className="gold-text">para el aula</span>
+                <span className="gold-gradient-text">para el aula</span>
               </h1>
               <p
                 style={{

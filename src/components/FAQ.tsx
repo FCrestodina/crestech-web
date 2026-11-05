@@ -49,13 +49,15 @@ export default function FAQ() {
       id="faq"
       style={{
         padding: "100px 24px",
-        borderTop: "1px solid var(--hairline)",
+        borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
       }}
     >
       <div className="faq-layout" style={{ maxWidth: 1100, margin: "0 auto" }}>
         <Reveal>
           <div className="split-aside">
-            <span className="eyebrow">FAQ</span>
+            <span style={{ fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)" }}>
+              FAQ
+            </span>
             <h2
               className="font-display"
               style={{ fontSize: "clamp(32px, 4.5vw, 48px)", fontWeight: 500, marginTop: 16, color: "#ffffff", lineHeight: 1.1 }}
@@ -64,7 +66,7 @@ export default function FAQ() {
             </h2>
             <p style={{ fontSize: 15, color: "#999999", lineHeight: 1.7, marginTop: 20, maxWidth: 300 }}>
               ¿No está tu pregunta?{" "}
-              <a href="#contacto" style={{ color: "var(--gold-mid)", fontWeight: 500 }}>
+              <a href="#contacto" style={{ color: "var(--gold-mid)", fontWeight: 600 }}>
                 Escribinos
               </a>{" "}
               y te respondemos.
@@ -92,7 +94,7 @@ export default function FAQ() {
                     <span
                       aria-hidden="true"
                       style={{
-                        color: "var(--text-dim)",
+                        color: "var(--gold-mid)",
                         fontSize: 20,
                         lineHeight: 1,
                         transform: open === i ? "rotate(45deg)" : "rotate(0deg)",
@@ -119,7 +121,7 @@ export default function FAQ() {
                         lineHeight: 1.8,
                         textAlign: "left",
                         paddingTop: 16,
-                        borderTop: "1px solid var(--hairline)",
+                        borderTop: "1px solid rgba(var(--gold-rgb),0.1)",
                       }}
                     >
                       {faq.a}

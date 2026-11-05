@@ -28,8 +28,9 @@ export default function Process() {
     <section
       id="proceso"
       style={{
-        padding: "100px 24px 112px",
-        borderTop: "1px solid var(--hairline)",
+        padding: "100px 24px 110px",
+        background: "linear-gradient(180deg, rgba(var(--gold-rgb),0.05), rgba(var(--gold-rgb),0) 70%)",
+        borderTop: "1px solid rgba(var(--gold-rgb),0.12)",
       }}
     >
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -52,7 +53,7 @@ export default function Process() {
             <li key={step.title} className="timeline-step">
               <Reveal delay={i * 100}>
                 <span className="timeline-dot font-display" aria-hidden="true">
-                  {String(i + 1).padStart(2, "0")}
+                  {i + 1}
                 </span>
                 <h3
                   className="font-display"

@@ -9,7 +9,6 @@
   --text: #ffffff;
   --text-secondary: #cccccc;
   --text-dim: #888888;
-  --hairline: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -48,12 +47,15 @@ body {
 
 .font-display {
   font-family: var(--font-instrument), Arial, Helvetica, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.02em;
 }
 
-.gold-text {
-  color: var(--gold-mid);
+.gold-gradient-text {
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-mid) 40%, var(--gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .gold-border {
@@ -62,60 +64,8 @@ body {
 
 .gold-line {
   height: 1px;
-  background: rgba(var(--gold-rgb), 0.25);
-}
-
-/* Etiqueta chica sobre los títulos de sección */
-.eyebrow {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-dim);
-}
-
-/* Etiquetas de servicios y casos */
-.tag {
-  font-size: 12px;
-  color: var(--text-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-/* Comienzo destacado de un párrafo de los casos (Desafío, Resultado, Ejemplo) */
-.lead-in {
-  font-weight: 500;
-  color: var(--text);
-}
-
-/* Hero: centrado en escritorio; en el celular arranca arriba y no ocupa toda la
-   pantalla, así los dos botones quedan a la vista y el de WhatsApp no los tapa. */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 120px 24px 80px;
-}
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-@media (max-width: 640px) {
-  .hero { min-height: auto; padding-top: 112px; }
-  .hero-actions { flex-direction: column; align-items: stretch; max-width: 320px; margin: 0 auto; }
-}
-
-/* Sobre nosotros: los roles del equipo como lista */
-.team-list { list-style: none; margin-top: 16px; }
-.team-list li {
-  font-size: 15px;
-  color: var(--text);
-  padding: 12px 0;
-  border-bottom: 1px solid var(--hairline);
+  background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
+  opacity: 0.5;
 }
 
 /* Buttons */
@@ -125,10 +75,11 @@ body {
   justify-content: center;
   gap: 10px;
   padding: 14px 36px;
-  background: var(--gold-mid);
+  background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-mid) 40%, var(--gold-dark) 100%);
   color: #0a0a0a;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.15em;
   text-decoration: none;
   border-radius: 2px;
   transition: opacity 0.2s;
@@ -143,17 +94,18 @@ body {
   justify-content: center;
   gap: 10px;
   padding: 14px 36px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--text);
-  font-weight: 500;
-  font-size: 15px;
+  border: 1px solid rgba(var(--gold-rgb),0.5);
+  color: var(--gold-mid);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.15em;
   text-decoration: none;
   border-radius: 2px;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, color 0.2s;
   background: transparent;
   cursor: pointer;
 }
-.btn-outline:hover { border-color: rgba(255, 255, 255, 0.4); }
+.btn-outline:hover { border-color: var(--gold-mid); color: var(--gold-light); }
 
 /* Service cards */
 .service-card {
@@ -246,8 +198,8 @@ html.js .reveal-init {
 }
 .faq-item {
   width: 100%;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--hairline);
+  background: rgba(var(--gold-rgb),0.03);
+  border: 1px solid rgba(var(--gold-rgb),0.15);
   border-radius: 2px;
   transition: border-color 0.2s, background 0.2s;
   text-align: left;
@@ -255,8 +207,8 @@ html.js .reveal-init {
 }
 .faq-item:hover,
 .faq-item-open {
-  border-color: rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(var(--gold-rgb),0.4);
+  background: rgba(var(--gold-rgb),0.06);
 }
 .faq-trigger {
   display: block;
@@ -295,27 +247,24 @@ html.js .reveal-init {
 /* Servicios: lista numerada, sin tarjetas */
 .service-list {
   list-style: none;
-  border-top: 1px solid var(--hairline);
+  border-top: 1px solid rgba(var(--gold-rgb),0.2);
 }
 .service-row {
   display: grid;
-  grid-template-columns: 48px minmax(0, 1fr);
+  grid-template-columns: 88px minmax(0, 1fr);
   gap: 24px;
   padding: 40px 0;
-  border-bottom: 1px solid var(--hairline);
+  border-bottom: 1px solid rgba(var(--gold-rgb),0.2);
 }
-/* Firma: la numeración de etapas en dorado, igual en Servicios, Proceso y Portfolio */
 .service-num {
-  font-size: 15px;
-  line-height: 20px;
+  font-size: 56px;
+  line-height: 0.9;
   font-weight: 500;
-  letter-spacing: 0;
-  color: var(--gold-mid);
-  font-variant-numeric: tabular-nums;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(var(--gold-rgb),0.6);
+  transition: color 0.3s;
 }
-.case-num { color: var(--gold-mid); font-variant-numeric: tabular-nums; }
-.service-icon { flex-shrink: 0; color: var(--text-dim); }
-.service-icon * { vector-effect: non-scaling-stroke; }
+.service-row:hover .service-num { color: rgba(var(--gold-rgb),0.25); }
 
 /* Proceso: línea de tiempo horizontal (vertical en celular) */
 .timeline {
@@ -332,22 +281,20 @@ html.js .reveal-init {
   left: 22px;
   right: 0;
   height: 1px;
-  background: var(--hairline);
+  background: linear-gradient(90deg, var(--gold-mid), rgba(var(--gold-rgb),0.1));
 }
 .timeline-step { position: relative; }
-/* El número tapa la línea con el color del fondo, así la línea corre entre los pasos. */
 .timeline-dot {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  width: 44px;
   height: 44px;
-  margin-left: -12px;
-  padding: 0 12px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-mid);
   background: var(--bg);
-  color: var(--gold-mid);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0;
-  font-variant-numeric: tabular-nums;
+  color: var(--gold-light);
+  font-size: 16px;
   margin-bottom: 28px;
   position: relative;
 }
@@ -361,7 +308,7 @@ html.js .reveal-init {
   flex-wrap: wrap;
   padding-bottom: 32px;
   margin-bottom: 72px;
-  border-bottom: 1px solid var(--hairline);
+  border-bottom: 1px solid rgba(var(--gold-rgb),0.2);
 }
 .case-row {
   display: grid;
@@ -375,16 +322,17 @@ html.js .reveal-init {
   aspect-ratio: 3 / 2;
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid var(--hairline);
+  border: 1px solid rgba(var(--gold-rgb),0.2);
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
-  transition: border-color 0.2s;
 }
-a.case-row:hover .case-media { border-color: rgba(255, 255, 255, 0.2); }
+.case-media img { transition: transform 0.6s ease; }
+a.case-row:hover .case-media img { transform: scale(1.03); }
 .case-visit {
   display: inline-flex;
   gap: 6px;
   margin-top: 24px;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
   color: var(--gold-light);
   border-bottom: 1px solid rgba(var(--gold-rgb),0.4);
   padding-bottom: 3px;
@@ -398,8 +346,10 @@ a.case-row:hover .case-media { border-color: rgba(255, 255, 255, 0.2); }
   margin: 0 auto;
   padding: 56px 48px;
   border-radius: 20px;
-  background: #111111;
-  border: 1px solid var(--hairline);
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(var(--gold-rgb),0.10), transparent 60%),
+    #111111;
+  border: 1px solid rgba(var(--gold-rgb),0.18);
 }
 .didactico-head {
   display: flex;
@@ -418,9 +368,9 @@ a.case-row:hover .case-media { border-color: rgba(255, 255, 255, 0.2); }
   background: #0a0a0a;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: 3px solid var(--acento);
-  transition: border-color 0.25s;
+  transition: transform 0.25s, border-color 0.25s;
 }
-.didactico-card:hover { border-color: var(--acento); }
+.didactico-card:hover { transform: translateY(-4px); border-color: var(--acento); }
 .didactico-card-media {
   position: relative;
   aspect-ratio: 16 / 10;
@@ -433,12 +383,13 @@ a.case-row:hover .case-media { border-color: rgba(255, 255, 255, 0.2); }
   .case-row { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .case-row-flip .case-media { order: 0; }
   .timeline { grid-template-columns: minmax(0, 1fr); gap: 36px; padding-left: 64px; }
-  .timeline::before { top: 0; bottom: 0; left: 22px; right: auto; width: 1px; height: auto; background: var(--hairline); }
+  .timeline::before { top: 0; bottom: 0; left: 22px; right: auto; width: 1px; height: auto; background: linear-gradient(180deg, var(--gold-mid), rgba(var(--gold-rgb),0.1)); }
   .timeline-dot { position: absolute; left: -64px; top: -8px; margin-bottom: 0; }
   .didactico-panel { padding: 36px 20px; border-radius: 14px; }
 }
 @media (max-width: 560px) {
   .service-row { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 32px 0; }
+  .service-num { font-size: 40px; }
 }
 
 /* WhatsApp floating button */
@@ -455,12 +406,13 @@ a.case-row:hover .case-media { border-color: rgba(255, 255, 255, 0.2); }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  transition: background-color 0.2s;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
   text-decoration: none;
 }
 .whatsapp-btn:hover {
-  background: #1ebe5a;
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
 }
 
 /* Contact link outline */
@@ -470,17 +422,18 @@ a.case-row:hover .case-media { border-color: rgba(255, 255, 255, 0.2); }
   justify-content: center;
   gap: 12px;
   padding: 14px 32px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--text);
-  font-weight: 500;
-  font-size: 15px;
+  border: 1px solid rgba(var(--gold-rgb),0.4);
+  color: var(--gold-mid);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.15em;
   text-decoration: none;
   border-radius: 2px;
   width: 100%;
   max-width: 320px;
   transition: border-color 0.2s;
 }
-.contact-link-outline:hover { border-color: rgba(255, 255, 255, 0.4); }
+.contact-link-outline:hover { border-color: var(--gold-mid); }
 
 /* Contact form */
 .contact-form {
@@ -491,15 +444,16 @@ a.case-row:hover .case-media { border-color: rgba(255, 255, 255, 0.2); }
   margin-bottom: 32px;
 }
 .contact-form label {
-  font-size: 13px;
-  color: var(--text-secondary);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--gold-mid);
   margin-bottom: 6px;
   display: block;
 }
 .contact-input {
   width: 100%;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(var(--gold-rgb),0.03);
+  border: 1px solid rgba(var(--gold-rgb),0.25);
   border-radius: 2px;
   padding: 13px 14px;
   color: var(--text);
@@ -511,7 +465,7 @@ a.case-row:hover .case-media { border-color: rgba(255, 255, 255, 0.2); }
 .contact-input:focus {
   outline: none;
   border-color: var(--gold-mid);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(var(--gold-rgb),0.06);
 }
 textarea.contact-input { resize: vertical; min-height: 110px; }
 .contact-form .btn-gold {
@@ -522,18 +476,17 @@ textarea.contact-input { resize: vertical; min-height: 110px; }
 }
 .contact-form .btn-gold:disabled { opacity: 0.5; cursor: not-allowed; }
 
-/* Clientes: fila quieta de logos, en dos renglones si no entran */
+/* Clientes: franja de logos que se desplaza sola */
+.clientes-marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
 .clientes-track {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px 48px;
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 0 16px;
+  width: max-content;
 }
-.cliente { display: flex; align-items: center; gap: 16px; }
+.cliente { display: flex; align-items: center; gap: 16px; margin-right: 56px; }
 .cliente-logo {
   display: flex;
   align-items: center;
@@ -549,3 +502,15 @@ textarea.contact-input { resize: vertical; min-height: 110px; }
 .cliente-logo-foto img { max-width: none; max-height: none; width: 100%; height: 100%; object-fit: cover; }
 .cliente-nombre { display: block; font-size: 16px; font-weight: 500; color: #ffffff; white-space: nowrap; }
 .cliente-rubro { display: block; font-size: 12px; color: var(--text-dim); margin-top: 2px; white-space: nowrap; }
+@media (prefers-reduced-motion: no-preference) {
+  .clientes-track { animation: clientes-scroll 32s linear infinite; }
+  .clientes-marquee:hover .clientes-track { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clientes-track { flex-wrap: wrap; justify-content: center; gap: 24px 0; width: auto; padding: 0 16px; }
+  .clientes-track > [aria-hidden="true"] { display: none; }
+}
+@keyframes clientes-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

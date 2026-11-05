@@ -121,7 +121,7 @@ export default function SistemasInternosPage() {
             >
               El panel de tu negocio,
               <br />
-              <span className="gold-text">hecho a tu medida</span>
+              <span className="gold-gradient-text">hecho a tu medida</span>
             </h1>
             <p
               style={{
@@ -148,7 +148,7 @@ export default function SistemasInternosPage() {
                 rel="noopener noreferrer"
                 className="btn-gold"
               >
-                Quiero uno para mi negocio
+                QUIERO UNO PARA MI NEGOCIO
               </a>
             </div>
             <div className="gold-line" style={{ width: 200, marginTop: 56 }} />
@@ -254,7 +254,7 @@ export default function SistemasInternosPage() {
             rel="noopener noreferrer"
             className="btn-gold"
           >
-            Escribinos por WhatsApp
+            ESCRIBINOS POR WHATSAPP
           </a>
           <p style={{ marginTop: 56 }}>
             <Link href="/" style={{ color: "#8a8577", fontSize: 13 }}>

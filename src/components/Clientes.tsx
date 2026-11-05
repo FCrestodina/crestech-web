@@ -18,9 +18,9 @@ const clientes: Cliente[] = [
   { nombre: "La Casona de Susana", rubro: "Hostería", logo: "/clientes/casona-susana.webp", fondo: "#f5eee1", ancho: 320, alto: 320 },
 ];
 
-function Item({ c }: { c: Cliente }) {
+function Item({ c, copia = false }: { c: Cliente; copia?: boolean }) {
   return (
-    <li className="cliente">
+    <li className="cliente" aria-hidden={copia || undefined}>
       <span className={c.foto ? "cliente-logo cliente-logo-foto" : "cliente-logo"} style={{ background: c.fondo }}>
         <Image src={c.logo} alt="" width={c.ancho} height={c.alto} />
       </span>
@@ -32,18 +32,27 @@ function Item({ c }: { c: Cliente }) {
   );
 }
 
-/** Fila quieta de logos de clientes; si no entran en una línea, siguen en la de abajo. */
+/** Franja de logos que se desplaza sola; con movimiento reducido queda quieta y en filas. */
 export default function Clientes() {
   return (
-    <section aria-labelledby="clientes-titulo" style={{ padding: "56px 0", borderTop: "1px solid var(--hairline)" }}>
-      <p id="clientes-titulo" className="eyebrow" style={{ textAlign: "center", marginBottom: 28 }}>
-        Confían en nosotros
+    <section aria-labelledby="clientes-titulo" style={{ padding: "56px 0", borderTop: "1px solid rgba(var(--gold-rgb),0.1)" }}>
+      <p
+        id="clientes-titulo"
+        style={{ textAlign: "center", fontSize: 11, letterSpacing: "0.3em", color: "var(--gold-mid)", marginBottom: 28 }}
+      >
+        CONFÍAN EN NOSOTROS
       </p>
-      <ul className="clientes-track">
-        {clientes.map((c) => (
-          <Item key={c.nombre} c={c} />
-        ))}
-      </ul>
+      <div className="clientes-marquee">
+        <ul className="clientes-track">
+          {clientes.map((c) => (
+            <Item key={c.nombre} c={c} />
+          ))}
+          {/* Segunda vuelta para que el desplazamiento no tenga corte; los lectores de pantalla la saltean. */}
+          {clientes.map((c) => (
+            <Item key={`${c.nombre}-2`} c={c} copia />
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }
